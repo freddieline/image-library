@@ -1,0 +1,33 @@
+body {
+  font-size: 12px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 15px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.terms {
+  color: #2e3436;
+  font-size: 12px;
+  height: 150px;
+  overflow: scroll;
+}
+
+.checkbox {
+  margin-top: 14px;
+}
+
+.card {
+  padding: 10px;
+}
+
