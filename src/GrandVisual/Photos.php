@@ -31,8 +31,7 @@ class Photos
                     [ 'image-filename' => $filename ],
                     [
                         'sent' => false,
-                        'deleted' => true,
-                        'failed' => false
+                        'deleted' => true
                     ]
                 );
 

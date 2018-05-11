@@ -30,9 +30,8 @@ class AppServiceProvider extends ServiceProvider
             Logger::updateOrCreate(
                 [ 'image-filename' => $payload->photo ],
                 [
-                    'sent' => false,
+                    'sent' => true,
                     'deleted' => false,
-                    'failed' => true
                 ]
             );
 
