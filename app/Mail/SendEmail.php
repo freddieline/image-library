@@ -18,12 +18,15 @@ class SendEmail extends Mailable
      */
     public $photoPath;
 
-    public $heading;
+    public $bannerPath;
+
+    public $text;
 
     public function __construct( $photoPath )
     {
         $this->photoPath = $photoPath;
-        $this->heading = "Your photo is available";
+        $this->bannerPath = storage_path("app/public/banner.jpeg");
+        $this->text = "Your photo is available";
     }
 
     /**
@@ -35,6 +38,6 @@ class SendEmail extends Mailable
     {
         return $this
             ->from('noreply-yourphoto@coke.ch')
-            ->view('email.base', ['photoPath', $this->photoPath ]);
+            ->view('email.base', [['photoPath', $this->photoPath],[ 'bannerPath', $this->bannerPath], ['text', $this->text]]);
     }
 }

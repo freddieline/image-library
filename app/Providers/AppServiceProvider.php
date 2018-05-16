@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Faker\Provider\File;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
             $payload = json_decode( $event->job->getRawBody() );
 
             $payload = unserialize( $payload->data->command );
+
+            \File::move(storage_path("app/public/photos/") . $payload->photo, storage_path("app/public/sent/"). $payload->photo );
 
             Logger::updateOrCreate(
                 [ 'image-filename' => $payload->photo ],

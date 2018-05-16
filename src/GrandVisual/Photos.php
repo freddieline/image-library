@@ -2,7 +2,6 @@
 
 namespace GrandVisual;
 use Symfony\Component\Finder\SplFileInfo;
-use Illuminate\Support\Facades\Storage;
 /**
  * Created by PhpStorm.
  * User: user

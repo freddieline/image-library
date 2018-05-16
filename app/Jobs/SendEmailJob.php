@@ -54,8 +54,6 @@ class SendEmailJob implements ShouldQueue
                     ->send(new SendEmail( $this->_photoPath ))
                 ;
 
-
-
                 return $this;
         }
         catch(\Exception $exception){

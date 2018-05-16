@@ -4,7 +4,9 @@
         <!--<v-carousel :hide-delimiters="true" :cycle="false" transition="none" style="margin-top:50px;">
            <v-carousel-item v-for="(item ,i) in items" cycle="false" :src="item.src" :key="i"></v-carousel-item>
         </v-carousel> -->
-        <img :src="photoDirectory + photoName" width="960" height="540" />
+
+            <img :src="photoSrc" width="960" height="540"  />
+
         <br/>
         <v-btn  @click.stop="openEmailDialog()" color="red">Send email</v-btn>
         <v-btn  @click.stop="confirmPhotoDeleteDialog = true" color="red">Delete photo</v-btn>
@@ -91,6 +93,7 @@
         data ()
         {
             return {
+                photoSrc:"",
                 termsChecked: false,
                 photoDirectory: '',
                 photoName: "",
@@ -124,6 +127,7 @@
 
             setPhotos( response ){
                 this.$store.commit(  'addPhotos', response.data.photos  );
+
                 this.getLatestPhoto();
             },
 
@@ -160,17 +164,32 @@
 
             messageSent(){
                 this.emailSendSuccessDialog = false;
+                console.log("sent");
+                this.getPhotos;
             },
 
             getLatestPhoto(){
+                console.log('get latest');
                 this.index = 0;
                 this.photoName = this.$store.getters.getPhotos[ this.index ];
+                this.setPhotoSrc();
+            },
+
+            setPhotoSrc(){
+                this.photoSrc =  this.photoDirectory + this.photoName;
+                console.log(this.photoName);
+                if(typeof this.photoName === "undefined"){
+                    this.photoSrc = "./storage/logo.jpg";
+                    console.log(this.photoSrc);
+                }
             },
 
             getNextPhoto(){
                 if(this.index < this.$store.getters.getPhotos.length - 1 ) {
                     this.index += 1;
                     this.photoName =  this.$store.getters.getPhotos[ this.index ];
+                    console.log(this.photoName);
+                    this.setPhotoSrc();
                 }
             },
 
@@ -178,6 +197,8 @@
                 if(this.index !== 0){
                     this.index -= 1;
                     this.photoName = this.$store.getters.getPhotos[ this.index ];
+                    console.log(this.photoName);
+                    this.setPhotoSrc();
                 }
             },
 

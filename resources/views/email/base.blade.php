@@ -14,7 +14,8 @@
             max-width: 100%; }
 
         body {
-            background-color: #f6f6f6;
+            background-color: #000000;
+            color: #ffffff;
             font-family: sans-serif;
             -webkit-font-smoothing: antialiased;
             font-size: 14px;
@@ -23,8 +24,18 @@
             padding: 0;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; }
-
+        img {
+             margin-bottom:20px;
+         }
+        img.center {
+            display: block;
+            width:516px;
+            margin: 0 auto;
+            margin-bottom:20px;
+        }
         table {
+            background-color: #000000;
+            color: #ffffff;
             border-collapse: separate;
             mso-table-lspace: 0pt;
             mso-table-rspace: 0pt;
@@ -39,7 +50,8 @@
         ------------------------------------- */
 
         .body {
-            background-color: #f6f6f6;
+            background-color: #000000;
+            color:#ffffff;
             width: 100%; }
 
         /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
@@ -64,7 +76,8 @@
             HEADER, FOOTER, MAIN
         ------------------------------------- */
         .main {
-            background: #fff;
+            color:#ffffff;
+            font-size:20px;
             border-radius: 3px;
             width: 100%; }
 
@@ -91,13 +104,20 @@
         h1,
         h2,
         h3,
-        h4 {
-            color: #000000;
-            font-family: sans-serif;
+        p {
+            color: #ffffff;
+            font-family:  "Helvetica Neue",helvetica,arial,sans-serif;
+            font-size:15px;
             font-weight: 400;
-            line-height: 1.4;
+            line-height: 19px;
             margin: 0;
-            Margin-bottom: 30px; }
+            Margin-bottom: 30px;
+        }
+        .p2 {
+            color: #bbbbbb;
+            font-family:  "Helvetica Neue",helvetica,arial,sans-serif;
+            font-size: 9px;
+        }
 
         h1 {
             font-size: 35px;
@@ -286,11 +306,45 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <h1>
-                                            {!! $heading !!}<hr>
-                                            <img src="{{ $message->embed( $photoPath) }}">
-                                            <hr>
-                                        </h1>
+                                            <img src="{{ $message->embed( $bannerPath) }}">
+                                            <img class="center" src="{{ $message->embed( $photoPath) }}">
+                                            <p>Hi,</p>
+
+
+                                            <p>
+                                                Schön, dass du bei der Coca-Cola Aktion am Hauptbahnhof in Zürich mitgemacht hast. </p>
+                                        <p>
+                                                Anbei findest du noch dein Foto, das wir von dir gemacht haben - sieht cool aus! : )</p>
+                                        <p>
+
+
+
+                                                Übrigens, wir verlosen unter allen Teilnehmern der Aktion am HB Zürich einen FIFA World Cup Official Match Ball von einem Gruppenspiel des Schweizer Teams bei der FIFA Weltmeisterschaft 2018™ - mach mit und mit ein bisschen Glück machst du schon Bald deine Kunststückchen mit einem echten Matchball! Hier geht's zum Gewinnspiel: http://CokeURL.com/MatchballCH
+                                        </p>
+                                        <p>
+
+
+                                                Viel Glück & liebe Grüsse
+                                        <br/>
+                                                vom Coca-Cola Schweiz Team</p>
+
+                                       <p>
+                                           <span class="p2">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat tellus id placerat sollicitudin. Proin a iaculis justo. Maecenas sagittis ligula sed neque ultricies hendrerit. Cras vel dolor in erat convallis sagittis eget at odio. Proin feugiat aliquet massa. Duis interdum vestibulum dignissim. Nulla interdum, risus sit amet fringilla pharetra, quam nisl efficitur leo, nec tempor sem dolor cursus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed ipsum magna, volutpat porta est ac, maximus dictum velit. Donec condimentum odio in magna egestas imperdiet. Cras erat massa, malesuada eu cursus condimentum, euismod viverra ligula. Pellentesque commodo commodo lacus nec suscipit. Aenean quis ligula et enim vestibulum blandit.
+                                            </span>
+                                       </p>
+                                        <p>
+                                            <span class="p2">
+                                            Suspendisse potenti. Ut non auctor arcu. Duis ac porttitor eros, nec mattis turpis. Mauris nec felis at purus placerat sodales. Mauris lobortis nunc at faucibus semper. Mauris velit dui, vulputate ac eros nec, tempor pellentesque mauris. Curabitur lobortis consequat arcu, sed ultricies lectus tincidunt a.
+                                              </span>
+                                        </p>
+                                        <p>
+                                                  <span class="p2">
+                                            Donec consectetur ex a ligula fringilla, eget scelerisque purus imperdiet. Donec interdum fringilla condimentum. Vivamus eros felis, posuere at volutpat id, molestie eu elit. Aliquam sed ex ac ex pulvinar lacinia. Phasellus id placerat odio, quis tempus quam. Aliquam libero arcu, consequat in gravida pellentesque, malesuada nec enim. Fusce fringilla cursus elit, id posuere lectus feugiat sed. Nulla imperdiet nibh vitae mi fringilla finibus. Donec massa augue, rutrum sit amet massa vestibulum, pulvinar cursus sem. Quisque tincidunt eget turpis eu blandit. Nam sit amet magna tincidunt, rhoncus ligula ut, dictum massa. Proin tellus leo, mattis eu sodales eget, mattis sit amet lacus. Ut vitae felis ex. Cras finibus, orci vitae elementum molestie, ipsum mauris faucibus orci, eu blandit libero mi nec velit. Aliquam ac feugiat arcu.</p>
+                                            </span>
+                                        </p>
+
+                                        <hr>
                                     </td>
                                 </tr>
                                 <tr>
@@ -310,7 +364,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block">
-                                <span class="apple-link">Coco-cola - 2018</span>
+                                <span class="apple-link">Coca-Cola - 2018</span>
                             </td>
                         </tr>
                     </table>
