@@ -39,7 +39,7 @@
                         <h2>I agree to the terms listed above</h2>
                     </v-flex>
                 <v-card-actions>
-                    <v-btn :disabled="email === ''" color="red" flat @click.stop="sendEmail">Send</v-btn>
+                    <v-btn :disabled="email === '' || termsChecked === false" color="red" flat @click.stop="sendEmail">Send</v-btn>
                     <v-btn color="red" flat @click.stop="emailDialog = false">Cancel</v-btn>
                 </v-card-actions>
 

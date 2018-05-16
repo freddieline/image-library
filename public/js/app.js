@@ -69032,7 +69032,8 @@ var render = function() {
                         "v-btn",
                         {
                           attrs: {
-                            disabled: _vm.email === "",
+                            disabled:
+                              _vm.email === "" || _vm.termsChecked === false,
                             color: "red",
                             flat: ""
                           },
