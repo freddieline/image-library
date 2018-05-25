@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
 
             $payload = unserialize( $payload->data->command );
 
-            \File::move(storage_path("app/public/photos/") . $payload->photo, storage_path("app/public/sent/"). $payload->photo );
+            \File::move(storage_path("app/public/outbox/") . $payload->photo, storage_path("app/public/sent/"). $payload->photo );
 
             Logger::updateOrCreate(
                 [ 'image-filename' => $payload->photo ],
@@ -40,8 +40,11 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
-        Queue::failing(function (JobFailed $event) {
+        /**
+         * @var
+         */
 
+        Queue::failing( function ($event) {
 
         });
     }

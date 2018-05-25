@@ -1,0 +1,6 @@
+MAIL_DRIVER=smtp
+MAIL_HOST=mail.utanet.at
+MAIL_PORT=465
+MAIL_USERNAME=yourphon
+MAIL_PASSWORD=kmx8xvno
+MAIL_ENCRYPTION=tls

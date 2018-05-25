@@ -8,6 +8,8 @@ use Symfony\Component\Finder\SplFileInfo;
  * Date: 08/05/2018
  * Time: 15:31
  */
+
+use App\Logger;
 class Photos
 {
     private $_photos;
@@ -21,18 +23,20 @@ class Photos
 
         try{
             //delete photo
-            \File::delete( $storagePath. "/" . $filename );
+            \File::move($storagePath. "/" . $filename , storage_path("app/public/deleted/"). $filename );
+
+            Logger::updateOrCreate(
+                [ 'image-filename' => $filename ],
+                [
+                    'sent' => false,
+                    'deleted' => true
+                ]
+            );
+
             //return photos
             return $this->getPhotosByModifedTime( $storagePath );
 
 
-                Logger::updateOrCreate(
-                    [ 'image-filename' => $filename ],
-                    [
-                        'sent' => false,
-                        'deleted' => true
-                    ]
-                );
 
 
         }

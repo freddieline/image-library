@@ -154,8 +154,12 @@
 
             emailSentError( error ){
                 this.emailSendSuccessDialog = false;
+                console.log(error.response);
                 if(error.response.status === 503){
                     this.emailSendMessageError = "Sorry! Invalid email";
+                }
+                if(error.response.status === 111){
+                    this.emailSendMessageError = "Sorry! This photo has already been sent";
                 }
             },
 

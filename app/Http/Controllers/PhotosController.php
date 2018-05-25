@@ -58,7 +58,12 @@ class PhotosController extends Controller
 
         //cast request to array
         $request = $request->toArray();
-
+        try {
+            \File::move(storage_path("app/public/photos/") . "/" . $request['photo'], storage_path("app/public/outbox/") . $request['photo']);
+        }
+        catch(\Exception $e){
+            abort(111);
+        }
         //make sure email and photo path are set
         if(isset($request['email']) && isset($request['photo'])) {
 
@@ -69,7 +74,7 @@ class PhotosController extends Controller
                 $request['email'],
 
                 // directory
-                storage_path('app/public/photos/'),
+                storage_path('app/public/outbox/'),
 
                 // photo filename
                 $request['photo']

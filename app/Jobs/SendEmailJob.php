@@ -48,17 +48,11 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle(){
 
-        try{
+            Mail::to($this->_email)
+                ->send(new SendEmail( $this->_photoPath ))
+            ;
 
-                Mail::to($this->_email)
-                    ->send(new SendEmail( $this->_photoPath ))
-                ;
-
-                return $this;
-        }
-        catch(\Exception $exception){
-            abort( 503, $exception->getMessage() );
-        }
+            return $this;
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.19 on 2018-05-10 15:06:35.
+ * Generated for Laravel 5.6.23 on 2018-05-24 10:55:15.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1248,7 +1248,7 @@ namespace Illuminate\Support\Facades {
          * Set the shared instance of the container.
          *
          * @param \Illuminate\Contracts\Container\Container|null $container
-         * @return static 
+         * @return \Illuminate\Contracts\Container\Container|static 
          * @static 
          */ 
         public static function setInstance($container = null)
@@ -2595,7 +2595,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store an item in the cache.
+         * Store an item in the cache.
          *
          * @param string $key
          * @param mixed $value
@@ -2627,7 +2627,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store multiple items in the cache for a given number of minutes.
+         * Store multiple items in the cache for a given number of minutes.
          *
          * @param array $values
          * @param \DateTimeInterface|\DateInterval|float|int $minutes
@@ -2658,7 +2658,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store an item in the cache if the key does not exist.
+         * Store an item in the cache if the key does not exist.
          *
          * @param string $key
          * @param mixed $value
@@ -2698,7 +2698,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store an item in the cache indefinitely.
+         * Store an item in the cache indefinitely.
          *
          * @param string $key
          * @param mixed $value
@@ -2886,7 +2886,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store an item in the cache for the default time.
+         * Store an item in the cache for the default time.
          *
          * @param string $key
          * @param mixed $value
@@ -7973,7 +7973,7 @@ namespace Illuminate\Support\Facades {
          * Gets the mime type associated with the format.
          *
          * @param string $format The format
-         * @return string The associated mime type (null if not found)
+         * @return string|null The associated mime type (null if not found)
          * @static 
          */ 
         public static function getMimeType($format)
@@ -10742,6 +10742,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Unset the given disk instances.
+         *
+         * @param array|string $disk
+         * @return $this 
+         * @static 
+         */ 
+        public static function forgetDisk($disk)
+        {
+            return \Illuminate\Filesystem\FilesystemManager::forgetDisk($disk);
+        }
+        
+        /**
          * Register a custom driver creator Closure.
          *
          * @param string $driver
@@ -10859,7 +10871,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store the uploaded file on the disk.
+         * Store the uploaded file on the disk.
          *
          * @param string $path
          * @param \Illuminate\Http\File|\Illuminate\Http\UploadedFile $file
@@ -10873,7 +10885,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * store the uploaded file on the disk with a given name.
+         * Store the uploaded file on the disk with a given name.
          *
          * @param string $path
          * @param \Illuminate\Http\File|\Illuminate\Http\UploadedFile $file
@@ -12604,7 +12616,7 @@ namespace  {
              * Add a basic where clause to the query.
              *
              * @param string|array|\Closure $column
-             * @param string $operator
+             * @param mixed $operator
              * @param mixed $value
              * @param string $boolean
              * @return $this 
@@ -12619,7 +12631,7 @@ namespace  {
              * Add an "or where" clause to the query.
              *
              * @param \Closure|array|string $column
-             * @param string $operator
+             * @param mixed $operator
              * @param mixed $value
              * @return \Illuminate\Database\Eloquent\Builder|static 
              * @static 
