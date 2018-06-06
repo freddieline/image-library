@@ -1,5 +1,11 @@
 body {
   font-size: 12px;
+  background-color: #000000;
+}
+
+.application.theme--dark {
+  background-color: #000000;
+  color: #fff;
 }
 
 h1 {
@@ -21,6 +27,20 @@ h2 {
   font-size: 12px;
   height: 150px;
   overflow: scroll;
+}
+
+buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ipad-button {
+  margin-right: 80px;
 }
 
 .checkbox {

@@ -1,9 +1,8 @@
 <template>
-    <v-app>
+    <v-app style="background-color:#000000;">
         <v-content>
             <router-view></router-view>
         </v-content>
-        <v-footer  absolute></v-footer>
     </v-app>
 </template>
 

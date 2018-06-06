@@ -20,7 +20,10 @@ Vue.use( Vuex );
 Vue.use( Vuetify, {
     theme: {
         primary: '#f44336'
-    }
+    },
+    darkTheme: {
+        background: '#000000',
+    },
 } );
 Vue.use( VueRouter );
 

@@ -14470,6 +14470,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vuetify___default.a, {
     theme: {
         primary: '#f44336'
+    },
+    darkTheme: {
+        background: '#000000'
     }
 });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
@@ -51543,7 +51546,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -51577,11 +51579,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    [
-      _c("v-content", [_c("router-view")], 1),
-      _vm._v(" "),
-      _c("v-footer", { attrs: { absolute: "" } })
-    ],
+    { staticStyle: { "background-color": "#000000" } },
+    [_c("v-content", [_c("router-view")], 1)],
     1
   )
 }
@@ -68740,6 +68739,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -68763,9 +68763,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             emailSendErrorDialog: false,
             emailSendSuccessDialog: false,
             emailSendMessageError: '',
-            emailSendMessageSuccess: "Your email has been sent!",
+            emailSendMessageSuccess: "Email wurde gesendet!",
             confirmPhotoDeleteDialog: false,
-            confirmPhotoDeleteMessage: "Are you sure you want to delete this photo?",
+            confirmPhotoDeleteMessage: "Möchtest du dieses Foto wirklich löschen?",
+
+            sendButtonSrc: "./storage/buttons/send_button.png",
+            deleteButtonSrc: "./storage/buttons/delete_button.png",
+            previousButtonSrc: "./storage/buttons/previous_button.png",
+            nextButtonSrc: "./storage/buttons/next_button.png",
+            refreshButtonSrc: "./storage/buttons/refresh_button.png",
+
             terms: '',
             index: 0,
             items: [{
@@ -68802,10 +68809,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.emailSendSuccessDialog = false;
             console.log(error.response);
             if (error.response.status === 503) {
-                this.emailSendMessageError = "Sorry! Invalid email";
+                this.emailSendMessageError = "Es tut uns leid. ungültige E-Mail";
             }
             if (error.response.status === 111) {
-                this.emailSendMessageError = "Sorry! This photo has already been sent";
+                this.emailSendMessageError = "Es tut uns leid. Dieses Foto wurde bereits gesendet";
             }
         },
         emailValidation: function emailValidation(email) {},
@@ -68837,6 +68844,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         getPreviousPhoto: function getPreviousPhoto() {
+            console.log("get previous");
+
             if (this.index !== 0) {
                 this.index -= 1;
                 this.photoName = this.$store.getters.getPhotos[this.index];
@@ -68878,75 +68887,126 @@ var render = function() {
     "v-container",
     { attrs: { fluid: "" } },
     [
-      _c("img", { attrs: { src: _vm.photoSrc, width: "960", height: "540" } }),
+      _c("img", {
+        staticStyle: { "margin-left": "15px" },
+        attrs: { src: _vm.photoSrc, width: "960", height: "540" }
+      }),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
       _c(
-        "v-btn",
+        "div",
         {
-          attrs: { color: "red" },
-          on: {
-            click: function($event) {
-              $event.stopPropagation()
-              _vm.openEmailDialog()
-            }
-          }
+          staticClass: "buttons-container",
+          staticStyle: { "margin-top": "20px" }
         },
-        [_vm._v("Send email")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "red" },
-          on: {
-            click: function($event) {
-              $event.stopPropagation()
-              _vm.confirmPhotoDeleteDialog = true
-            }
-          }
-        },
-        [_vm._v("Delete photo")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "red" },
-          nativeOn: {
-            click: function($event) {
-              _vm.getPreviousPhoto()
-            }
-          }
-        },
-        [_vm._v("Get previous")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "red" },
-          nativeOn: {
-            click: function($event) {
-              _vm.getNextPhoto()
-            }
-          }
-        },
-        [_vm._v("Get next photo")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "red" },
-          nativeOn: {
-            click: function($event) {
-              _vm.getPhotos()
-            }
-          }
-        },
-        [_vm._v("Refresh")]
+        [
+          _c(
+            "a",
+            {
+              attrs: { color: "red" },
+              on: {
+                click: function($event) {
+                  $event.stopPropagation()
+                  _vm.openEmailDialog()
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "ipad-button",
+                staticStyle: { "margin-right": "96px", "margin-left": "15px" },
+                attrs: { src: _vm.sendButtonSrc, width: "110", height: "110" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { color: "red" },
+              on: {
+                click: function($event) {
+                  $event.stopPropagation()
+                  _vm.confirmPhotoDeleteDialog = true
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "ipad-button",
+                staticStyle: { "margin-right": "97px" },
+                attrs: { src: _vm.deleteButtonSrc, width: "110", height: "110" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { color: "red" },
+              on: {
+                click: function($event) {
+                  $event.stopPropagation()
+                  _vm.getPreviousPhoto()
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "ipad-button",
+                staticStyle: { "margin-right": "96px" },
+                attrs: {
+                  src: _vm.previousButtonSrc,
+                  width: "110",
+                  height: "110"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { color: "red" },
+              on: {
+                click: function($event) {
+                  $event.stopPropagation()
+                  _vm.getNextPhoto()
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "ipad-button",
+                staticStyle: { "margin-right": "97px" },
+                attrs: { src: _vm.nextButtonSrc, width: "110", height: "110" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { color: "red" },
+              on: {
+                click: function($event) {
+                  $event.stopPropagation()
+                  _vm.getPhotos()
+                }
+              }
+            },
+            [
+              _c("img", {
+                attrs: {
+                  src: _vm.refreshButtonSrc,
+                  width: "110",
+                  height: "110"
+                }
+              })
+            ]
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -68973,7 +69033,7 @@ var render = function() {
                     "v-flex",
                     { attrs: { sm10: "", "offset-sm1": "" } },
                     [
-                      _c("h1", [_vm._v("Please enter email:")]),
+                      _c("h1", [_vm._v("Bitte Email eintragen:")]),
                       _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
@@ -68990,7 +69050,7 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _c("h1", [_vm._v("Terms and Conditions")]),
+                      _c("h1", [_vm._v("Teilnahmebedingungen")]),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -69025,8 +69085,12 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("v-flex", { attrs: { sm6: "" } }, [
-                    _c("h2", [_vm._v("I agree to the terms listed above")])
+                  _c("v-flex", { attrs: { sm10: "" } }, [
+                    _c("h2", [
+                      _vm._v(
+                        "Ich erkläre mich mit den oberen Bedingungen einverstanden."
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
                   _c(
@@ -69162,7 +69226,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Yes")]
+                            [_vm._v("Ja")]
                           ),
                           _vm._v(" "),
                           _c(
@@ -69176,7 +69240,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("No")]
+                            [_vm._v("Nein")]
                           )
                         ],
                         1
