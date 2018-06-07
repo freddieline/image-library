@@ -40,8 +40,8 @@
                         <h2>Ich erkläre mich mit den oberen Bedingungen einverstanden.</h2>
                     </v-flex>
                 <v-card-actions>
-                    <v-btn :disabled="email === '' || termsChecked === false" color="red" flat @click.stop="sendEmail">Send</v-btn>
-                    <v-btn color="red" flat @click.stop="emailDialog = false">Cancel</v-btn>
+                    <v-btn :disabled="email === '' || termsChecked === false" color="red" flat @click.stop="sendEmail">Senden</v-btn>
+                    <v-btn color="red" flat @click.stop="emailDialog = false">Löschen</v-btn>
                 </v-card-actions>
 
                 </v-layout>
