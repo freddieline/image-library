@@ -69112,7 +69112,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Send")]
+                        [_vm._v("Senden")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -69126,7 +69126,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Cancel")]
+                        [_vm._v("Löschen")]
                       )
                     ],
                     1
