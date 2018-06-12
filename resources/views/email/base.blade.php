@@ -113,10 +113,17 @@
             margin: 0;
             Margin-bottom: 30px;
         }
-        .p2 {
+        h5 {
             color: #bbbbbb;
             font-family:  "Helvetica Neue",helvetica,arial,sans-serif;
             font-size: 9px;
+            font-weight:normal;
+        }
+        h4 {
+            color: #bbbbbb;
+            font-family:  "Helvetica Neue",helvetica,arial,sans-serif;
+            font-size: 9px;
+            font-weight:bold;
         }
 
         h1 {
@@ -309,40 +316,51 @@
                                             <img src="{{ $message->embed( $bannerPath) }}">
                                             <img class="center" src="{{ $message->embed( $photoPath) }}">
                                             <p>Hi,</p>
-
-
                                             <p>
                                                 Schön, dass du bei der Coca-Cola Aktion am Hauptbahnhof in Zürich mitgemacht hast. </p>
                                         <p>
                                                 Anbei findest du noch dein Foto, das wir von dir gemacht haben - sieht cool aus! : )</p>
                                         <p>
-
-
-
                                                 Übrigens, wir verlosen unter allen Teilnehmern der Aktion am HB Zürich einen FIFA World Cup Official Match Ball von einem Gruppenspiel des Schweizer Teams bei der FIFA Weltmeisterschaft 2018™ - mach mit und mit ein bisschen Glück machst du schon Bald deine Kunststückchen mit einem echten Matchball! Hier geht's zum Gewinnspiel: http://CokeURL.com/MatchballCH
                                         </p>
                                         <p>
-
-
                                                 Viel Glück & liebe Grüsse
                                         <br/>
                                                 vom Coca-Cola Schweiz Team</p>
 
-                                       <p>
-                                           <span class="p2">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat tellus id placerat sollicitudin. Proin a iaculis justo. Maecenas sagittis ligula sed neque ultricies hendrerit. Cras vel dolor in erat convallis sagittis eget at odio. Proin feugiat aliquet massa. Duis interdum vestibulum dignissim. Nulla interdum, risus sit amet fringilla pharetra, quam nisl efficitur leo, nec tempor sem dolor cursus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed ipsum magna, volutpat porta est ac, maximus dictum velit. Donec condimentum odio in magna egestas imperdiet. Cras erat massa, malesuada eu cursus condimentum, euismod viverra ligula. Pellentesque commodo commodo lacus nec suscipit. Aenean quis ligula et enim vestibulum blandit.
-                                            </span>
-                                       </p>
-                                        <p>
-                                            <span class="p2">
-                                            Suspendisse potenti. Ut non auctor arcu. Duis ac porttitor eros, nec mattis turpis. Mauris nec felis at purus placerat sodales. Mauris lobortis nunc at faucibus semper. Mauris velit dui, vulputate ac eros nec, tempor pellentesque mauris. Curabitur lobortis consequat arcu, sed ultricies lectus tincidunt a.
-                                              </span>
-                                        </p>
-                                        <p>
-                                                  <span class="p2">
-                                            Donec consectetur ex a ligula fringilla, eget scelerisque purus imperdiet. Donec interdum fringilla condimentum. Vivamus eros felis, posuere at volutpat id, molestie eu elit. Aliquam sed ex ac ex pulvinar lacinia. Phasellus id placerat odio, quis tempus quam. Aliquam libero arcu, consequat in gravida pellentesque, malesuada nec enim. Fusce fringilla cursus elit, id posuere lectus feugiat sed. Nulla imperdiet nibh vitae mi fringilla finibus. Donec massa augue, rutrum sit amet massa vestibulum, pulvinar cursus sem. Quisque tincidunt eget turpis eu blandit. Nam sit amet magna tincidunt, rhoncus ligula ut, dictum massa. Proin tellus leo, mattis eu sodales eget, mattis sit amet lacus. Ut vitae felis ex. Cras finibus, orci vitae elementum molestie, ipsum mauris faucibus orci, eu blandit libero mi nec velit. Aliquam ac feugiat arcu.</p>
-                                            </span>
-                                        </p>
+                                        <h4>Datenschutzerklärung</h4>
+                                        <h4>Welche Informationen sammeln wir über Dich?</h4>
+                                        <h5>
+                                            Ein digitales Foto von Dir und eine E-Mail-Adresse.
+                                        </h5>
+                                        <h4>
+                                                Wie werden wir die Informationen über Dich verwendet?</>
+                                        </h4>
+
+                                            <h5>• Das System nimmt automatisch ein Foto am Ende der Augmented-Reality-Erfahrung auf, das nur für Deinen persönlichen Gebrauch bestimmt ist.</h5>
+                                            <h5>• Die angegebene E-Mail-Adresse wird anschliessend dazu verwendet, um Dir das Foto zu senden.</h5>
+                                            <h5>• Das System erstellt Sicherungskopien und schreibt Protokolldateien, die möglicherweise einige Deiner personenbezogenen Daten duplizieren.</h5>
+
+                                        <h4>
+                                                Rechtliche Grundlage für die Verarbeitung Deiner personenbezogenen Daten</h4>
+                                        <h5>
+                                            Wir betrachten Deine Einwilligung als rechtmässige Grundlage für die Verarbeitung Deiner personenbezogenen Daten zum Zweck der Durchführung der Erfahrung. Zusätzlich betrachten wir unser berechtigtes Interesse als rechtmässige Grundlage, um Protokolldateien und Backups so zu speichern, dass wir den Service wie vorgesehen bereitstellen können.
+                                        </h5>
+                                        <h4>Teilen Deiner Daten</h4>
+                                        <h5>Deine personenbezogenen Daten werden nicht an andere Unternehmen weitergegeben.</h5>
+                                        <h4>Wie lange werden Daten aufbewahrt?</h4>
+                                        <h5>Dein Foto und Deine E-Mail-Adresse (falls vorhanden) werden nur so lange gespeichert, wie sie benötigt werden, um die E-Mail zu bearbeiten und zu versenden (maximal 24 Stunden). Backups und Protokolle werden nur zur Wiederherstellung des Systems in einem Notfall verwendet und nur so lange aufrechterhalten, wie es für die Bereitstellung des Dienstes angemessen ist.
+                                        </h5>
+                                        <h4>
+                                                Weitere Informationen</h4>
+                                        <h5>
+                                            Wenn Du weitere Fragen zu den Informationen hast, die wir über Dich aufbewahren, sende uns bitte eine E-Mail an <b>privacy@grandvisual.com</b> oder sprich mit einem Mitglied des Activity-Teams.</h5>
+                                        <h4>
+                                            Das Kontrollkästchen sollte dann sagen:</h4>
+                                        <h5>
+                                            Ich stimme der beschriebenen Verwendung meiner personenbezogenen Daten zu.
+                                        </h5>
+</span>
 
                                         <hr>
                                     </td>

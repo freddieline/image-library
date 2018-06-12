@@ -68796,9 +68796,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.getElementById('terms').innerHTML = this.$store.getters.getTerms;
         },
         sendEmail: function sendEmail() {
-
             this.emailDialog = false;
-            this.emailSendSuccessDialog = true;
             if (this.emailValidation) {
                 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/sendEmail', {
                     'email': this.email, 'photo': this.photoName
@@ -68817,6 +68815,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         emailValidation: function emailValidation(email) {},
         messageSent: function messageSent() {
+            this.email = "";
+            this.termsChecked = false;
             this.emailSendSuccessDialog = false;
             console.log("sent");
             this.getPhotos;
@@ -69050,7 +69050,7 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _c("h1", [_vm._v("Teilnahmebedingungen")]),
+                      _c("h1", [_vm._v("Datenschutzerklärung")]),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -69073,6 +69073,7 @@ var render = function() {
                     [
                       _c("v-checkbox", {
                         staticClass: "checkbox",
+                        staticStyle: { "padding-top": "8px" },
                         model: {
                           value: _vm.termsChecked,
                           callback: function($$v) {
@@ -69088,7 +69089,7 @@ var render = function() {
                   _c("v-flex", { attrs: { sm10: "" } }, [
                     _c("h2", [
                       _vm._v(
-                        "Ich erkläre mich mit den oberen Bedingungen einverstanden."
+                        "Ich stimme der beschriebenen Verwendung meiner personenbezogenen Daten zu."
                       )
                     ])
                   ]),

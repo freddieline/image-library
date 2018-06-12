@@ -37,6 +37,7 @@ class SendEmail extends Mailable
     public function build()
     {
         return $this
+            ->subject("Coca-Cola FIFA-Weltmeisterschaft 2018 AR Zürich")
             ->from('noreply-yourphoto@coke.ch')
             ->view('email.base', [['photoPath', $this->photoPath],[ 'bannerPath', $this->bannerPath], ['text', $this->text]]);
     }

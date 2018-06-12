@@ -28,16 +28,16 @@
                     label="E-mail"
                     v-model="email"
             ></v-text-field>
-                    <h1>Teilnahmebedingungen</h1>
+                    <h1>Datenschutzerklärung</h1>
                     <div class="terms" id="terms">
                         {{ terms }}
                     </div>
                 </v-flex>
                     <v-flex sm1 offset-sm1>
-                        <v-checkbox v-model="termsChecked" class="checkbox" ></v-checkbox>
+                        <v-checkbox v-model="termsChecked" class="checkbox" style="padding-top:8px"></v-checkbox>
                     </v-flex>
                     <v-flex sm10>
-                        <h2>Ich erkläre mich mit den oberen Bedingungen einverstanden.</h2>
+                        <h2>Ich stimme der beschriebenen Verwendung meiner personenbezogenen Daten zu.</h2>
                     </v-flex>
                 <v-card-actions>
                     <v-btn :disabled="email === '' || termsChecked === false" color="red" flat @click.stop="sendEmail">Senden</v-btn>
@@ -145,9 +145,7 @@
             },
 
             sendEmail(){
-
                 this.emailDialog = false;
-                this.emailSendSuccessDialog = true;
                 if( this.emailValidation ){
                     axios.post('/sendEmail', {
                         'email': this.email, 'photo': this.photoName
@@ -175,6 +173,8 @@
             },
 
             messageSent(){
+                this.email = "";
+                this.termsChecked = false;
                 this.emailSendSuccessDialog = false;
                 console.log("sent");
                 this.getPhotos;
