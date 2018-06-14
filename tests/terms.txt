@@ -1,26 +1,121 @@
-<p><b>Welche Informationen sammeln wir über Dich?</b></p>
+<p>S.A. Coca-Cola Services N.V. (im Folgenden das „Unternehmen“), mit eingetragenem Sitz in 1424 Chaussée de Mons,
+1070 Brüssel, Belgien, das per E-Mail kontaktiert werden kann unter privacy@coca-cola.com, agiert als Verantwortlicher
+und verarbeitet die Daten, die du zum Zeitpunkt des Zugangs zu Coca-Cola FIFA-Weltmeisterschaft 2018 AR Zürich
+bereitstellst, das in Zürich am 15/6/2018 und 22/6/2018 stattfindet (das „Event“) bzw. während deiner dortigen
+Anwesenheit.</p>
+<b><p>
+1.     Verarbeitete personenbezogene Daten
+</p></b>
 <p>
-	Ein digitales Foto von Dir und eine E-Mail-Adresse.
+Das Unternehmen sammelt folgende Kategorien von personenbezogenen Daten:
 </p>
-<p><b>
-	Wie werden wir die Informationen über Dich verwendet?</b>
+<div class='ordered-list'>
+<ol type="i">
+<li>Bilder und andere Informationen von dir, die während des Zugangs zu und der Teilnahme an der
+Veranstaltung sowie jeglicher damit verbundener Aktivität aufgezeichnet wurden;</li>
+<li>
+Identifikationsdaten, die du zum Zeitpunkt der Unterzeichnung der Vereinbarung zur Übertragung und
+Freigabe von Rechten, an die diese Datenschutzinformationen angehängt sind, bereitstellst (die
+„Vereinbarung“);</li></ol>
+</div><p>
+(im Folgenden zusammengefasst die „personenbezogenen Daten“).
 </p>
+<p><b>2.      Zwecke der Verarbeitung von personenbezogenen Daten</b></p>
+<p>
+Das Unternehmen verarbeitet die personenbezogenen Daten zu folgenden Zwecken:
+<div class='ordered-list'><ol type="a">
+<li>Verwertung der im Rahmen der Vereinbarung gewährten Rechte sowie Durchführung von damit verbundenen
+Tätigkeiten. Insbesondere werden personenbezogene Daten in Übereinstimmung mit den Vertragsbedingungen
+verwendet, um die Werbe-, Publicity- und/oder verkaufsfördernden Aktivitäten in Werbe-, Verkaufsförderungs-
+oder Informationsmaterialien, die vom Unternehmen entweder direkt oder durch Partner des Unternehmens oder
+von Dritten, die ordnungsgemäss vom Unternehmen beauftragt wurden, produziert werden, in Online-Medien
+und allen anderen Formaten auszuführen, einschliesslich, jedoch nicht beschränkt auf Uploads auf die Websites
+VIMEO.COM und WOAH.COM und Präsentationen auf den Coca-Cola Festival Promotions; und</li>
+<li>
+zur Erfüllung der Verpflichtungen, die in den geltenden Gesetzen oder Verordnungen sowie durch die
+veröffentlichten Entscheidungen der zuständigen Aufsichtsbehörden und Kontrollstellen vorgesehen sind;
+(im Folgenden zusammenfassend die „vertraglichen Zwecke“).</li></ol>
+</div>
+</p>
+<p><b>3.      Rechtliche Grundlagen für die Verarbeitung deiner personenbezogenen Daten</b></p>
+<p>
+Die Verarbeitung personenbezogener Daten für die vertraglichen Zwecke erfolgt gemäss Artikel 6 (b) der Verordnung
+(EU) 2016/679 zum Schutz personenbezogener Daten (die „Datenschutzverordnung“) zur Durchführung des
+Abkommens zwischen Ihnen und das Unternehmen. Die Verarbeitung personenbezogener Daten ist für die Durchführung
+der in der Vereinbarung aufgeführten Aktivitäten erforderlich. Darüber hinaus ist die Verarbeitung personenbezogener
+Daten erforderlich, um die geltenden Gesetze einzuhalten. Wenn du die personenbezogenen Daten, die für die
+vertraglichen Zwecke erforderlich sind, nicht zur Verfügung stellst, ist eine Verwertung der im Rahmen der Vertrags
+gewährten Rechte und die Erfassung deiner personenbezogenen Daten nicht möglich.</p>
+<p><b>4.      Modalitäten der Verarbeitung personenbezogener Daten</b></p>
+<p>Die personenbezogenen Daten können mit manuellen oder computergestützten Mitteln verarbeitet werden, die die
+Sicherheit und Vertraulichkeit der personenbezogenen Daten gewährleisten, und die die Umsetzung von angemessenen
+technischen, physischen und organisatorischen Massnahmen umfassen, um unbefugten Zugriff oder Änderungen an sowie
+Verbreitung und Diebstahl der personenbezogenen Daten zu verhindern.</p>
+<p><b>5.      Anwendungsbereich und Verbreitung der Daten</b></p>
+<p>Für die oben genannten vertraglichen Zwecke können die personenbezogenen Daten an die folgenden Kategorien von
+vorgesehenen Empfängern innerhalb und ausserhalb des Europäischen Wirtschaftsraums („EWR“) übermittelt werden: (a)
+Drittanbieter, die das Unternehmen in Bezug auf die Aktivitäten im Rahmen dieser Richtlinie unterstützen und beraten; (b)
+andere Unternehmen der Coca-Cola-Group (die „Group“) und (c) zuständige Behörden. Eine vollständige Liste der vom
+Unternehmen ernannten Auftragsverarbeiter ist auf Anfrage über die in dieser Richtlinie festgelegten Modalitäten
+erhältlich.</p>
+<p>
+Personenbezogene Daten, die das Unternehmen von dir erhebt, können an einen Bestimmungsort ausserhalb des EWR,
+insbesondere in die Vereinigten Staaten und die Schweiz, übertragen und dort gespeichert werden. Das Unternehmen wird
+alle angemessenen Schritte unternehmen, um sicherzustellen, dass deine personenbezogenen Daten sicher und im Einklang
+mit dieser Datenschutzrichtlinie behandelt werden.</p><p>
+Bei Übermittlungen von der EU in Länder, die von der Europäischen Kommission als nicht angemessen angesehen
+werden, hat das Unternehmen angemessene und geeignete Sicherheitsvorkehrungen getroffen, um deine
+personenbezogenen Daten zu schützen. Dementsprechend werden deine personenbezogenen Daten gemäss den
+Anforderungen und den Verpflichtungen übermittelt, die sich aus den geltenden Datenschutzgesetzen ergeben, z. B.
+Standardvertragsklauseln, die von der Europäischen Kommission gemäss den Artikeln 45 und 46 der
+Datenschutzverordnung erlassen wurden.</p>
+<p><b>6.     Rechte der betroffenen Person</p></b>
+Du kannst die folgenden Rechte jederzeit ausüben, indem du eine E-Mail an privacy@coca-cola.com sendest:
+<div class="ordered-list"><ol type="a">
+<li>Anfordern einer Bestätigung vom Unternehmen darüber, ob personenbezogene Daten über dich vorhanden sind
+oder nicht, und Erhalt von Informationen über den Inhalt und die Quelle der personenbezogenen Daten,
+Überprüfen von deren Richtigkeit sowie Auffordern, dass die Daten integriert, aktualisiert oder berichtigt werden;</li>
+<li>
+die Löschung, Anonymisierung oder Sperrung der personenbezogenen Daten, die unter Verstoss gegen geltendes
+Recht verarbeitet wurden, falls vorhanden;</li>
+<li>
+voller oder teilweiser Einspruch bezüglich der Verarbeitung aus berechtigten Gründen, wo zutreffend; und<</li><li>
+jederzeit Widerruf deiner Einwilligung zur Verarbeitung personenbezogener Daten (in Bezug auf die
+Verarbeitung, für die eine solche Zustimmung erforderlich ist), unbeschadet der Rechtmässigkeit der
+Verarbeitung, basierend auf der vor dem Widerruf erteilten Einwilligung.</li></ol>
+</div>
+
+
+<p>Zusätzlich zu diesen Rechten hast du auch das Recht, das jederzeit ausgeübt werden kann:</p>
+<p>
+<div class="ordered-list"><ol type="i">
+<li>das Unternehmen zu bitten, die Verarbeitung deiner personenbezogenen Daten zu beschränken, falls:</li>
+<div class="bullet-list"><ul>
+<li>du die Richtigkeit deiner personenbezogenen Daten für einen Zeitraum, der es dem Unternehmen
+ermöglicht, die Richtigkeit der personenbezogenen Daten zu überprüfen, anfichst;</li>
+<li>die Verarbeitung rechtswidrig ist und du die Löschung deiner personenbezogenen Daten ablehnst und
+stattdessen die Einschränkung ihrer Nutzung forderst;</li>
+<li>das Unternehmen die personenbezogenen Daten für die Zwecke der Verarbeitung nicht mehr benötigt,
+aber trotzdem die personenbezogenen Daten für das Unternehmen für die Begründung, Ausübung oder
+Verteidigung von Rechtsansprüchen erforderlich sind;</li>
 <ul>
-	<p>• Das System nimmt automatisch ein Foto am Ende der Augmented-Reality-Erfahrung auf, das nur für Deinen persönlichen Gebrauch bestimmt ist.</p>
-	<p>• Die angegebene E-Mail-Adresse wird anschliessend dazu verwendet, um Dir das Foto zu senden.</p>
-	<p>• Das System erstellt Sicherungskopien und schreibt Protokolldateien, die möglicherweise einige Deiner personenbezogenen Daten duplizieren.</p>
-</ul>
-<p><b>
-Rechtliche Grundlage für die Verarbeitung Deiner personenbezogenen Daten</b></p><p>
-Wir betrachten Deine Einwilligung als rechtmässige Grundlage für die Verarbeitung Deiner personenbezogenen Daten zum Zweck der Durchführung der Erfahrung. Zusätzlich betrachten wir unser berechtigtes Interesse als rechtmässige Grundlage, um Protokolldateien und Backups so zu speichern, dass wir den Service wie vorgesehen bereitstellen können.
+</div>
+<li> um der Verarbeitung Deiner personenbezogenen Daten zu widersprechen;</br>
+<li> um die Löschung der dich betreffenden personenbezogenen Daten ohne unangemessene Verzögerung zu
+verlangen;</li>
+<li>eine elektronische Kopie deiner personenbezogenen Daten zu erhalten, in den Fällen, in denen du die
+personenbezogenen Daten über dich an dich selbst oder einen anderen Datenverantwortlichen weitergeben
+möchtest, in den Fällen, in denen das Unternehmen personenbezogene Daten aufgrund deiner Einwilligung
+verarbeitet oder aufgrund der Tatsache, dass die Verarbeitung zur Erfüllung der Vereinbarung erforderlich ist und
+die personenbezogenen Daten auf automatisierte Weise verarbeitet werden; und</li>
+<li> eine Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde einzureichen.</li>
+</ol>
+</div>
 </p>
-<p><b>Teilen Deiner Daten</b></p>
-<p>Deine personenbezogenen Daten werden nicht an andere Unternehmen weitergegeben.</p>
- <p><b>Wie lange werden Daten aufbewahrt?</b></p>
-<p>Dein Foto und Deine E-Mail-Adresse (falls vorhanden) werden nur so lange gespeichert, wie sie benötigt werden, um die E-Mail zu bearbeiten und zu versenden (maximal 24 Stunden). Backups und Protokolle werden nur zur Wiederherstellung des Systems in einem Notfall verwendet und nur so lange aufrechterhalten, wie es für die Bereitstellung des Dienstes angemessen ist.
- </p><p><b>
-Weitere Informationen</b></p><p>
-Wenn Du weitere Fragen zu den Informationen hast, die wir über Dich aufbewahren, sende uns bitte eine E-Mail an <b>privacy@grandvisual.com</b> oder sprich mit einem Mitglied des Activity-Teams.</p>
-
-
-
+<p><b>7.      Aufbewahrungsfristen</p></b><p>
+Die personenbezogenen Daten werden für die Dauer der Rechte, die dem Unternehmen im Rahmen der Vereinbarung
+gewährt werden, sowie für die nachfolgenden Verjährungsfristen gemäss den geltenden Gesetzen verarbeitet.</p>
+<p><b>8. Aktualisierungen</p></b>
+Diese Richtlinie kann Änderungen und Aktualisierungen unterliegen, auch als Folge der Aktualisierung der Gesetze und
+Vorschriften für die Verarbeitung personenbezogener Daten. Änderungen dieser Datenschutzerklärung werden in Zukunft
+auf der Website des Unternehmens veröffentlicht und dir gegebenenfalls mitgeteilt.
