@@ -14,7 +14,6 @@ import App      from './App.vue';
 import Vuetify from 'vuetify';
 import PhotoViewer from './components/PhotoViewer.vue';
 import Login from './components/Login.vue';
-import 'material-design-icons-iconfont';
 
 Vue.use( Vuex );
 Vue.use( Vuetify, {

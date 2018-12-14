@@ -1,6 +1,5 @@
 body {
   font-size: 12px;
-  background-color: #000000;
 }
 
 .application.theme--dark {
@@ -60,4 +59,3 @@ ipad-button {
   margin-left: 10px;
   padding-left: 10px;
 }
-

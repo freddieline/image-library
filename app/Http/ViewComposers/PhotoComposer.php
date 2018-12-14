@@ -30,14 +30,9 @@ class PhotoComposer {
                 storage_path('app/public/photos/')
         );
 
-        $terms = ( new Photos )
-            ->getTerms(
-                storage_path('app/public/')."/" ."terms.txt"
-            );
         // Alias for if the user is signed in
         $View->with( 'photos', $photos );
         $View->with( 'photosDirectory', './storage/photos/' );
-        $View->with( 'terms', $terms );
     }
 
 

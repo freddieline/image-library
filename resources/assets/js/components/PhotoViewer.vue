@@ -87,6 +87,8 @@
         created(){
             this.photoDirectory = this.$store.getters.getPhotosDirectory;
             //  this.terms = this.$store.getters.getTerms;
+            console.log( 'ss' );
+            console.log( this.$store.getters.getPhotos );
             this.getLatestPhoto();
 
         },
