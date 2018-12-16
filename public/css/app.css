@@ -1,10 +1,18 @@
 body {
   font-size: 12px;
+  background-color: #f3f4f8;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 .application.theme--dark {
   background-color: #000000;
   color: #fff;
+}
+
+@media only screen and (max-width: 550px) {
+  #photo-container {
+    max-width: 247px;
+  }
 }
 
 h1 {
@@ -19,6 +27,10 @@ h2 {
   font-size: 15px;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.container {
+  padding: 0px;
 }
 
 .terms {

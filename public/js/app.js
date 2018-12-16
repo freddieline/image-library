@@ -51748,14 +51748,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
     props: ['composerProp', 'app', 'composer'],
+    computed: {},
 
+    mounted: function mounted() {
+        //
+        this.onResize();
+
+        window.addEventListener('resize', this.onResize, { passive: true });
+    },
     created: function created() {
+
+        this.defineObjects();
 
         // set store values
         this.setStoreValues();
@@ -51768,17 +51784,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            photoSrc: "",
             photoStyles: [],
             photoDirectory: '',
             photoName: "",
-            terms: '',
-            index: 0
+            headerStyle: "background-color:#ffffff;" + "width:100%;" + "height:300px;" + "position:absolute;" + "z-index:-1;",
+            containerStyle: 'margin-left:auto;' + 'margin-right:auto;' + 'max-width:1100px;',
+            layoutStyle: 'padding-top:200px;',
+            titleStyle: 'padding-top:100px;',
+            flexElementStyle: "min-width:255px;" + "margin-bottom:20px;"
+
         };
     },
 
 
     methods: {
+        defineObjects: function defineObjects() {
+            this.photoContainer = document.getElementById('photo-container');
+        },
+        onResize: function onResize() {
+            var width = window.innerWidth;
+            console.log(width);
+
+            if (width < 600) {
+                console.log('1 blocks');
+                document.getElementById('photo-container').style.width = "275px";
+            } else if (width < 800) {
+                console.log('2 blocks');
+                document.getElementById('photo-container').style.width = "550px";
+            } else if (width < 1050) {
+                console.log('3 blocks');
+                document.getElementById('photo-container').style.width = "825px";
+            } else document.getElementById('photo-container').style.width = "1100px";
+        },
         getPhotos: function getPhotos() {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/photos').then(this.setPhotos).catch(this.error);
         },
@@ -51799,7 +51836,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.photoStyles = this.$store.getters.getPhotos.map(function (photo) {
-                return "height: 138px;" + "float: left;" + "overflow: hidden;" + "width: 245px;" + "margin: 20px;" + "background-image: url(" + _this.photoDirectory + photo + ");" + "-ms-background-position-x: center;" + "-ms-background-position-y: bottom;" + "background-position: center center;" + "background-size: cover";
+                return "height: 138px;" + "overflow: hidden;" + "width: 245px;" + "background-image: url(" + _this.photoDirectory + photo + ");" + "-ms-background-position-x: center;" + "-ms-background-position-y: bottom;" + "background-position: center center;" + "background-size: cover";
             });
             console.log(this.photoStyles);
         },
@@ -51862,7 +51899,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(error);
             this.confirmPhotoDeleteDialog = false;
             console.log('delete failed');
-        }
+        },
+        mounted: function mounted() {}
     }
 });
 
@@ -51875,14 +51913,53 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { attrs: { fluid: "" } },
+    "div",
     [
-      _vm._l(_vm.photoStyles, function(photoStyle) {
-        return [_c("div", { style: photoStyle })]
-      })
+      _c("div", { style: _vm.headerStyle }),
+      _vm._v(" "),
+      _c(
+        "v-container",
+        {
+          style: _vm.containerStyle,
+          attrs: {
+            fluid: "",
+            wrap: "",
+            id: "photo-container",
+            "justify-center": ""
+          }
+        },
+        [
+          _c("h1", { style: _vm.titleStyle }, [_vm._v("My Library")]),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              style: _vm.layoutStyle,
+              attrs: {
+                "justify-start": "",
+                wrap: "",
+                xs10: "",
+                "offset-xs1": ""
+              }
+            },
+            [
+              _vm._l(_vm.photoStyles, function(photoStyle) {
+                return [
+                  _c(
+                    "v-flex",
+                    { style: _vm.flexElementStyle, attrs: { sm3: "" } },
+                    [_c("div", { style: photoStyle })]
+                  )
+                ]
+              })
+            ],
+            2
+          )
+        ],
+        1
+      )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
