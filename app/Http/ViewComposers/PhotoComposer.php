@@ -11,6 +11,7 @@ namespace App\Http\ViewComposers;
 use Auth;
 use Illuminate\View\View;
 use GrandVisual\Photos;
+use App\FoodIngredients;
 
 
 class PhotoComposer {
@@ -30,9 +31,12 @@ class PhotoComposer {
                 storage_path('app/public/photos/')
         );
 
+        $ingredients = FoodIngredients::all()->toArray();
+
         // Alias for if the user is signed in
         $View->with( 'photos', $photos );
         $View->with( 'photosDirectory', './storage/photos/' );
+        $View->with('food_ingredients', $ingredients);
     }
 
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class LogsTable extends Migration
+class FoodIngredientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class LogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create('food_ingredients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image-filename');
-            $table->boolean('deleted');
-            $table->boolean('sent');
-            $table->boolean('failed');
+            $table->string('name')->unique();
+            $table->float('average_kgCO2e_per_kg_food',9,2)->nullable();
+            $table->float('standard_deviation',9,2)->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class LogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists('food_ingredients');
     }
 }

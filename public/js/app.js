@@ -53460,12 +53460,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         // set store values
         this.setStoreValues();
-
-        // set photo directory
-        this.setPhotoDirectory();
-
-        // set photo srcs
-        this.setPhotoStyles();
     },
     data: function data() {
         return {
@@ -53486,106 +53480,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         defineObjects: function defineObjects() {
             this.photoContainer = document.getElementById('photo-container');
         },
-        onResize: function onResize() {
-            var width = window.innerWidth;
-            console.log(width);
-
-            if (width < 600) {
-                console.log('1 blocks');
-                document.getElementById('photo-container').style.width = "275px";
-            } else if (width < 800) {
-                console.log('2 blocks');
-                document.getElementById('photo-container').style.width = "550px";
-            } else if (width < 1050) {
-                console.log('3 blocks');
-                document.getElementById('photo-container').style.width = "825px";
-            } else document.getElementById('photo-container').style.width = "1100px";
-        },
-        getPhotos: function getPhotos() {
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/photos').then(this.setPhotos).catch(this.error);
-        },
-
-
-        /**
-         * set photo directory
-         */
-        setPhotoDirectory: function setPhotoDirectory() {
-            this.photoDirectory = this.$store.getters.getPhotosDirectory;
-        },
-
-
-        /**
-         * set photo srcs
-         * */
-        setPhotoStyles: function setPhotoStyles() {
-            var _this = this;
-
-            this.photoStyles = this.$store.getters.getPhotos.map(function (photo) {
-                return "height: 138px;" + "overflow: hidden;" + "width: 245px;" + "background-image: url(" + _this.photoDirectory + photo + ");" + "-ms-background-position-x: center;" + "-ms-background-position-y: bottom;" + "background-position: center center;" + "background-size: cover";
-            });
-            console.log(this.photoStyles);
-        },
 
 
         /**
          * set photo values in vue-store
          */
         setStoreValues: function setStoreValues() {
+            console.log('hi');
+            console.log(this.composer.food_ingredients);
             this.$store.commit('addPhotos', this.composer.photos);
             this.$store.commit('addPhotosDirectory', this.composer.photosDirectory);
-        },
-        setPhotos: function setPhotos(response) {
-            this.$store.commit('addPhotos', response.data.photos);
-            this.getLatestPhoto();
-        },
-        openEmailDialog: function openEmailDialog() {
-            this.emailDialog = true;
-            document.getElementById('terms').innerHTML = this.$store.getters.getTerms;
-        },
-        sendEmail: function sendEmail() {
-            this.emailDialog = false;
-            if (this.emailValidation) {
-                __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/sendEmail', {
-                    'email': this.email, 'photo': this.photoName
-                }).then(this.messageSent).catch(this.emailSentError);
-            }
-        },
-        emailSentError: function emailSentError(error) {
-            this.emailSendSuccessDialog = false;
-            console.log(error.response);
-        },
-        emailValidation: function emailValidation(email) {},
-        messageSent: function messageSent() {
-            this.email = "";
-            this.termsChecked = false;
-            this.emailSendSuccessDialog = false;
-            console.log("sent");
-            this.getPhotos;
-        },
-        setPhotoSrc: function setPhotoSrc() {
-            this.photoSrc = this.photoDirectory + this.photoName;
-            console.log(this.photoName);
-        },
-        confirmDelete: function confirmDelete() {
-            this.confirmPhotoDeleteDialog = true;
-        },
-        deletePhoto: function deletePhoto() {
-            this.confirmPhotoDeleteDialog = false;
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/deletePhoto', {
-                "photo": this.photoName
-            }).then(this.photoDeleted).catch(this.deleteError);
-        },
-        photoDeleted: function photoDeleted(response) {
-            this.$store.commit('addPhotos', response.data);
-            this.getLatestPhoto();
-            this.confirmPhotoDeleteDialog = false;
-        },
-        deleteError: function deleteError(error) {
-            console.log(error);
-            this.confirmPhotoDeleteDialog = false;
-            console.log('delete failed');
-        },
-        mounted: function mounted() {}
+        }
     }
 });
 
@@ -53614,7 +53519,7 @@ var render = function() {
           }
         },
         [
-          _c("h1", { style: _vm.titleStyle }, [_vm._v("My Library")]),
+          _c("h1", { style: _vm.titleStyle }, [_vm._v("My Lirary")]),
           _vm._v(" "),
           _c(
             "v-layout",

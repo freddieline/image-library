@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RemoveFailedColumn extends Migration
+class AddCategoryColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class RemoveFailedColumn extends Migration
      */
     public function up()
     {
-
-        Schema::table('logs', function (Blueprint $table) {
-            $table->dropColumn('failed');
+        Schema::table('food_ingredients', function (Blueprint $table) {
+            $table->string('category')->nullable();
         });
     }
 
@@ -26,8 +25,8 @@ class RemoveFailedColumn extends Migration
      */
     public function down()
     {
-        Schema::table('logs', function (Blueprint $table) {
-            $table->boolean('failed');
+        Schema::table('food_ingredients', function (Blueprint $table) {
+            $table->dropColumn('category');
         });
     }
 }
