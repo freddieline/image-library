@@ -31900,14 +31900,14 @@ __webpack_require__(149);
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vuetify___default.a, {
     iconfont: 'md',
     theme: {
-        primary: '#7000bb'
+        primary: '#7000BB'
 
     }
 });
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('app', __WEBPACK_IMPORTED_MODULE_4__App_vue___default.a);
@@ -31915,7 +31915,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('app', __WEBPACK_IMPORTED_
 var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-eating-out', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchEatOut_vue___default.a }, { path: '/search-home-prepared', component: __WEBPACK_IMPORTED_MODULE_9__components_SearchHomePrepared_vue___default.a }, { path: '/search-make-a-recipe', component: __WEBPACK_IMPORTED_MODULE_10__components_SearchMakeARecipe_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
-    routes: routes // short for `routes: routes`
+    routes: routes // short for `routes: routes
 });
 
 var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
@@ -70545,6 +70545,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -86286,7 +86288,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view")
+  return _c("v-app", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

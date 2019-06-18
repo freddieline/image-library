@@ -20,14 +20,15 @@ import SearchMakeARecipe from './components/SearchMakeARecipe.vue'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 
-Vue.use( Vuex );
+
 Vue.use( Vuetify, {
     iconfont: 'md',
     theme: {
-        primary: '#7000bb'
+        primary: '#7000BB'
         
     },
 } );
+Vue.use( Vuex );
 Vue.use( VueRouter );
 
 Vue.component( 'app', App );
@@ -41,7 +42,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    routes // short for `routes: routes`
+    routes // short for `routes: routes
 });
 
 const store = new Vuex.Store({
