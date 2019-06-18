@@ -12,16 +12,20 @@ import VueRouter from 'vue-router';
 import Vuex      from 'vuex';
 import App      from './App.vue';
 import Vuetify from 'vuetify';
-import PhotoViewer from './components/PhotoViewer.vue';
-import Login from './components/Login.vue';
+import Results from './components/Results.vue'
+import Menu from './components/Menu.vue'
+import SearchEatOut from './components/SearchEatOut.vue'
+import SearchHomePrepared from './components/SearchHomePrepared.vue'
+import SearchMakeARecipe from './components/SearchMakeARecipe.vue'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
 
 Vue.use( Vuex );
 Vue.use( Vuetify, {
+    iconfont: 'md',
     theme: {
-        primary: '#f44336'
-    },
-    darkTheme: {
-        background: '#000000',
+        primary: '#7000bb'
+        
     },
 } );
 Vue.use( VueRouter );
@@ -29,8 +33,11 @@ Vue.use( VueRouter );
 Vue.component( 'app', App );
 
 const routes = [
-    { path: '/login', component: Login },
-    { path: '/view', component: PhotoViewer }
+    { path: '/results', component: Results },
+    { path: '/', component: Menu },
+    { path: '/search-eating-out', component: SearchEatOut },
+    { path: '/search-home-prepared', component: SearchHomePrepared },
+    { path: '/search-make-a-recipe', component: SearchMakeARecipe }
 ]
 
 const router = new VueRouter({
