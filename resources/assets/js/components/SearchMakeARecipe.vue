@@ -66,7 +66,7 @@
 
 <script>
 	export default {
-				name: 'SearchEatOut',
+				name: 'SearchMakeARecipe',
 	 data(){
 			return {
 				containerStyle:     "padding:38px 28px 0 28px;"+

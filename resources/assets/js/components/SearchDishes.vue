@@ -6,20 +6,13 @@
 			:style="containerStyle"
 		>
 			<v-flex xs12>
-				<h1>Home prepared food</h1>
+				<h1>Search dishes</h1>
 			</v-flex>
-			<v-flex
-				xs12
-				mb-5
-			>
-			
-				<v-autocomplete :items="items" append-icon="undefined" append-outer-icon="search" flat :style="searchBoxStyle" v-model="select" placeholder="Search dishes" hide-no-data :search-input.sync="search"
-
-		 
-				></v-autocomplete>
+			<v-flex xs12 mb-5>
+				<v-autocomplete :items="items" append-icon="undefined" append-outer-icon="search" flat :style="searchBoxStyle" v-model="select" placeholder="Search dishes" hide-no-data :search-input.sync="search">
+				</v-autocomplete>
 					<v-checkbox :style="checkboxStyle" :label="this.unitText" color="primary" v-model="imperial" @change="toggleUnits()" ></v-checkbox>
-				
-								<v-btn to="/results" outline large round color="primary" :style="buttonStyle">
+						<v-btn to="/results" outline large round color="primary" :style="buttonStyle">
 					carbon check
 					</v-btn>
 
@@ -31,7 +24,7 @@
 
 <script>
 	export default {
-				name: 'SearchEatOut',
+				name: 'SearchDishes',
 	 data(){
 			return {
 				layoutStyle:      "padding:28px 28px 0 28px;",
@@ -53,7 +46,8 @@
 				showAccuracyText:  "Show accuracy values",
 				imperial:           false,
 				checkboxStyle:    "margin-top:5px;",
-				buttonStyle:      "margin-top:80px;", 
+				buttonStyle:      "margin-top:80px;"+
+									"text-transform: lowercase;" ,
 				placeholder:      "Search dishes",
 				items:            [],
 				search:           null,

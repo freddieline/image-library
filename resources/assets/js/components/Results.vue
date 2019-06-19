@@ -2,19 +2,17 @@
 	<div>
 	<div id="container" :style="containerStyle" >
 		<v-layout row align-center justify-center>
-			<h2>carbon check</h2><v-icon large color="#2c3e50">check_circle_outline</v-icon>
+								<h2><b>carbon check <v-icon  color="#2c3e50">check</v-icon></b></h2>
 		</v-layout>
 		<h1>Caesar salad</h1>
 		<div :style="container2Style">
 			<div :style="valueContainerStyle">
-				<div :style="valueTitleStyle">Total</div>
 				<div id="" :style="valueStyle"> 21.5</div>
-				<div :style="unitStyle">kG of CO<sub>2</sub>e</div>
+				<div :style="unitStyle">Total kg of CO<sub>2</sub>e</div>
 			</div>
 			<div :style="valueContainerStyle">
-				<div :style="valueTitleStyle">Average</div>
 				<div :style="valueStyle">12.3</div>
-				<div :style="unitStyle">kg of CO<sub>2</sub>e<br/>per kg food</div>
+				<div :style="unitStyle">Average kg of CO<sub>2</sub>e<br/>per kg food</div>
 			</div>
 		</div>
 		<div id="chart-container">
@@ -51,21 +49,21 @@
 		<div :style="container4Style">
 			<v-flex xs12>
 				<v-layout justify-space-around row fill-height>
-					<v-btn to="/" outline medium fab color="primary">
+				
 						<v-flex style="align-content:center;">
-							<v-icon color="primary"  medium>keyboard_return</v-icon>
+							<v-icon  @click="toHome()"  color="primary"  medium>keyboard_return</v-icon>
 						</v-flex>
-					</v-btn>
-					<v-btn to="/" outline medium fab color="primary">
+			
+				
 						<v-flex style="align-content:center;">
 							<v-icon color="primary" medium>share</v-icon>
 						</v-flex>
-					</v-btn>
-					<v-btn @click="open()" outline fab color="primary">
+		
+		
 						<v-flex style="align-content:center;">
-							<v-icon color="primary" medium>more_horiz</v-icon>
+							<v-icon color="primary" @click="open()" medium>more_horiz</v-icon>
 						</v-flex>
-					</v-btn>
+				
 				</v-layout>
 			</v-flex>
 		</div>
@@ -261,13 +259,23 @@ export default {
 		this.createChart();
 	},
 	methods: {
+
+		// close more info
 		close(){
 			this.showData = false;
 		},
+
+		// open more info
 		open(){ 
-			console.log('open');
 			this.showData = true;
 		},
+
+		// navigate to home
+		toHome(){
+			this.$router.push('/');
+		},
+
+		// create chart
 		createChart(){ 
 
 			var ctx = document.getElementById('myChart');

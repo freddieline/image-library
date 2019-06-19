@@ -31871,14 +31871,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Results_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Menu_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchEatOut_vue__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchEatOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_SearchEatOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SearchHomePrepared_vue__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SearchHomePrepared_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_SearchHomePrepared_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_SearchMakeARecipe_vue__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_SearchMakeARecipe_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_SearchMakeARecipe_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SearchMakeARecipe_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SearchMakeARecipe_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_SearchMakeARecipe_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css__);
 /**
  * First, we will load all of this project's Javascript utilities and other
  * dependencies. Then, we will be ready to develop a robust and powerful
@@ -31887,7 +31885,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(149);
 
 // index.js or main.js
-
 
 
 
@@ -31912,7 +31909,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('app', __WEBPACK_IMPORTED_MODULE_4__App_vue___default.a);
 
-var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-eating-out', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchEatOut_vue___default.a }, { path: '/search-home-prepared', component: __WEBPACK_IMPORTED_MODULE_9__components_SearchHomePrepared_vue___default.a }, { path: '/search-make-a-recipe', component: __WEBPACK_IMPORTED_MODULE_10__components_SearchMakeARecipe_vue___default.a }];
+var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-dishes', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default.a }, { path: '/search-make-a-recipe', component: __WEBPACK_IMPORTED_MODULE_9__components_SearchMakeARecipe_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     routes: routes // short for `routes: routes
@@ -70493,7 +70490,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nhtml{\n\theight:100%;\n\t-webkit-box-sizing:border-box;\n\t        box-sizing:border-box;\n}\nh1{\n\tfont-weight:normal;\n}\nh2{\n\tfont-size:17px;\n\tmargin:8px;\n}\nbody{\n\tuser-select: none; /* supported by Chrome and Opera */\n\t-webkit-user-select: none; /* Safari */\n\t-khtml-user-select: none; /* Konqueror HTML */\n\t-moz-user-select: none; /* Firefox */\n\t-ms-user-select: none; /* Internet Explorer/Edge */\n\t-webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n#app{  \n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\n\t-webkit-font-smoothing: antialiased;\n\t-moz-osx-font-smoothing: grayscale;\n\ttext-align: center;\n\tcolor: #2c3e50;\n\tmargin-top: 0px;\n\tbackground-color:transparent;\n}\n", ""]);
+exports.push([module.i, "\nhtml{\n\theight:100%;\n\t-webkit-box-sizing:border-box;\n\t        box-sizing:border-box;\n}\nh1{\n\tfont-weight:normal;\n    font-size:27px;\n    margin-top:8px;\n}\nh2{\n\tfont-size:17px;\n\tmargin:8px;\n}\nbody{\n\tuser-select: none; /* supported by Chrome and Opera */\n\t-webkit-user-select: none; /* Safari */\n\t-khtml-user-select: none; /* Konqueror HTML */\n\t-moz-user-select: none; /* Firefox */\n\t-ms-user-select: none; /* Internet Explorer/Edge */\n\t-webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n#app{  \n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\n\t-webkit-font-smoothing: antialiased;\n\t-moz-osx-font-smoothing: grayscale;\n\ttext-align: center;\n\tcolor: #111111;\n\tmargin-top: 0px;\n\tbackground-color:transparent;\n}\n", ""]);
 
 // exports
 
@@ -70562,7 +70559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     created: function created() {
 
-        // set store valueshjhjj
+        // set store values
         this.setStoreValues();
     },
     data: function data() {
@@ -70576,10 +70573,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * set photo values in vue-store
          */
         setStoreValues: function setStoreValues() {
-            console.log('hi');
+            console.log(this.composer.photosDirectory);
             console.log(this.composer.food_ingredients);
             this.$store.commit('addPhotos', this.composer.photos);
             this.$store.commit('addPhotosDirectory', this.composer.photosDirectory);
+            //   this.$store.commit( 'food_ingredients' , this.composer.food_ingredients );
         }
     }
 });
@@ -70632,8 +70630,6 @@ exports.push([module.i, "\n*[data-v-224e6d0f]{   -webkit-box-sizing: border-box;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
-//
-//
 //
 //
 //
@@ -70844,13 +70840,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	methods: {
+
+		// close more info
 		close: function close() {
 			this.showData = false;
 		},
+
+
+		// open more info
 		open: function open() {
-			console.log('open');
 			this.showData = true;
 		},
+
+
+		// navigate to home
+		toHome: function toHome() {
+			this.$router.push('/');
+		},
+
+
+		// create chart
 		createChart: function createChart() {
 
 			var ctx = document.getElementById('myChart');
@@ -85938,38 +85947,41 @@ var render = function() {
           "v-layout",
           { attrs: { row: "", "align-center": "", "justify-center": "" } },
           [
-            _c("h2", [_vm._v("carbon check")]),
-            _c("v-icon", { attrs: { large: "", color: "#2c3e50" } }, [
-              _vm._v("check_circle_outline")
+            _c("h2", [
+              _c(
+                "b",
+                [
+                  _vm._v("carbon check "),
+                  _c("v-icon", { attrs: { color: "#2c3e50" } }, [
+                    _vm._v("check")
+                  ])
+                ],
+                1
+              )
             ])
-          ],
-          1
+          ]
         ),
         _vm._v(" "),
         _c("h1", [_vm._v("Caesar salad")]),
         _vm._v(" "),
         _c("div", { style: _vm.container2Style }, [
           _c("div", { style: _vm.valueContainerStyle }, [
-            _c("div", { style: _vm.valueTitleStyle }, [_vm._v("Total")]),
-            _vm._v(" "),
             _c("div", { style: _vm.valueStyle, attrs: { id: "" } }, [
               _vm._v(" 21.5")
             ]),
             _vm._v(" "),
             _c("div", { style: _vm.unitStyle }, [
-              _vm._v("kG of CO"),
+              _vm._v("Total kg of CO"),
               _c("sub", [_vm._v("2")]),
               _vm._v("e")
             ])
           ]),
           _vm._v(" "),
           _c("div", { style: _vm.valueContainerStyle }, [
-            _c("div", { style: _vm.valueTitleStyle }, [_vm._v("Average")]),
-            _vm._v(" "),
             _c("div", { style: _vm.valueStyle }, [_vm._v("12.3")]),
             _vm._v(" "),
             _c("div", { style: _vm.unitStyle }, [
-              _vm._v("kg of CO"),
+              _vm._v("Average kg of CO"),
               _c("sub", [_vm._v("2")]),
               _vm._v("e"),
               _c("br"),
@@ -86175,83 +86187,53 @@ var render = function() {
                   },
                   [
                     _c(
-                      "v-btn",
-                      {
-                        attrs: {
-                          to: "/",
-                          outline: "",
-                          medium: "",
-                          fab: "",
-                          color: "primary"
-                        }
-                      },
+                      "v-flex",
+                      { staticStyle: { "align-content": "center" } },
                       [
                         _c(
-                          "v-flex",
-                          { staticStyle: { "align-content": "center" } },
-                          [
-                            _c(
-                              "v-icon",
-                              { attrs: { color: "primary", medium: "" } },
-                              [_vm._v("keyboard_return")]
-                            )
-                          ],
-                          1
+                          "v-icon",
+                          {
+                            attrs: { color: "primary", medium: "" },
+                            on: {
+                              click: function($event) {
+                                return _vm.toHome()
+                              }
+                            }
+                          },
+                          [_vm._v("keyboard_return")]
                         )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
-                      {
-                        attrs: {
-                          to: "/",
-                          outline: "",
-                          medium: "",
-                          fab: "",
-                          color: "primary"
-                        }
-                      },
+                      "v-flex",
+                      { staticStyle: { "align-content": "center" } },
                       [
                         _c(
-                          "v-flex",
-                          { staticStyle: { "align-content": "center" } },
-                          [
-                            _c(
-                              "v-icon",
-                              { attrs: { color: "primary", medium: "" } },
-                              [_vm._v("share")]
-                            )
-                          ],
-                          1
+                          "v-icon",
+                          { attrs: { color: "primary", medium: "" } },
+                          [_vm._v("share")]
                         )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { outline: "", fab: "", color: "primary" },
-                        on: {
-                          click: function($event) {
-                            return _vm.open()
-                          }
-                        }
-                      },
+                      "v-flex",
+                      { staticStyle: { "align-content": "center" } },
                       [
                         _c(
-                          "v-flex",
-                          { staticStyle: { "align-content": "center" } },
-                          [
-                            _c(
-                              "v-icon",
-                              { attrs: { color: "primary", medium: "" } },
-                              [_vm._v("more_horiz")]
-                            )
-                          ],
-                          1
+                          "v-icon",
+                          {
+                            attrs: { color: "primary", medium: "" },
+                            on: {
+                              click: function($event) {
+                                return _vm.open()
+                              }
+                            }
+                          },
+                          [_vm._v("more_horiz")]
                         )
                       ],
                       1
@@ -112365,7 +112347,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -112395,9 +112377,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-				name: 'SearchEatOut',
+				name: 'Menu',
 				data: function data() {
 								return {
 												layoutStyle: "padding:28px 28px 0 28px;",
@@ -112409,7 +112395,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 												showAccuracyText: "Show accuracy values",
 												imperial: false,
 												checkboxStyle: "margin-top:5px;",
-												buttonStyle: "margin-top:80px;",
+												buttonStyle: "margin-top:80px;" + "padding-top:12px;" + "color:#ffffff;" + 'font-size:36px;' + 'font-weight:bold;' + "width:100%;" + "background-image:url('./img/food_search.jpg')",
 												placeholder: "Search dishes"
 
 								};
@@ -112449,46 +112435,114 @@ var render = function() {
               }
             },
             [
+              _c("v-layout", { attrs: { row: "", "align-center": "" } }, [
+                _c("h2", [
+                  _c(
+                    "b",
+                    [
+                      _vm._v("carbon check "),
+                      _c("v-icon", { attrs: { color: "#2c3e50" } }, [
+                        _vm._v("check")
+                      ])
+                    ],
+                    1
+                  )
+                ])
+              ]),
+              _vm._v(" "),
               _c(
-                "v-layout",
-                { attrs: { row: "", "align-center": "" } },
+                "div",
+                {
+                  style: _vm.buttonStyle,
+                  attrs: {
+                    to: "/search-dishes",
+                    outline: "",
+                    large: "",
+                    round: "",
+                    color: "primary"
+                  }
+                },
                 [
-                  _c("h2", [_vm._v("carbon check ")]),
-                  _c("v-icon", { attrs: { large: "", color: "#2c3e50" } }, [
-                    _vm._v("check_circle_outline")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  style: _vm.buttonStyle,
-                  attrs: {
-                    to: "/search-eating-out",
-                    outline: "",
-                    large: "",
-                    round: "",
-                    color: "primary"
-                  }
-                },
-                [_vm._v("Eating out/takeaways")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  style: _vm.buttonStyle,
-                  attrs: {
-                    to: "/search-home-prepared",
-                    outline: "",
-                    large: "",
-                    round: "",
-                    color: "primary"
-                  }
-                },
-                [_vm._v("Home prepared food")]
+                  _vm._v("\n\t\t\t\tFood dishes"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticStyle: {
+                        color: "white",
+                        "text-decoration": "none",
+                        float: "right",
+                        padding: "4px 6px",
+                        "font-family":
+                          '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif',
+                        "font-size": "12px",
+                        "font-weight": "bold",
+                        "line-height": "1.2",
+                        display: "inline-block",
+                        "border-radius": "3px"
+                      },
+                      attrs: {
+                        href:
+                          "https://unsplash.com/@cellisboa?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        title:
+                          "Download free do whatever you want high-resolution photos from Cel Lisboa"
+                      }
+                    },
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            display: "inline-block",
+                            float: "right",
+                            padding: "2px 3px"
+                          }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                height: "12px",
+                                width: "auto",
+                                position: "relative",
+                                "vertical-align": "middle",
+                                top: "-2px",
+                                fill: "white"
+                              },
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 32 32"
+                              }
+                            },
+                            [
+                              _c("title", [_vm._v("unsplash-logo")]),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      ),
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            display: "inline-block",
+                            padding: "2px 3px"
+                          }
+                        },
+                        [_vm._v("Cel Lisboa")]
+                      )
+                    ]
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -112504,6 +112558,15 @@ var render = function() {
                   }
                 },
                 [_vm._v("Make a recipe")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  style: _vm.buttonStyle,
+                  attrs: { outline: "", large: "", round: "", color: "primary" }
+                },
+                [_vm._v("Food ingredients data")]
               )
             ],
             1
@@ -112526,568 +112589,16 @@ if (false) {
 }
 
 /***/ }),
-/* 195 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(196)
-}
-var normalizeComponent = __webpack_require__(5)
-/* script */
-var __vue_script__ = __webpack_require__(198)
-/* template */
-var __vue_template__ = __webpack_require__(199)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/SearchEatOut.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-49075755", Component.options)
-  } else {
-    hotAPI.reload("data-v-49075755", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 196 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(197);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("2edb7f97", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49075755\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchEatOut.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49075755\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchEatOut.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 198 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SearchEatOut',
-  data: function data() {
-    return {
-      layoutStyle: "padding:28px 28px 0 28px;",
-      containerStyle: "max-width:600px;" + "margin: 0 auto;",
-      searchBoxStyle: "margin-top:100px;" + "margin-bottom:100px;",
-      searchButton: "color:#fff;" + "padding:10px;" + "font-size:16px;" + "font-weight:bold;" + "width:150px;" + "height:45px;" + "border-radius:20px;" + "margin:100px auto;" + "background-color: #7000bb;",
-      unitText: "Use Imperial units for food ingredients",
-      showAccuracy: false,
-      showAccuracyText: "Show accuracy values",
-      imperial: false,
-      checkboxStyle: "margin-top:5px;",
-      buttonStyle: "margin-top:80px;",
-      placeholder: "Search dishes",
-      items: [],
-      search: null,
-      select: null,
-      dishItems: ["Caesar salad", "Vegan burger", "Beef burger", "Beef burger (UK produced)"]
-
-      // searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
-
-    };
-  },
-  created: function created() {
-    document.body.style.backgroundColor = "#ebe6ff";
-  },
-
-  watch: {
-    search: function search(val) {
-      val && val !== this.select && this.querySelections(val);
-    }
-  },
-  methods: {
-    querySelections: function querySelections(v) {
-      var _this = this;
-
-      setTimeout(function () {
-        _this.items = _this.dishItems.filter(function (e) {
-          return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
-        });
-      }, 500);
-    }
-  }
-});
-
-/***/ }),
-/* 199 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    { style: _vm.layoutStyle },
-    [
-      _c(
-        "v-layout",
-        {
-          style: _vm.containerStyle,
-          attrs: { "text-xs-center": "", wrap: "" }
-        },
-        [
-          _c("v-flex", { attrs: { xs12: "" } }, [
-            _c("h1", [_vm._v("Eating out/takeaways")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", "mb-5": "" } },
-            [
-              _c("v-autocomplete", {
-                style: _vm.searchBoxStyle,
-                attrs: {
-                  items: _vm.items,
-                  "append-icon": "undefined",
-                  "append-outer-icon": "search",
-                  flat: "",
-                  placeholder: "Search dishes",
-                  "hide-no-data": "",
-                  "search-input": _vm.search
-                },
-                on: {
-                  "update:searchInput": function($event) {
-                    _vm.search = $event
-                  },
-                  "update:search-input": function($event) {
-                    _vm.search = $event
-                  }
-                },
-                model: {
-                  value: _vm.select,
-                  callback: function($$v) {
-                    _vm.select = $$v
-                  },
-                  expression: "select"
-                }
-              }),
-              _vm._v(" "),
-              _c("v-checkbox", {
-                style: _vm.checkboxStyle,
-                attrs: { label: this.unitText, color: "primary" },
-                on: {
-                  change: function($event) {
-                    return _vm.toggleUnits()
-                  }
-                },
-                model: {
-                  value: _vm.imperial,
-                  callback: function($$v) {
-                    _vm.imperial = $$v
-                  },
-                  expression: "imperial"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  style: _vm.buttonStyle,
-                  attrs: {
-                    to: "/results",
-                    outline: "",
-                    large: "",
-                    round: "",
-                    color: "primary"
-                  }
-                },
-                [_vm._v("\n        carbon check\n        ")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-49075755", module.exports)
-  }
-}
-
-/***/ }),
-/* 200 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(201)
-}
-var normalizeComponent = __webpack_require__(5)
-/* script */
-var __vue_script__ = __webpack_require__(203)
-/* template */
-var __vue_template__ = __webpack_require__(204)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/SearchHomePrepared.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-51f70f0a", Component.options)
-  } else {
-    hotAPI.reload("data-v-51f70f0a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(202);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("52be5ba9", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51f70f0a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchHomePrepared.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51f70f0a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchHomePrepared.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 203 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	name: 'SearchEatOut',
-	data: function data() {
-		return {
-			layoutStyle: "padding:28px 28px 0 28px;",
-			containerStyle: "max-width:600px;" + "margin: 0 auto;",
-			searchBoxStyle: "margin-top:100px;" + "margin-bottom:100px;",
-			searchButton: "color:#fff;" + "padding:10px;" + "font-size:16px;" + "font-weight:bold;" + "width:150px;" + "height:45px;" + "border-radius:20px;" + "margin:100px auto;" + "background-color: #7000bb;",
-			unitText: "Use Imperial units for food ingredients",
-			showAccuracy: false,
-			showAccuracyText: "Show accuracy values",
-			imperial: false,
-			checkboxStyle: "margin-top:5px;",
-			buttonStyle: "margin-top:80px;",
-			placeholder: "Search dishes",
-			items: [],
-			search: null,
-			select: null,
-			dishItems: ["Caesar salad", "Vegan burger", "Beef burger", "Beef burger (UK produced)"]
-
-			// searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
-
-		};
-	},
-	created: function created() {
-		document.body.style.backgroundColor = "#ebe6ff";
-	},
-
-	watch: {
-		search: function search(val) {
-			val && val !== this.select && this.querySelections(val);
-		}
-	},
-	methods: {
-		querySelections: function querySelections(v) {
-			var _this = this;
-
-			setTimeout(function () {
-				_this.items = _this.dishItems.filter(function (e) {
-					return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
-				});
-			}, 500);
-		}
-	}
-});
-
-/***/ }),
-/* 204 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    { style: _vm.layoutStyle },
-    [
-      _c(
-        "v-layout",
-        {
-          style: _vm.containerStyle,
-          attrs: { "text-xs-center": "", wrap: "" }
-        },
-        [
-          _c("v-flex", { attrs: { xs12: "" } }, [
-            _c("h1", [_vm._v("Home prepared food")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", "mb-5": "" } },
-            [
-              _c("v-autocomplete", {
-                style: _vm.searchBoxStyle,
-                attrs: {
-                  items: _vm.items,
-                  "append-icon": "undefined",
-                  "append-outer-icon": "search",
-                  flat: "",
-                  placeholder: "Search dishes",
-                  "hide-no-data": "",
-                  "search-input": _vm.search
-                },
-                on: {
-                  "update:searchInput": function($event) {
-                    _vm.search = $event
-                  },
-                  "update:search-input": function($event) {
-                    _vm.search = $event
-                  }
-                },
-                model: {
-                  value: _vm.select,
-                  callback: function($$v) {
-                    _vm.select = $$v
-                  },
-                  expression: "select"
-                }
-              }),
-              _vm._v(" "),
-              _c("v-checkbox", {
-                style: _vm.checkboxStyle,
-                attrs: { label: this.unitText, color: "primary" },
-                on: {
-                  change: function($event) {
-                    return _vm.toggleUnits()
-                  }
-                },
-                model: {
-                  value: _vm.imperial,
-                  callback: function($$v) {
-                    _vm.imperial = $$v
-                  },
-                  expression: "imperial"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  style: _vm.buttonStyle,
-                  attrs: {
-                    to: "/results",
-                    outline: "",
-                    large: "",
-                    round: "",
-                    color: "primary"
-                  }
-                },
-                [_vm._v("\n\t\t\t\tcarbon check\n\t\t\t\t")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-51f70f0a", module.exports)
-  }
-}
-
-/***/ }),
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
 /* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -113252,7 +112763,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	name: 'SearchEatOut',
+	name: 'SearchMakeARecipe',
 	data: function data() {
 		return {
 			containerStyle: "padding:38px 28px 0 28px;" + "margin: 0 auto;",
@@ -113699,6 +113210,281 @@ module.exports = "/fonts/vendor/material-design-icons-icondist/MaterialIcons-Reg
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 218 */,
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(220)
+}
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(222)
+/* template */
+var __vue_template__ = __webpack_require__(223)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/SearchDishes.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c3bf4d72", Component.options)
+  } else {
+    hotAPI.reload("data-v-c3bf4d72", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(221);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("36dcb82c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c3bf4d72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchDishes.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c3bf4d72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchDishes.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	name: 'SearchDishes',
+	data: function data() {
+		return {
+			layoutStyle: "padding:28px 28px 0 28px;",
+			containerStyle: "max-width:600px;" + "margin: 0 auto;",
+			searchBoxStyle: "margin-top:100px;" + "margin-bottom:100px;",
+			searchButton: "color:#fff;" + "padding:10px;" + "font-size:16px;" + "font-weight:bold;" + "width:150px;" + "height:45px;" + "border-radius:20px;" + "margin:100px auto;" + "background-color: #7000bb;",
+			unitText: "Use Imperial units for food ingredients",
+			showAccuracy: false,
+			showAccuracyText: "Show accuracy values",
+			imperial: false,
+			checkboxStyle: "margin-top:5px;",
+			buttonStyle: "margin-top:80px;" + "text-transform: lowercase;",
+			placeholder: "Search dishes",
+			items: [],
+			search: null,
+			select: null,
+			dishItems: ["Caesar salad", "Vegan burger", "Beef burger", "Beef burger (UK produced)"]
+
+			// searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
+
+		};
+	},
+	created: function created() {
+		document.body.style.backgroundColor = "#ebe6ff";
+	},
+
+	watch: {
+		search: function search(val) {
+			val && val !== this.select && this.querySelections(val);
+		}
+	},
+	methods: {
+		querySelections: function querySelections(v) {
+			var _this = this;
+
+			setTimeout(function () {
+				_this.items = _this.dishItems.filter(function (e) {
+					return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
+				});
+			}, 500);
+		}
+	}
+});
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { style: _vm.layoutStyle },
+    [
+      _c(
+        "v-layout",
+        {
+          style: _vm.containerStyle,
+          attrs: { "text-xs-center": "", wrap: "" }
+        },
+        [
+          _c("v-flex", { attrs: { xs12: "" } }, [
+            _c("h1", [_vm._v("Search dishes")])
+          ]),
+          _vm._v(" "),
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", "mb-5": "" } },
+            [
+              _c("v-autocomplete", {
+                style: _vm.searchBoxStyle,
+                attrs: {
+                  items: _vm.items,
+                  "append-icon": "undefined",
+                  "append-outer-icon": "search",
+                  flat: "",
+                  placeholder: "Search dishes",
+                  "hide-no-data": "",
+                  "search-input": _vm.search
+                },
+                on: {
+                  "update:searchInput": function($event) {
+                    _vm.search = $event
+                  },
+                  "update:search-input": function($event) {
+                    _vm.search = $event
+                  }
+                },
+                model: {
+                  value: _vm.select,
+                  callback: function($$v) {
+                    _vm.select = $$v
+                  },
+                  expression: "select"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-checkbox", {
+                style: _vm.checkboxStyle,
+                attrs: { label: this.unitText, color: "primary" },
+                on: {
+                  change: function($event) {
+                    return _vm.toggleUnits()
+                  }
+                },
+                model: {
+                  value: _vm.imperial,
+                  callback: function($$v) {
+                    _vm.imperial = $$v
+                  },
+                  expression: "imperial"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  style: _vm.buttonStyle,
+                  attrs: {
+                    to: "/results",
+                    outline: "",
+                    large: "",
+                    round: "",
+                    color: "primary"
+                  }
+                },
+                [_vm._v("\n\t\t\t\tcarbon check\n\t\t\t\t")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c3bf4d72", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

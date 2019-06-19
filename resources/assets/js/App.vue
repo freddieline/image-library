@@ -19,7 +19,7 @@
 
         created(){
 
-            // set store valueshjhjj
+            // set store values
             this.setStoreValues();
         },
 
@@ -37,14 +37,12 @@
              * set photo values in vue-store
              */
             setStoreValues(){
-                console.log('hi');
-                console.log(this.composer.food_ingredients);
-                this.$store.commit(  'addPhotos', this.composer.photos  );
-                this.$store.commit(  'addPhotosDirectory', this.composer.photosDirectory  );
+                console.log(this.composer.photosDirectory);
+                 console.log( this.composer.food_ingredients);
+                this.$store.commit( 'addPhotos', this.composer.photos  );
+                this.$store.commit( 'addPhotosDirectory', this.composer.photosDirectory  );
+             //   this.$store.commit( 'food_ingredients' , this.composer.food_ingredients );
             },
-
- 
-
 
         }
     }
@@ -57,6 +55,8 @@ html{
 }
 h1{
 	font-weight:normal;
+    font-size:27px;
+    margin-top:8px;
 }
 h2{
 	font-size:17px;
@@ -75,7 +75,7 @@ body{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #2c3e50;
+	color: #111111;
 	margin-top: 0px;
 	background-color:transparent;
 }

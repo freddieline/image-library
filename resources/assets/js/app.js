@@ -14,8 +14,7 @@ import App      from './App.vue';
 import Vuetify from 'vuetify';
 import Results from './components/Results.vue'
 import Menu from './components/Menu.vue'
-import SearchEatOut from './components/SearchEatOut.vue'
-import SearchHomePrepared from './components/SearchHomePrepared.vue'
+import SearchDishes from './components/SearchDishes.vue'
 import SearchMakeARecipe from './components/SearchMakeARecipe.vue'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
@@ -36,8 +35,7 @@ Vue.component( 'app', App );
 const routes = [
     { path: '/results', component: Results },
     { path: '/', component: Menu },
-    { path: '/search-eating-out', component: SearchEatOut },
-    { path: '/search-home-prepared', component: SearchHomePrepared },
+    { path: '/search-dishes', component: SearchDishes },
     { path: '/search-make-a-recipe', component: SearchMakeARecipe }
 ]
 
