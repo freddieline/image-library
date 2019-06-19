@@ -15,7 +15,7 @@ import Vuetify from 'vuetify';
 import Results from './components/Results.vue'
 import Menu from './components/Menu.vue'
 import SearchDishes from './components/SearchDishes.vue'
-import SearchMakeARecipe from './components/SearchMakeARecipe.vue'
+import MakeADish from './components/MakeADish.vue'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 
@@ -36,7 +36,7 @@ const routes = [
     { path: '/results', component: Results },
     { path: '/', component: Menu },
     { path: '/search-dishes', component: SearchDishes },
-    { path: '/search-make-a-recipe', component: SearchMakeARecipe }
+    { path: '/make-a-dish', component: MakeADish }
 ]
 
 const router = new VueRouter({
@@ -45,7 +45,7 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
     state: {
-        photos: "",
+        food_ingredients: "",
         terms: "",
         photosDirectory:""
     },

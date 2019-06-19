@@ -1,9 +1,8 @@
 <template >
 	<div>
 	<div id="container" :style="containerStyle" >
-		<v-layout row align-center justify-center>
-								<h2><b>carbon check <v-icon  color="#2c3e50">check</v-icon></b></h2>
-		</v-layout>
+
+
 		<h1>Caesar salad</h1>
 		<div :style="container2Style">
 			<div :style="valueContainerStyle">
@@ -101,7 +100,7 @@ export default {
 								"position:absolute;"+
 								"left:0px;"+
 								"top:0px;" +
-								"background-color:#fdf2d8;"+
+								"background-color:#ffffff;"+
 								"padding:20px;" +
 								"width:100%;",             
 			container3Height:   600,
@@ -124,12 +123,12 @@ export default {
 			accuracyStyle:      "fontSize:14px;",
 			switch1:            true,
 			switchUnit:         "Metric units",
-			metricLabels:[
+			metricLabels:	[
 								'50g Lettuce',
 								'15g Croutons',
 								'140g Chicken', 
 								'5g Anchovies'
-				],
+							],
 			imperialLabels:[
 					'5oz Lettuce',
 					'1.5oz Croutons',
@@ -251,7 +250,7 @@ export default {
 	},
 	created(){
 		window.addEventListener('resize', this.handleResize);
-		document.body.style.backgroundColor = "#fdf2d8";
+		document.body.style.backgroundColor = "#FFFFFF";
 
 	},
 	mounted() {

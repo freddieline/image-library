@@ -1,8 +1,9 @@
 <template>
 	<v-container :style="containerStyle">
+
 		<v-layout column>
 		<v-flex xs12>
-			<h1>Make a recipe</h1>
+			<h1>Make a dish</h1>
 			<v-layout column align-center justify-center>
 
 				<v-autocomplete :allow-overflow="false" :items="items" append-icon="undefined" append-outer-icon="search" flat :style="searchBoxStyle" v-model="select" placeholder="Search dishes" hide-no-data cache-items :search-input.sync="search" 
@@ -86,7 +87,8 @@
 									"background-color: #7000bb;",
 				imperial:           false,
 				checkboxStyle:    	"margin-top:5px;",
-				buttonStyle:      	"margin-top:20px;", 
+				buttonStyle:      	"margin-top:20px;"+
+									"text-transform:lowercase;", 
 				placeholder:      	"Search dishes",
 				items:            	[],
 				search:           	null,
@@ -112,7 +114,7 @@
 			}
 	 },
 			 created(){
-				 document.body.style.backgroundColor = "#ebe6ff";
+				 document.body.style.backgroundColor = "#ffffff";
 			},
 			watch:{
 				search(val){

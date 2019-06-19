@@ -25,10 +25,7 @@
 
         data ()
         {
-            return {
-      
-
-            }
+            return {}
         },
 
         methods: {
@@ -38,10 +35,10 @@
              */
             setStoreValues(){
                 console.log(this.composer.photosDirectory);
-                 console.log( this.composer.food_ingredients);
+                console.log( this.composer.food_ingredients);
                 this.$store.commit( 'addPhotos', this.composer.photos  );
                 this.$store.commit( 'addPhotosDirectory', this.composer.photosDirectory  );
-             //   this.$store.commit( 'food_ingredients' , this.composer.food_ingredients );
+                //   this.$store.commit( 'food_ingredients' , this.composer.food_ingredients );
             },
 
         }
@@ -57,10 +54,12 @@ h1{
 	font-weight:normal;
     font-size:27px;
     margin-top:8px;
+  
 }
 h2{
 	font-size:17px;
 	margin:8px;
+      text-align:left;
 }
 body{
 	user-select: none; /* supported by Chrome and Opera */

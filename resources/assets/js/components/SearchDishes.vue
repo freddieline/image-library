@@ -1,5 +1,6 @@
 <template>
 	<v-container :style="layoutStyle">
+		
 		<v-layout
 			text-xs-center
 			wrap
@@ -31,16 +32,16 @@
 				containerStyle:  "max-width:600px;"+
 													"margin: 0 auto;",
 				searchBoxStyle:   "margin-top:100px;"+
-													"margin-bottom:100px;",
-				searchButton:     "color:#fff;" +
-													"padding:10px;"+
-													"font-size:16px;" +
-													"font-weight:bold;" +
-													"width:150px;" +
-													"height:45px;" +
-													"border-radius:20px;"+
-													"margin:100px auto;"+
-													"background-color: #7000bb;",
+								"margin-bottom:100px;",
+				searchButton:   "color:#fff;" +
+								"padding:10px;"+
+								"font-size:16px;" +
+								"font-weight:bold;" +
+								"width:150px;" +
+								"height:45px;" +
+								"border-radius:20px;"+
+								"margin:100px auto;"+
+								"background-color: #7000bb;",
 				unitText:          "Use Imperial units for food ingredients",
 				showAccuracy:     false,
 				showAccuracyText:  "Show accuracy values",
@@ -59,7 +60,7 @@
 			}
 	 },
 			 created(){
-				 document.body.style.backgroundColor = "#ebe6ff";
+				document.body.style.backgroundColor = "#FFFFFF";
 			},
 			watch:{
 				search(val){
