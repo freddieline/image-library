@@ -42,38 +42,29 @@ const routes = [
 const router = new VueRouter({
     routes // short for `routes: routes
 });
-
+//assas
 const store = new Vuex.Store({
     state: {
-        food_ingredients: "",
-        terms: "",
-        photosDirectory:""
+        meals: [],
+        food_ingredients: [],
+
     },
     mutations: {
-
-        addPhotos ( state, photos ) {
-            state.photos  = photos;
+        meals ( state, meals ) {
+            state.meals  = meals;
         },
-
-        addTerms ( state, terms ) {
-            state.terms  = terms;
-        },
-
-        addPhotosDirectory ( state, photosDirectory ) {
-            state.photosDirectory  = photosDirectory;
+        food_ingredients ( state, food_ingredients ) {
+            state.food_ingredients  = food_ingredients;
         }
 
     },
     getters:
         {
-            getPhotos(state){
-                return state.photos;
+            getMeals(state){
+                return state.meals;
             },
-            getTerms(state){
-                return state.terms;
-            },
-            getPhotosDirectory(state){
-                return state.photosDirectory;
+            getFoodIngredients(state){
+                return state.food_ingredients;
             }
         }
 });

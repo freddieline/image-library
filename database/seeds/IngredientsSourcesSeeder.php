@@ -1,44 +1,19 @@
 <?php
 
-namespace App\Console\Commands;
-
+use Illuminate\Database\Seeder;
 use App\FoodIngredients;
 use App\FoodSources;
+use Illuminate\Support\Collection;
 use App\IngredientsSources;
-use Illuminate\Console\Command;
 
-class CreateIngredientsSources extends Command
+class IngredientsSourcesSeeder extends Seeder
 {
     /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'ingredients-sources:update';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Create a new command instance.
+     * Run the database seeds.
      *
      * @return void
      */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle()
+    public function run()
     {
         $ingredients = FoodIngredients::all();
         $foodSources = FoodSources::all();
@@ -79,6 +54,5 @@ class CreateIngredientsSources extends Command
             });
 
         });
-
     }
 }

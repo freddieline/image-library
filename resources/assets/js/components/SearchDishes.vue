@@ -53,7 +53,8 @@
 				items:            [],
 				search:           null,
 				select:           null,
-				dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"]
+				//dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"],
+				meals:				[]
 
 				// searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
 
@@ -61,10 +62,19 @@
 	 },
 			 created(){
 				document.body.style.backgroundColor = "#FFFFFF";
+				this.meals = this.$store.getters.getMeals;
+				
 			},
 			watch:{
 				search(val){
 					val && val !== this.select && this.querySelections(val);
+				}
+			},
+			computed:{
+				dishItems: function(){
+					return this.meals.map((meal) => {
+								return meal.name;
+					});
 				}
 			},
 			methods:{
@@ -74,7 +84,10 @@
 							return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
 						});
 					}, 500);
-				}
+				},
+				
+
+				
 			}
 	}
 </script>

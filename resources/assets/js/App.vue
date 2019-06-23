@@ -34,11 +34,11 @@
              * set photo values in vue-store
              */
             setStoreValues(){
-                console.log(this.composer.photosDirectory);
+                console.log('appa');
                 console.log( this.composer.food_ingredients);
-                this.$store.commit( 'addPhotos', this.composer.photos  );
-                this.$store.commit( 'addPhotosDirectory', this.composer.photosDirectory  );
-                //   this.$store.commit( 'food_ingredients' , this.composer.food_ingredients );
+                console.log( this.composer.meals );
+                this.$store.commit( 'food_ingredients' );
+                this.$store.commit( 'meals', this.composer.meals );
             },
 
         }

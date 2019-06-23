@@ -10,8 +10,8 @@ namespace App\Http\ViewComposers;
 
 use Auth;
 use Illuminate\View\View;
-use GrandVisual\Photos;
 use App\FoodIngredients;
+use App\Meals;
 
 
 class PhotoComposer {
@@ -26,17 +26,12 @@ class PhotoComposer {
     public function compose( View $View )
     {
 
-        $photos = ( new Photos )
-            ->getPhotosByModifedTime(
-                storage_path('app/public/photos/')
-        );
-
         $ingredients = FoodIngredients::all()->toArray();
+        $meals = Meals::all()->toArray();
 
         // Alias for if the user is signed in
-        $View->with( 'photos', $photos );
-        $View->with( 'photosDirectory', './storage/photos/' );
         $View->with('food_ingredients', $ingredients);
+        $View->with('meals', $meals );
     }
 
 

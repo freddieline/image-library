@@ -28,6 +28,8 @@ Route::post( '/deletePhoto', 'PhotosController@deletePhoto' );
 Route::post( '/auth/login', 'Auth\LoginController@login' );
 Route::get( '/auth/logout', 'Auth\LoginController@logout' );
 
+//Route::get( '/meals/{id}', 'Auth\LoginController@logout' );
+
 //Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
