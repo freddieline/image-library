@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Meals;
 
 class MealsController extends Controller
 {
@@ -12,7 +13,11 @@ class MealsController extends Controller
      * 
      */
     public function getMeal(Request $request){
+
+
+
+        $meal = Meals::where('id' ,'=', $request->id)->first()->toArray();
         
-        return $request;
+        return array( 'data'=> $meal);
     }
 }

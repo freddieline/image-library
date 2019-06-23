@@ -7,13 +7,13 @@
 			:style="containerStyle"
 		>
 			<v-flex xs12>
-				<h1>Search dishes</h1>
+				<h1>Searchdishes</h1>
 			</v-flex>
 			<v-flex xs12 mb-5>
 				<v-autocomplete :items="items" append-icon="undefined" append-outer-icon="search" flat :style="searchBoxStyle" v-model="select" placeholder="Search dishes" hide-no-data :search-input.sync="search">
 				</v-autocomplete>
 					<v-checkbox :style="checkboxStyle" :label="this.unitText" color="primary" v-model="imperial" @change="toggleUnits()" ></v-checkbox>
-						<v-btn to="/results" outline large round color="primary" :style="buttonStyle">
+						<v-btn @click='submitDish()' outline large round color="primary" :style="buttonStyle">
 					carbon check
 					</v-btn>
 
@@ -55,8 +55,7 @@
 				select:           null,
 				//dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"],
 				meals:				[]
-
-				// searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
+				// ssssearchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
 
 			}
 	 },
@@ -73,7 +72,7 @@
 			computed:{
 				dishItems: function(){
 					return this.meals.map((meal) => {
-								return meal.name;
+						return meal.name;
 					});
 				}
 			},
@@ -85,6 +84,25 @@
 						});
 					}, 500);
 				},
+				submitDish(){
+
+					console.log(this.select);
+					console.log(this.meals);
+					this.meals.forEach(function(meal) {
+						console.log(meal);
+						if (meal.name === this.select){
+							this.id = meal.id;
+							console.log(meal.name);
+						}
+					}.bind(this));
+
+					//get meal info
+					axios.get('/meal/' + this.id)
+					 .then( function (response) {
+						// handle success
+						console.log(response.data);
+					});
+				}
 				
 
 				

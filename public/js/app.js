@@ -112672,7 +112672,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -112729,8 +112729,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			select: null,
 			//dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"],
 			meals: []
-
-			// searchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
+			// ssssearchBoxStyle:   "box-shadow:none;background-color:trasnparent;"
 
 		};
 	},
@@ -112760,6 +112759,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
 				});
 			}, 500);
+		},
+		submitDish: function submitDish() {
+
+			console.log(this.select);
+			console.log(this.meals);
+			this.meals.forEach(function (meal) {
+				console.log(meal);
+				if (meal.name === this.select) {
+					this.id = meal.id;
+					console.log(meal.name);
+				}
+			}.bind(this));
+
+			//get meal info
+			axios.get('/meal/' + this.id).then(function (response) {
+				// handle success
+				console.log(response.data);
+			});
 		}
 	}
 });
@@ -112784,7 +112801,7 @@ var render = function() {
         },
         [
           _c("v-flex", { attrs: { xs12: "" } }, [
-            _c("h1", [_vm._v("Search dishes")])
+            _c("h1", [_vm._v("Searchdishes")])
           ]),
           _vm._v(" "),
           _c(
@@ -112841,11 +112858,15 @@ var render = function() {
                 {
                   style: _vm.buttonStyle,
                   attrs: {
-                    to: "/results",
                     outline: "",
                     large: "",
                     round: "",
                     color: "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.submitDish()
+                    }
                   }
                 },
                 [_vm._v("\n\t\t\t\tcarbon check\n\t\t\t\t")]

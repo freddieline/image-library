@@ -20,15 +20,11 @@ Route::get( '/', function () {
     return view('html.template');
 });
 
-Route::get( '/photos', 'PhotosController@getPhotos' );
-Route::post( '/sendEmail', 'PhotosController@sendEmail' );
-Route::post( '/deletePhoto', 'PhotosController@deletePhoto' );
-
 // Route POST request to Login Handler
 Route::post( '/auth/login', 'Auth\LoginController@login' );
 Route::get( '/auth/logout', 'Auth\LoginController@logout' );
 
-//Route::get( '/meals/{id}', 'Auth\LoginController@logout' );
+Route::get( '/meal/{id}', 'MealsController@getMeal' );
 
 //Auth::routes();
 //
