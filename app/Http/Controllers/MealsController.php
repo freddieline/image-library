@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Meals;
+use App\MealsIngredients;
+use App\FoodIngredients;
 
 class MealsController extends Controller
 {
@@ -15,8 +17,12 @@ class MealsController extends Controller
     public function getMeal(Request $request){
 
 
-
-        $meal = Meals::where('id' ,'=', $request->id)->first()->toArray();
+        $meal = MealsIngredients::
+                    where('meal_id' ,'=', $request->id)
+                    ->with('ingredient.foodSources')
+                    ->get()
+                    ->toArray()
+                ;
         
         return array( 'data'=> $meal);
     }
