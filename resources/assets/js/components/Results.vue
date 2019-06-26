@@ -3,16 +3,13 @@
 	<div id="container" :style="containerStyle" >
 
 
-		<h1>Caesar salad</h1>
+		<h1>{{mealName}}</h1>
 		<div :style="container2Style">
 			<div :style="valueContainerStyle">
-				<div id="" :style="valueStyle"> 21.5</div>
+				<div id="" :style="valueStyle"> {{totalCarbon}}</div>
 				<div :style="unitStyle">Total kg of CO<sub>2</sub>e</div>
 			</div>
-			<div :style="valueContainerStyle">
-				<div :style="valueStyle">12.3</div>
-				<div :style="unitStyle">Average kg of CO<sub>2</sub>e<br/>per kg food</div>
-			</div>
+
 		</div>
 		<div id="chart-container">
 			<canvas :style="chart" id="myChart"></canvas>
@@ -22,7 +19,7 @@
 			<h1>More info</h1>
 			<div :style="dataStyle">
 				 Total value 53 kg &#177;3.5 kg of CO<sub>2</sub>e <br/>
-				 Average value 32 kg &#177;1.2 kg of CO<sub>2</sub>e <br/>
+			
 					 </div>
 				<v-expansion-panel style="box-shadow:none;">
 					  <v-expansion-panel-content  color="primary"
@@ -112,29 +109,26 @@ export default {
 								"height:90px;"+
 								"clear:both;",
 			container4Style:    "margin-top:40px;",
-			valueContainerStyle: "width:50%;" +
+			valueContainerStyle: "width:100%;" +
 								"float:left;",
 			valueTitleStyle:    "fontSize:18px",
-			valueStyle:         "fontSize:36px;" +
+			valueStyle:         "fontSize:40px;" +
 								"line-height:42px;",
-			unitStyle:          "fontSize:12px;" ,
+			unitStyle:          "fontSize:17px;" ,
 			chart:              "margin-top:0px;" +
 								"margin-bottom:30px;",
 			accuracyStyle:      "fontSize:14px;",
 			switch1:            true,
 			switchUnit:         "Metric units",
-			metricLabels:	[
-								'50g Lettuce',
-								'15g Croutons',
-								'140g Chicken', 
-								'5g Anchovies'
-							],
-			imperialLabels:[
-					'5oz Lettuce',
-					'1.5oz Croutons',
-					'14oz Chicken', 
-					'0.5oz Anchovies'
-				],
+
+			mealName:			"",
+			totalCarbon:		0,
+			imperialLabels:		[
+									'5oz Lettuce',
+									'1.5oz Croutons',
+									'14oz Chicken', 
+									'0.5oz Anchovies'
+								],
 			ingredients:[
 				{
 					name:'5oz Lettuce',
@@ -251,13 +245,41 @@ export default {
 	created(){
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
+		console.log('hi');
+		console.log(this.$store.getters.getMealIngredients.ingredients);
+		// get chart data
+		this.getChartData();
 
 	},
 	mounted() {
 		this.handleResize();
 		this.createChart();
+		
+	},
+	computed:{
+		ingredientsCarbon: function(){
+
+			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+			
+				return ingredient.ingredient_kgCO2;
+			});
+		},
+		metricLabels:function(){
+
+			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+			
+				return ingredient.mass_in_grams + "g " + ingredient.ingredient;
+			});
+		},
+
 	},
 	methods: {
+
+		// get chart data
+		getChartData(){
+			this.mealName = this.$store.getters.getMealIngredients.name;
+			this.totalCarbon = this.$store.getters.getMealIngredients.total_kgCO2e;
+		},
 
 		// close more info
 		close(){
@@ -279,7 +301,7 @@ export default {
 
 			var ctx = document.getElementById('myChart');
 			if(this.myDoughnutChart!=null){
-				console.log('destroy');
+			
 				this.myDoughnutChart.destroy();
 			}
 			
@@ -297,7 +319,7 @@ export default {
 
 				datasets: [{
 					  label: 'CO2e',
-					data: [10, 20, 30, 30],
+					data: this.ingredientsCarbon,
 					backgroundColor: ['#fdd378', '#b9a2ff', '#ff93f9', "#7000bb"],
 				}],
 

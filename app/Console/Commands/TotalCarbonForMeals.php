@@ -39,6 +39,9 @@ class TotalCarbonForMeals extends Command
      */
     public function handle()
     {
+        // reset cartbon to zero
+        DB::table('meals')->update(['total_kgCO2e'=>0]);
+
         $mealsI = DB::table('meals_ingredients')
             ->join('meals', 'meals.id',"=", 'meals_ingredients.meal_id')
             ->join('food_ingredients', 'food_ingredients.id',"=",'meals_ingredients.ingredient_id')
@@ -54,7 +57,7 @@ class TotalCarbonForMeals extends Command
                 $currentCarbon = ($currentCarbon === null) ? 0 : $currentCarbon;
         
                 // add carbon to existing value
-                $totalCarbon = $mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams + $currentCarbon;
+                $totalCarbon = ($mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams /1000 )+ $currentCarbon;
                 
                 // update 
                 DB::table('meals')->where('name', '=', $mealIngredient->name )->update(['total_kgCO2e' => $totalCarbon ]);

@@ -47,6 +47,7 @@ const store = new Vuex.Store({
     state: {
         meals: [],
         food_ingredients: [],
+        meal_ingredients: [],
 
     },
     mutations: {
@@ -55,6 +56,9 @@ const store = new Vuex.Store({
         },
         food_ingredients ( state, food_ingredients ) {
             state.food_ingredients  = food_ingredients;
+        },
+        meal_ingredients (state, payload){
+            state.meal_ingredients = payload;
         }
 
     },
@@ -65,6 +69,9 @@ const store = new Vuex.Store({
             },
             getFoodIngredients(state){
                 return state.food_ingredients;
+            },
+            getMealIngredients(state){
+                return state.meal_ingredients;
             }
         }
 });
