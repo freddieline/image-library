@@ -16,27 +16,35 @@
 		</div>
 		<div :style="container3Style" id="more-info-popup" v-show="this.showData">
 			<v-icon @click="close()" style="float:right;" color="primary" large>clear</v-icon>
-			<h1>More info</h1>
-			<div :style="dataStyle">
-				 Total value 53 kg &#177;3.5 kg of CO<sub>2</sub>e <br/>
-			
-					 </div>
+			<h1>Ingredients info</h1>
 				<v-expansion-panel style="box-shadow:none;">
 					  <v-expansion-panel-content  color="primary"
-						v-for="(item,i) in this.ingredients"
-						:key="i" style="background-color:transparent;border:none;">
+						v-for="(item,i) in this.ingredientsSources"
+						:key="i" style="background-color:transparent;border:none;font-size:15px;">
 						<template v-slot:header color="primary">
-						  <div>{{item.name}}</div>
+							<v-layout flex-start row fill-height>
+						  		<v-flex :style="dataStyle">{{item.name}}</v-flex><v-flex :style="data2Style">Average CO2e per kg<br/>{{item.value}} +/- {{item.sd}} (s.d.)</v-flex>
+							</v-layout>
 						</template>
 						<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
 						<div :style="sourceStyle" v-for="it in item['sources']">
 							<template color="primary">
-								<div style="float:left;width:120px;">Emission value:</div>
-								<div style="float:right;width:140px;text-align:right;"> {{it.value}} C0<sub>2</sub>e</div><br/>
-								<div style="float:left;width:120px;">Location:</div>
-								<div style="float:right;width:140px;text-align:right;"> {{it.location}}</div><br/>
-								<div style="float:left;width:120px;">External reference:</div>
-								<div style="float:right;width:140px;text-align:right;"><a target="_blank" :href="it.link">{{it.ref}}</a></div>
+								<v-layout flex-start row fill-height>
+									<v-flex :style="leftColumn">Food:</v-flex>
+									<v-flex :style="rightColumn"> {{it.kgCO2e_per_kg_food}} </v-flex>
+								</v-layout>
+								<v-layout flex-start row fill-height>
+									<v-flex :style="leftColumn">Emission value:</v-flex>
+									<v-flex :style="rightColumn"> {{it.kgCO2e_per_kg_food}} C0<sub>2</sub>e</v-flex>
+								</v-layout>
+								<v-layout flex-start row fill-height>
+									<v-flex :style="leftColumn">Title:</v-flex>
+									<v-flex :style="rightColumn"> {{it.source_title}}</v-flex>
+								</v-layout>
+								<v-layout flex-start row fill-height>
+									<v-flex :style="leftColumn">External reference:</v-flex>
+									<v-flex :style="rightColumn"><a target="_blank" :href="it.link">{{it.authors}}</a></v-flex>
+								</v-layout>
 							</template>
 						</div>
 					</v-expansion-panel-content>
@@ -102,12 +110,15 @@ export default {
 								"width:100%;",             
 			container3Height:   600,
 			dataStyle:          "text-align:left;"+
-								"margin:25px 0px 15px 22px;" +
-								"font-size:15px;" +
-								"line-height:26px;",
+								"width:30%;" +
+								"font-size:15px;" ,
+			data2Style:          "text-align:left;"+
+								"font-size:15px;" ,
 			sourceStyle:        "padding:8px 22px 8px 22px;" +
-								"height:90px;"+
-								"clear:both;",
+								"height:100%;"+
+								"font-size:13px;"+
+								"clear:both;"+
+								"background-color:#fafafa;",
 			container4Style:    "margin-top:40px;",
 			valueContainerStyle: "width:100%;" +
 								"float:left;",
@@ -120,126 +131,20 @@ export default {
 			accuracyStyle:      "fontSize:14px;",
 			switch1:            true,
 			switchUnit:         "Metric units",
-
+			leftColumn:			
+								"width:50%;",
+			rightColumn:		
+								"width:50%;"+
+								"text-align:right;",
 			mealName:			"",
+				
 			totalCarbon:		0,
 			imperialLabels:		[
 									'5oz Lettuce',
 									'1.5oz Croutons',
 									'14oz Chicken', 
 									'0.5oz Anchovies'
-								],
-			ingredients:[
-				{
-					name:'5oz Lettuce',
-					sd:5,
-					sources:[
-						{
-							name:'source1',
-							value:34.2,
-							location:"UK",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source2',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source3',
-							value:34.2,
-							location:"Europe",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						}
-					]
-				},
-				{
-					name:'1.5oz Croutons',
-					sd:2.1,
-					sources:[
-						{
-							name:'source1',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source2',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source3',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						}
-					]
-				},
-				{
-					name:'1.5oz Chicken',
-					sd:1.1,
-					sources:[
-						{
-							name:'source1',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source2',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source3',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						}
-					]
-				},
-				{
-					name:'0.5oz Anchovies',
-					sd:2.4,
-					sources:[
-						{
-							name:'source1',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source2',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						},
-						{
-							name:'source3',
-							value:34.2,
-							location:"Worldwide",
-							ref:"Standford et al 2017",
-							link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/'
-						}
-					]
-				},
-
-			]
+								]
 		}
 	},
 	created(){
@@ -257,6 +162,17 @@ export default {
 		
 	},
 	computed:{
+		ingredientsSources:function(){
+				return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+					return {
+							name: 		ingredient.ingredient,
+							value:		ingredient.average_kgCO2e_per_kg_food,
+							sd:			ingredient.sd_percent,
+							sources:	ingredient.food_sources
+						
+					}
+				});
+		},
 		ingredientsCarbon: function(){
 
 			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
@@ -264,7 +180,7 @@ export default {
 				return ingredient.ingredient_kgCO2;
 			});
 		},
-		metricLabels:function(){
+		metricLabels: function(){
 
 			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
 			

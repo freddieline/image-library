@@ -31,8 +31,9 @@ class MealsController extends Controller
             $results[] = [
                 'ingredient' => $mealI['ingredient']['name'],
                 'mass_in_grams' => $mealI['mass_of_ingredient_in_grams'],
-                'ingredient_kgCO2' => $mealI['ingredient']['average_kgCO2e_per_kg_food'] * $mealI['mass_of_ingredient_in_grams'] / 1000,
-                'sd_percent' =>  $sd ,
+                'average_kgCO2e_per_kg_food' => round($mealI['ingredient']['average_kgCO2e_per_kg_food'],2),
+                'ingredient_kgCO2' => round($mealI['ingredient']['average_kgCO2e_per_kg_food'] * $mealI['mass_of_ingredient_in_grams'] / 1000,2),
+                'sd_percent' =>  round($sd ,2),
                 'food_sources' => $mealI['ingredient']['food_sources']
             ];
         }

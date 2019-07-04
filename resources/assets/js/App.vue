@@ -48,15 +48,16 @@ html{
 	box-sizing:border-box;
 }
 h1{
-	font-weight:normal;
-    font-size:27px;
+	font-weight:300;
+    font-size:30px;
     margin-top:8px;
   
 }
-h2{
-	font-size:17px;
-	margin:8px;
-      text-align:left;
+.logo{
+	font-weight:500;
+    font-size:30px;
+    margin-top:8px;
+    color:#2c3e50;
 }
 body{
 	user-select: none; /* supported by Chrome and Opera */
@@ -67,7 +68,7 @@ body{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #app{  
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	font-family:  Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;

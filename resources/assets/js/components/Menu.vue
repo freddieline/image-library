@@ -10,7 +10,7 @@
 	  			:style="containerStyle"
 	  			column>
 	  			<v-layout row align-center>
-							   <h2><b>carbon check <v-icon  color="#2c3e50">check</v-icon></b></h2>
+							   <b class="logo">check your carbon  <img style="width:40px;margin:-5px 10px;" src="/img/carbon_check.png" /></b>
 				</v-layout>
 		
 					<div @click="clickDishes()" class="clickable" outline large round color="primary" :style="dishesStyle">
@@ -77,9 +77,9 @@
 <style>
 .clickable{
 	border-radius:5px;
-	margin-top:20px;
+	margin-top:30px;
 	display: block;
-	height:300px;
+	height:220px;
 	padding-top:60px;
 	color:#ffffff;
 	font-size:36px;
