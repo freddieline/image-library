@@ -7,16 +7,49 @@
 			:style="containerStyle"
 		>
 			<v-flex xs12>
-				<h1>Searchdishes</h1>
+				<h1>Search meals</h1>
 			</v-flex>
-			<v-flex xs12 mb-5>
-				<v-autocomplete :items="items" append-icon="undefined" append-outer-icon="search" flat :style="searchBoxStyle" v-model="select" placeholder="Search dishes" hide-no-data :search-input.sync="search">
-				</v-autocomplete>
-					<v-checkbox :style="checkboxStyle" :label="this.unitText" color="primary" v-model="imperial" @change="toggleUnits()" ></v-checkbox>
-						<v-btn @click='submitDish()' outline large round color="primary" :style="buttonStyle">
-					carbon check
+			<v-flex xs12 mb-5 flex-start>
+				<v-form
+					flex-start
+					ref="form"
+      				v-model="valid"
+      				lazy-validation>
+					<v-layout column>
+						<v-autocomplete 
+							:items="items" 
+							append-icon="undefined" 
+							append-outer-icon="search" 
+							flat 
+							:style="searchBoxStyle" 
+							v-model="select" 
+							placeholder="Search dishes" 
+							hide-no-data 
+							:search-input.sync="search"
+							:rules="searchRules">
+						</v-autocomplete>
+						<v-label style="width:20%;">Metric or Imperial units?</v-label>
+						<v-switch
+							:style="checkboxStyle" 
+							:label="getUnitText()" 
+							color="primary" 
+							v-model="isImperial" 
+							small
+							>
+						</v-switch>
+	
+					</v-layout>
+					<v-btn 
+						:disabled="!valid"
+						@click='submitDish()' 
+						outline 
+						large 
+						round 
+						color="primary" 
+						:style="buttonStyle">
+						carbon check
 					</v-btn>
-
+				</v-form>
 			</v-flex>
 
 		</v-layout>
@@ -29,6 +62,7 @@
 				props: [ 'composerProp','app', 'composer' ],
 	 data(){
 			return {
+
 				layoutStyle:    	"padding:28px 28px 0 28px;",
 				containerStyle: 	"max-width:600px;" +
 									"margin: 0 auto;",
@@ -48,14 +82,18 @@
 				showAccuracyText:  	"Show accuracy values",
 				imperial:           false,
 				checkboxStyle:    	"margin-top:5px;",
-				buttonStyle:      	"margin-top:80px;"+
-									"text-transform: lowercase;" ,
+				buttonStyle:      	"margin-top:80px;" +
+									"text-transform: lowercase;",
 				placeholder:      	"Search dishes",
 				items:            	[	],
 				search:           	null,
 				select:           	null,
-				//dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"],
-				meals:				[]
+				meals:				[],
+				searchRules:		[
+										v => !!v || 'A meal name is required'
+									],
+				valid:				true,
+				isImperial: 		false
 
 
 			}
@@ -78,6 +116,15 @@
 				}
 			},
 			methods:{
+				getUnitText(){
+					if(this.isImperial){
+						return "Imperial";
+					}
+					else{
+						return "metric";
+					}
+				},
+
 				querySelections(v) {
 					setTimeout(() => {
 						this.items = this.dishItems.filter(e => {
@@ -86,24 +133,28 @@
 					}, 500);
 				},
 				submitDish(){
+					
+					this.$refs.form.validate();
 
+					// find meal id
 					this.meals.forEach(function(meal) {
 						if (meal.name === this.select){
 							this.id = meal.id;
 						}
 					}.bind(this));
 
-					//get meal info
-					axios.get('/meal/' + this.id)
-					 .then( function (response) {
-						// handle success
-						console.log(response.data);
-						console.log(response.data.meal_ingredients);
-						this.$store.commit( 'meal_ingredients', response.data.meal );
-						console.log(this.$store.getters.getMealIngredients);
-						this.$router.push('/results');
-
-					}.bind(this));
+					// if id is defined pass value into url
+					if(this.id ){
+						console.log('submit');
+						console.log(this.id);
+						this.$router.push({ 
+							path: 'results' , 
+							query :	{
+									id: this.id,
+									isImperial: this.isImperial
+									}
+							});
+					}
 				}
 				
 

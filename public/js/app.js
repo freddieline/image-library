@@ -31909,7 +31909,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('app', __WEBPACK_IMPORTED_MODULE_4__App_vue___default.a);
 
-var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-dishes', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default.a }, { path: '/make-a-dish', component: __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue___default.a }];
+var routes = [{ path: '/results/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-dishes', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default.a }, { path: '/make-a-dish', component: __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     routes: routes // short for `routes: routes
@@ -31919,7 +31919,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
     state: {
         meals: [],
         food_ingredients: [],
-        meal_ingredients: []
+        meals_with_ingredients: []
 
     },
     mutations: {
@@ -31929,8 +31929,8 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
         food_ingredients: function food_ingredients(state, _food_ingredients) {
             state.food_ingredients = _food_ingredients;
         },
-        meal_ingredients: function meal_ingredients(state, payload) {
-            state.meal_ingredients = payload;
+        meals_with_ingredients: function meals_with_ingredients(state, payload) {
+            state.meals_with_ingredients = payload;
         }
     },
     getters: {
@@ -31940,8 +31940,8 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
         getFoodIngredients: function getFoodIngredients(state) {
             return state.food_ingredients;
         },
-        getMealIngredients: function getMealIngredients(state) {
-            return state.meal_ingredients;
+        getMealsWithIngredients: function getMealsWithIngredients(state) {
+            return state.meals_with_ingredients;
         }
     }
 });
@@ -70491,7 +70491,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nhtml{\n\theight:100%;\n\t-webkit-box-sizing:border-box;\n\t        box-sizing:border-box;\n}\nh1{\n\tfont-weight:300;\n    font-size:30px;\n    margin-top:8px;\n}\n.logo{\n\tfont-weight:500;\n    font-size:30px;\n    margin-top:8px;\n    color:#2c3e50;\n}\nbody{\n\tuser-select: none; /* supported by Chrome and Opera */\n\t-webkit-user-select: none; /* Safari */\n\t-khtml-user-select: none; /* Konqueror HTML */\n\t-moz-user-select: none; /* Firefox */\n\t-ms-user-select: none; /* Internet Explorer/Edge */\n\t-webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n#app{  \n\tfont-family:  Helvetica, Arial, sans-serif;\n\t-webkit-font-smoothing: antialiased;\n\t-moz-osx-font-smoothing: grayscale;\n\ttext-align: center;\n\tcolor: #111111;\n\tmargin-top: 0px;\n\tbackground-color:transparent;\n}\n", ""]);
+exports.push([module.i, "\nhtml{\n\theight:100%;\n\t-webkit-box-sizing:border-box;\n\t        box-sizing:border-box;\n}\nh1{\n\tfont-weight:300;\n    font-size:30px;\n    margin-top:8px;\n}\n.logo{\n\tfont-weight:500;\n    font-size:30px;\n    margin-top:8px;\n    color:#2c3e50;\n}\nbody{\n\tuser-select: none; /* supported by Chrome and Opera */\n\t-webkit-user-select: none; /* Safari */\n\t-khtml-user-select: none; /* Konqueror HTML */\n\t-moz-user-select: none; /* Firefox */\n\t-ms-user-select: none; /* Internet Explorer/Edge */\n\t-webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n#app{  \n\tfont-family:  Helvetica, Arial, sans-serif;\n\t-webkit-font-smoothing: antialiased;\n\t-moz-osx-font-smoothing: grayscale;\n\ttext-align: center;\n\tcolor: #111111;\n\tmargin-top: 0px;\n\tbackground-color:transparent;\n}\n.theme--light.v-label{\n    text-align: left;\n    color: #444444;\n    font-size:15px;\n     line-height:26px;\n}\n\n", ""]);
 
 // exports
 
@@ -70574,8 +70574,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * set photo values in vue-store
          */
         setStoreValues: function setStoreValues() {
+            console.log(this.composer.meals_with_ingredients);
             this.$store.commit('food_ingredients');
             this.$store.commit('meals', this.composer.meals);
+            this.$store.commit('meals_with_ingredients', this.composer.meals_with_ingredients);
         }
     }
 });
@@ -70630,6 +70632,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
 //
 //
 //
@@ -70708,6 +70712,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -70752,42 +70757,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	created: function created() {
+		console.log('created');
+		var id = parseInt(this.$route.params.id);
+
+		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
 		console.log('hi');
-		console.log(this.$store.getters.getMealIngredients.ingredients);
+		this.meal = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.filter(this.$store.getters.getMealsWithIngredients, { 'id': id })[0];
+		console.log(this.meal);
 		// get chart data
 		this.getChartData();
 	},
 	mounted: function mounted() {
+		console.log('mounted');
 		this.handleResize();
 		this.createChart();
 	},
 
 	computed: {
 		ingredientsSources: function ingredientsSources() {
-			return this.$store.getters.getMealIngredients.ingredients.map(function (ingredient) {
+			return this.meal.meals_ingredients.map(function (ingredient) {
+				console.log(ingredient.ingredient.name);
 				return {
-					name: ingredient.ingredient,
-					value: ingredient.average_kgCO2e_per_kg_food,
-					sd: ingredient.sd_percent,
-					sources: ingredient.food_sources
+					name: ingredient.ingredient.name,
+					value: ingredient.ingredient.average_kgCO2e_per_kg_food,
+					sd: ingredient.ingredient.standard_deviation,
+					food_sources: ingredient.ingredient.food_sources
 
 				};
 			});
 		},
 		ingredientsCarbon: function ingredientsCarbon() {
 
-			return this.$store.getters.getMealIngredients.ingredients.map(function (ingredient) {
+			return this.meal.meals_ingredients.map(function (i) {
 
-				return ingredient.ingredient_kgCO2;
+				return Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass_of_ingredient_in_grams * 100) / 100;
 			});
 		},
 		metricLabels: function metricLabels() {
 
-			return this.$store.getters.getMealIngredients.ingredients.map(function (ingredient) {
+			return this.meal.meals_ingredients.map(function (ingredient) {
 
-				return ingredient.mass_in_grams + "g " + ingredient.ingredient;
+				return ingredient.mass_of_ingredient_in_grams + "g " + ingredient.ingredient.name;
 			});
 		}
 
@@ -70796,8 +70808,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		// get chart data
 		getChartData: function getChartData() {
-			this.mealName = this.$store.getters.getMealIngredients.name;
-			this.totalCarbon = this.$store.getters.getMealIngredients.total_kgCO2e;
+			this.mealName = this.meal.name;
+			this.totalCarbon = this.meal.total_kgCO2e;
 		},
 
 
@@ -86017,7 +86029,7 @@ var render = function() {
                     [_vm._v("$vuetify.icons.expand")]
                   ),
                   _vm._v(" "),
-                  _vm._l(item["sources"], function(it) {
+                  _vm._l(item["food_sources"], function(it) {
                     return _c(
                       "div",
                       { style: _vm.sourceStyle },
@@ -86038,9 +86050,7 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("v-flex", { style: _vm.rightColumn }, [
-                                _vm._v(
-                                  " " + _vm._s(it.kgCO2e_per_kg_food) + " "
-                                )
+                                _vm._v(" " + _vm._s(it.food) + " ")
                               ])
                             ],
                             1
@@ -112669,7 +112679,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -112705,12 +112715,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'SearchDishes',
 	props: ['composerProp', 'app', 'composer'],
 	data: function data() {
 		return {
+
 			layoutStyle: "padding:28px 28px 0 28px;",
 			containerStyle: "max-width:600px;" + "margin: 0 auto;",
 			searchBoxStyle: "margin-top:100px;" + "margin-bottom:100px;",
@@ -112725,8 +112769,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			items: [],
 			search: null,
 			select: null,
-			//dishItems:        ["Caesar salad","Vegan burger","Beef burger","Beef burger (UK produced)"],
-			meals: []
+			meals: [],
+			searchRules: [function (v) {
+				return !!v || 'A meal name is required';
+			}],
+			valid: true,
+			isImperial: false
 
 		};
 	},
@@ -112748,6 +112796,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
+		getUnitText: function getUnitText() {
+			if (this.isImperial) {
+				return "Imperial";
+			} else {
+				return "metric";
+			}
+		},
 		querySelections: function querySelections(v) {
 			var _this = this;
 
@@ -112759,21 +112814,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		submitDish: function submitDish() {
 
+			this.$refs.form.validate();
+
+			// find meal id
 			this.meals.forEach(function (meal) {
 				if (meal.name === this.select) {
 					this.id = meal.id;
 				}
 			}.bind(this));
 
-			//get meal info
-			axios.get('/meal/' + this.id).then(function (response) {
-				// handle success
-				console.log(response.data);
-				console.log(response.data.meal_ingredients);
-				this.$store.commit('meal_ingredients', response.data.meal);
-				console.log(this.$store.getters.getMealIngredients);
-				this.$router.push('/results');
-			}.bind(this));
+			// if id is defined pass value into url
+			if (this.id) {
+				console.log('submit');
+				console.log(this.id);
+				this.$router.push({
+					path: 'results',
+					query: {
+						id: this.id,
+						isImperial: this.isImperial
+					}
+				});
+			}
 		}
 	}
 });
@@ -112798,75 +112859,104 @@ var render = function() {
         },
         [
           _c("v-flex", { attrs: { xs12: "" } }, [
-            _c("h1", [_vm._v("Searchdishes")])
+            _c("h1", [_vm._v("Search meals")])
           ]),
           _vm._v(" "),
           _c(
             "v-flex",
-            { attrs: { xs12: "", "mb-5": "" } },
+            { attrs: { xs12: "", "mb-5": "", "flex-start": "" } },
             [
-              _c("v-autocomplete", {
-                style: _vm.searchBoxStyle,
-                attrs: {
-                  items: _vm.items,
-                  "append-icon": "undefined",
-                  "append-outer-icon": "search",
-                  flat: "",
-                  placeholder: "Search dishes",
-                  "hide-no-data": "",
-                  "search-input": _vm.search
-                },
-                on: {
-                  "update:searchInput": function($event) {
-                    _vm.search = $event
-                  },
-                  "update:search-input": function($event) {
-                    _vm.search = $event
-                  }
-                },
-                model: {
-                  value: _vm.select,
-                  callback: function($$v) {
-                    _vm.select = $$v
-                  },
-                  expression: "select"
-                }
-              }),
-              _vm._v(" "),
-              _c("v-checkbox", {
-                style: _vm.checkboxStyle,
-                attrs: { label: this.unitText, color: "primary" },
-                on: {
-                  change: function($event) {
-                    return _vm.toggleUnits()
-                  }
-                },
-                model: {
-                  value: _vm.imperial,
-                  callback: function($$v) {
-                    _vm.imperial = $$v
-                  },
-                  expression: "imperial"
-                }
-              }),
-              _vm._v(" "),
               _c(
-                "v-btn",
+                "v-form",
                 {
-                  style: _vm.buttonStyle,
-                  attrs: {
-                    outline: "",
-                    large: "",
-                    round: "",
-                    color: "primary"
-                  },
-                  on: {
-                    click: function($event) {
-                      return _vm.submitDish()
-                    }
+                  ref: "form",
+                  attrs: { "flex-start": "", "lazy-validation": "" },
+                  model: {
+                    value: _vm.valid,
+                    callback: function($$v) {
+                      _vm.valid = $$v
+                    },
+                    expression: "valid"
                   }
                 },
-                [_vm._v("\n\t\t\t\tcarbon check\n\t\t\t\t")]
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { column: "" } },
+                    [
+                      _c("v-autocomplete", {
+                        style: _vm.searchBoxStyle,
+                        attrs: {
+                          items: _vm.items,
+                          "append-icon": "undefined",
+                          "append-outer-icon": "search",
+                          flat: "",
+                          placeholder: "Search dishes",
+                          "hide-no-data": "",
+                          "search-input": _vm.search,
+                          rules: _vm.searchRules
+                        },
+                        on: {
+                          "update:searchInput": function($event) {
+                            _vm.search = $event
+                          },
+                          "update:search-input": function($event) {
+                            _vm.search = $event
+                          }
+                        },
+                        model: {
+                          value: _vm.select,
+                          callback: function($$v) {
+                            _vm.select = $$v
+                          },
+                          expression: "select"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-label", { staticStyle: { width: "20%" } }, [
+                        _vm._v("Metric or Imperial units?")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-switch", {
+                        style: _vm.checkboxStyle,
+                        attrs: {
+                          label: _vm.getUnitText(),
+                          color: "primary",
+                          small: ""
+                        },
+                        model: {
+                          value: _vm.isImperial,
+                          callback: function($$v) {
+                            _vm.isImperial = $$v
+                          },
+                          expression: "isImperial"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      style: _vm.buttonStyle,
+                      attrs: {
+                        disabled: !_vm.valid,
+                        outline: "",
+                        large: "",
+                        round: "",
+                        color: "primary"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.submitDish()
+                        }
+                      }
+                    },
+                    [_vm._v("\n\t\t\t\t\t\tcarbon check\n\t\t\t\t\t")]
+                  )
+                ],
+                1
               )
             ],
             1

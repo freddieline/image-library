@@ -34,8 +34,10 @@
              * set photo values in vue-store
              */
             setStoreValues(){
+                console.log(this.composer.meals_with_ingredients );
                 this.$store.commit( 'food_ingredients' );
                 this.$store.commit( 'meals', this.composer.meals );
+                this.$store.commit( 'meals_with_ingredients', this.composer.meals_with_ingredients );
             },
 
         }
@@ -76,4 +78,11 @@ body{
 	margin-top: 0px;
 	background-color:transparent;
 }
+.theme--light.v-label{
+    text-align: left;
+    color: #444444;
+    font-size:15px;
+     line-height:26px;
+}
+
 </style>

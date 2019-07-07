@@ -11,6 +11,7 @@ namespace App\Http\ViewComposers;
 use Auth;
 use Illuminate\View\View;
 use App\FoodIngredients;
+use App\MealsIngredients;
 use App\Meals;
 
 
@@ -26,12 +27,20 @@ class PhotoComposer {
     public function compose( View $View )
     {
 
+        // get food_ingredients
         $ingredients = FoodIngredients::all()->toArray();
         $meals = Meals::all()->toArray();
+
+        // get meals_ingredients
+        $mealsWithIngredients = Meals::
+            with('mealsIngredients.ingredient.foodSources')
+            ->get()
+            ->toArray();
 
         // Alias for if the user is signed in
         $View->with('food_ingredients', $ingredients);
         $View->with('meals', $meals );
+        $View->with('meals_with_ingredients', $mealsWithIngredients);
     }
 
 

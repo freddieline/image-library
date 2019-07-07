@@ -27,11 +27,11 @@
 							</v-layout>
 						</template>
 						<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
-						<div :style="sourceStyle" v-for="it in item['sources']">
+						<div :style="sourceStyle" v-for="it in item['food_sources']">
 							<template color="primary">
 								<v-layout flex-start row fill-height>
 									<v-flex :style="leftColumn">Food:</v-flex>
-									<v-flex :style="rightColumn"> {{it.kgCO2e_per_kg_food}} </v-flex>
+									<v-flex :style="rightColumn"> {{it.food}} </v-flex>
 								</v-layout>
 								<v-layout flex-start row fill-height>
 									<v-flex :style="leftColumn">Emission value:</v-flex>
@@ -80,6 +80,7 @@
 
 import Chart from 'chart.js';
 import axios from 'axios';
+import _ from 'lodash';
 
 export default {
 	name: 'Results',
@@ -148,43 +149,50 @@ export default {
 		}
 	},
 	created(){
+		console.log('created');
+		var id  = parseInt(this.$route.params.id);
+
+		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
 		console.log('hi');
-		console.log(this.$store.getters.getMealIngredients.ingredients);
+		this.meal = _.filter(this.$store.getters.getMealsWithIngredients, { 'id':id})[0];
+		console.log(this.meal);
 		// get chart data
 		this.getChartData();
 
 	},
 	mounted() {
+		console.log('mounted');
 		this.handleResize();
 		this.createChart();
 		
 	},
 	computed:{
 		ingredientsSources:function(){
-				return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+				return this.meal.meals_ingredients.map((ingredient) => {
+					console.log(ingredient.ingredient.name);
 					return {
-							name: 		ingredient.ingredient,
-							value:		ingredient.average_kgCO2e_per_kg_food,
-							sd:			ingredient.sd_percent,
-							sources:	ingredient.food_sources
+							name: 			ingredient.ingredient.name,
+							value:			ingredient.ingredient.average_kgCO2e_per_kg_food,
+							sd:				ingredient.ingredient.standard_deviation,
+							food_sources: 	ingredient.ingredient.food_sources
 						
 					}
 				});
 		},
 		ingredientsCarbon: function(){
 
-			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+			return this.meal.meals_ingredients.map((i) => {
 			
-				return ingredient.ingredient_kgCO2;
+				return Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass_of_ingredient_in_grams * 100) / 100;
 			});
 		},
 		metricLabels: function(){
 
-			return this.$store.getters.getMealIngredients.ingredients.map((ingredient) => {
+			return this.meal.meals_ingredients.map((ingredient) => {
 			
-				return ingredient.mass_in_grams + "g " + ingredient.ingredient;
+				return ingredient.mass_of_ingredient_in_grams + "g " + ingredient.ingredient.name;
 			});
 		},
 
@@ -193,8 +201,8 @@ export default {
 
 		// get chart data
 		getChartData(){
-			this.mealName = this.$store.getters.getMealIngredients.name;
-			this.totalCarbon = this.$store.getters.getMealIngredients.total_kgCO2e;
+			this.mealName = this.meal.name;
+			this.totalCarbon = this.meal.total_kgCO2e;
 		},
 
 		// close more info

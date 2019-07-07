@@ -33,7 +33,7 @@ Vue.use( VueRouter );
 Vue.component( 'app', App );
 
 const routes = [
-    { path: '/results', component: Results },
+    { path: '/results/:id', component: Results },
     { path: '/', component: Menu },
     { path: '/search-dishes', component: SearchDishes },
     { path: '/make-a-dish', component: MakeADish }
@@ -47,7 +47,7 @@ const store = new Vuex.Store({
     state: {
         meals: [],
         food_ingredients: [],
-        meal_ingredients: [],
+        meals_with_ingredients: [],
 
     },
     mutations: {
@@ -57,8 +57,8 @@ const store = new Vuex.Store({
         food_ingredients ( state, food_ingredients ) {
             state.food_ingredients  = food_ingredients;
         },
-        meal_ingredients (state, payload){
-            state.meal_ingredients = payload;
+        meals_with_ingredients (state, payload){
+            state.meals_with_ingredients = payload;
         }
 
     },
@@ -70,8 +70,8 @@ const store = new Vuex.Store({
             getFoodIngredients(state){
                 return state.food_ingredients;
             },
-            getMealIngredients(state){
-                return state.meal_ingredients;
+            getMealsWithIngredients(state){
+                return state.meals_with_ingredients;
             }
         }
 });
