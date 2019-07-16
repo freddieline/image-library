@@ -33,7 +33,7 @@ Vue.use( VueRouter );
 Vue.component( 'app', App );
 
 const routes = [
-    { path: '/results/:id', component: Results },
+    { path: '/results', component: Results },
     { path: '/', component: Menu },
     { path: '/search-dishes', component: SearchDishes },
     { path: '/make-a-dish', component: MakeADish }

@@ -53,6 +53,7 @@ h1{
 	font-weight:300;
     font-size:30px;
     margin-top:8px;
+    line-height:1.2em;
   
 }
 .logo{

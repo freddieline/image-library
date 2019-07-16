@@ -7,7 +7,7 @@
 		<div :style="container2Style">
 			<div :style="valueContainerStyle">
 				<div id="" :style="valueStyle"> {{totalCarbon}}</div>
-				<div :style="unitStyle">Total kg of CO<sub>2</sub>e</div>
+				<div :style="unitStyle">total kg of CO<sub>2</sub>e</div>
 			</div>
 
 		</div>
@@ -22,8 +22,9 @@
 						v-for="(item,i) in this.ingredientsSources"
 						:key="i" style="background-color:transparent;border:none;font-size:15px;">
 						<template v-slot:header color="primary">
-							<v-layout flex-start row fill-height>
-						  		<v-flex :style="dataStyle">{{item.name}}</v-flex><v-flex :style="data2Style">Average CO2e per kg<br/>{{item.value}} +/- {{item.sd}} (s.d.)</v-flex>
+							<v-layout flex-start column fill-height>
+						  		<v-flex :style="dataStyle">{{item.name}}</v-flex>
+								<v-flex :style="data2Style">Av. CO<sub>2</sub>e per kg: {{item.value}} &#177; {{item.sd}}&#37;</v-flex>
 							</v-layout>
 						</template>
 						<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
@@ -97,7 +98,6 @@ export default {
 			containerPadding:   12,
 			containerStyle:     "padding:26px 14px 0 14px;"+
 								"margin-right:0px;",
-			switchStyle:        "float:left;width:100px;",
 			container2Style:    "margin-top:28px;" +
 								"height:130px;" +
 								"padding-bottom:0px;",
@@ -110,8 +110,13 @@ export default {
 								"padding:20px;" +
 								"width:100%;",             
 			container3Height:   600,
-			dataStyle:          "text-align:left;"+
-								"width:30%;" +
+			valueStyle:         "fontSize:4em;" +
+								"font-weight:200;" +
+								"line-height:1.5em;",
+			unitStyle:          "fontSize:17px;" ,
+			dataStyle:          "font-weight:700;"+
+								"text-align:left;"+
+								"width:100%;" +
 								"font-size:15px;" ,
 			data2Style:          "text-align:left;"+
 								"font-size:15px;" ,
@@ -124,34 +129,22 @@ export default {
 			valueContainerStyle: "width:100%;" +
 								"float:left;",
 			valueTitleStyle:    "fontSize:18px",
-			valueStyle:         "fontSize:40px;" +
-								"line-height:42px;",
-			unitStyle:          "fontSize:17px;" ,
 			chart:              "margin-top:0px;" +
 								"margin-bottom:30px;",
 			accuracyStyle:      "fontSize:14px;",
-			switch1:            true,
-			switchUnit:         "Metric units",
-			leftColumn:			
-								"width:50%;",
-			rightColumn:		
-								"width:50%;"+
+			leftColumn:			"width:50%;",
+			rightColumn:		"width:50%;"+
 								"text-align:right;",
 			mealName:			"",
-				
 			totalCarbon:		0,
-			imperialLabels:		[
-									'5oz Lettuce',
-									'1.5oz Croutons',
-									'14oz Chicken', 
-									'0.5oz Anchovies'
-								]
 		}
 	},
 	created(){
-		console.log('created');
-		var id  = parseInt(this.$route.params.id);
-
+		console.log('created results');
+		var id  = parseInt(this.$route.query.id);
+		this.isImperial  =  this.$route.query.isImperial;
+		console.log(this.$route.query.isImperial );
+		console.log(this.isImperial);
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
@@ -169,15 +162,13 @@ export default {
 		
 	},
 	computed:{
-		ingredientsSources:function(){
+		ingredientsSources: function(){
 				return this.meal.meals_ingredients.map((ingredient) => {
-					console.log(ingredient.ingredient.name);
 					return {
 							name: 			ingredient.ingredient.name,
 							value:			ingredient.ingredient.average_kgCO2e_per_kg_food,
-							sd:				ingredient.ingredient.standard_deviation,
+							sd:				Math.round(ingredient.ingredient.standard_deviation * 100 *100/ ingredient.ingredient.average_kgCO2e_per_kg_food ) / 100,
 							food_sources: 	ingredient.ingredient.food_sources
-						
 					}
 				});
 		},
@@ -193,6 +184,13 @@ export default {
 			return this.meal.meals_ingredients.map((ingredient) => {
 			
 				return ingredient.mass_of_ingredient_in_grams + "g " + ingredient.ingredient.name;
+			});
+		},
+		imperialLabels: function(){
+
+			return this.meal.meals_ingredients.map((ingredient) => {
+			
+				return Math.round(ingredient.mass_of_ingredient_in_grams * 0.035274 * 100) / 100 + "oz " + ingredient.ingredient.name;
 			});
 		},
 
@@ -232,13 +230,13 @@ export default {
 			const context = ctx.getContext('2d');
 			context.clearRect(0, 0, ctx.width, ctx.height);
   
-			var labels1 =[];
-			if( this.switch1 ==true){
-					labels1 = this.metricLabels;
-				}
-				else{
+			var labels1 = [];
+			if( this.isImperial === true){
 					labels1 = this.imperialLabels;
 				}
+			else{
+				labels1 = this.metricLabels;
+			}
 			var data = {
 
 				datasets: [{
