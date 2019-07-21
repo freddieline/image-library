@@ -54,17 +54,12 @@
 		<div :style="container4Style">
 			<v-flex xs12>
 				<v-layout justify-space-around row fill-height>
-				
 						<v-flex style="align-content:center;">
 							<v-icon  @click="toHome()"  color="primary"  medium>keyboard_return</v-icon>
-						</v-flex>
-			
-				
+						</v-flex>		
 						<v-flex style="align-content:center;">
 							<v-icon color="primary" medium>share</v-icon>
 						</v-flex>
-		
-		
 						<v-flex style="align-content:center;">
 							<v-icon color="primary" @click="open()" medium>more_horiz</v-icon>
 						</v-flex>
@@ -143,14 +138,14 @@ export default {
 		console.log('created results');
 		var id  = parseInt(this.$route.query.id);
 		this.isImperial  =  this.$route.query.isImperial;
-		console.log(this.$route.query.isImperial );
-		console.log(this.isImperial);
+
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
-		console.log('hi');
-		this.meal = _.filter(this.$store.getters.getMealsWithIngredients, { 'id':id})[0];
+
+		this.meal = _.filter(this.$store.getters.getMealsWithIngredients, {'id':id})[0];
 		console.log(this.meal);
+		
 		// get chart data
 		this.getChartData();
 
@@ -298,7 +293,11 @@ export default {
 		* handle resize
 		*/
 		handleResize() {
+
+			// define width of window
 			this.windowWidth = window.innerWidth;
+
+
 			if(this.windowWidth > this.maxChartSize){
 				this.chartSize = this.maxChartSize;
 				this.containerSize = this.maxChartSize ;
@@ -312,8 +311,8 @@ export default {
 				document.getElementById('container').style.width =  this.containerSize + 'px';
 			}
 			this.container3Height = this.chartSize + 230;
-			console.log(this.container3Height);
-		   document.getElementById('more-info-popup').style.height = this.container3Height +"px";
+	
+		   	document.getElementById('more-info-popup').style.height = this.container3Height +"px";
 		var marginLeft = ( (this.windowWidth) /2 - (this.containerSize+ this.containerPadding )/2) +'px';
 		   document.getElementById('container').style.marginLeft = marginLeft;
 		},

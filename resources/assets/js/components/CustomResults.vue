@@ -11,7 +11,7 @@
 						v-model="rating"></v-rating>
 				</v-flex>
 				<v-flex xs6>
-					<div :style="valueStyle"> {{totalCarbon}}</div>
+					<div :style="valueStyle"> {{totalCarbonDisplay}}</div>
 				</v-flex >
 			</v-layout>
 			<v-layout flex-start row fill-height>
@@ -19,7 +19,7 @@
 					<div :style="unitStyle">green rating</div>
 				</v-flex>
 				<v-flex xs6>
-					<div :style="unitStyle">total kg of CO<sub>2</sub>e</div>
+					<div :style="unitStyle">CO<sub>2</sub>e emissions</div>
 				</v-flex >
 			</v-layout>
 		</div>
@@ -158,15 +158,13 @@ export default {
 		this.getIngredientsMasses();
 		this.getMealIngredients();
 		this.getTotalMassInGrams();
-		this.getChartData();
+		this.getAverageCarbon();
 		this.getRating();
 
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
 
-		// get chart data
-		this.getChartData();
 
 	},
 	mounted() {
@@ -203,8 +201,13 @@ export default {
 		imperialLabels: function(){
 
 			return this.food_ingredients.map((ingredient) => {
-			
-				return ingredient.mass + "oz " + ingredient.ingredient.name;
+				if(Math.round(ingredient.mass / 16) === 0){
+					return ingredient.mass + " oz " + ingredient.ingredient.name;
+				}
+				else{
+					return Math.round(ingredient.mass / 16) + 'lb ' + Math.round(ingredient.mass % 16)+ " oz " + ingredient.ingredient.name;
+				}
+
 			});
 		},
 
@@ -213,7 +216,7 @@ export default {
 
 		// get array of ingredients
 		getQueryStringVariables(){
-			this.isImperial  =  this.$route.query.isImperial;
+			this.isImperial  = ( this.$route.query.isImperial === 'true') ? true : false;
 			this.ingredient1 = parseInt(this.$route.query.i1);
 			this.ingredient2 = parseInt(this.$route.query.i2);
 			this.ingredient3 = parseInt(this.$route.query.i3);
@@ -319,16 +322,29 @@ export default {
 		},
 
 		// get chart data
-		getChartData(){
+		getAverageCarbon(){
 			this.mealName = "My dish";
 			this.totalCarbon = 0;
 			this.food_ingredients.forEach((i) => {
-			
 				this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
 			});
-			this.totalCarbon = this.totalCarbon.toFixed(2);
-			this.averageCarbon = Math.round(this.totalCarbon * 1000 *100 / this.totalMassInGrams) /100;
 
+			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) /100;
+
+			if(this.isImperial === false){
+				this.totalCarbonDisplay = this.totalCarbon.toFixed(2) + " kg";
+			}
+			else{
+				this.totalCarbonOunces = Math.round(this.totalCarbon * 1000 * 100 * 0.035274 ) / 100;
+				console.log(this.totalCarbonOunces);
+				console.log(this.totalCarbonOunces / 16);
+				if(Math.round(this.totalCarbonOunces / 16)  === 0){
+					this.totalCarbonDisplay =  this.totalCarbonOunces + " ozs";
+				}
+				else{
+					this.totalCarbonDisplay = Math.round(this.totalCarbonOunces / 16) + " lbs" +  Math.round(this.totalCarbonOunces % 16) + " ozs";
+				}
+			}
 		
 		},
 
@@ -361,6 +377,7 @@ export default {
 			context.clearRect(0, 0, ctx.width, ctx.height);
   
 			var labels1 = [];
+			console.log(this.isImperial);
 			if( this.isImperial === true){
 				console.log('is ium');
 					labels1 = this.imperialLabels;

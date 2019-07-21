@@ -70718,11 +70718,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -70766,14 +70761,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		console.log('created results');
 		var id = parseInt(this.$route.query.id);
 		this.isImperial = this.$route.query.isImperial;
-		console.log(this.$route.query.isImperial);
-		console.log(this.isImperial);
+
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
-		console.log('hi');
+
 		this.meal = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.filter(this.$store.getters.getMealsWithIngredients, { 'id': id })[0];
 		console.log(this.meal);
+
 		// get chart data
 		this.getChartData();
 	},
@@ -70923,7 +70918,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   * handle resize
   */
 		handleResize: function handleResize() {
+
+			// define width of window
 			this.windowWidth = window.innerWidth;
+
 			if (this.windowWidth > this.maxChartSize) {
 				this.chartSize = this.maxChartSize;
 				this.containerSize = this.maxChartSize;
@@ -70936,7 +70934,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				document.getElementById('container').style.width = this.containerSize + 'px';
 			}
 			this.container3Height = this.chartSize + 230;
-			console.log(this.container3Height);
+
 			document.getElementById('more-info-popup').style.height = this.container3Height + "px";
 			var marginLeft = this.windowWidth / 2 - (this.containerSize + this.containerPadding) / 2 + 'px';
 			document.getElementById('container').style.marginLeft = marginLeft;
@@ -114040,15 +114038,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		this.getIngredientsMasses();
 		this.getMealIngredients();
 		this.getTotalMassInGrams();
-		this.getChartData();
+		this.getAverageCarbon();
 		this.getRating();
 
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
 		document.body.style.backgroundColor = "#FFFFFF";
-
-		// get chart data
-		this.getChartData();
 	},
 	mounted: function mounted() {
 		console.log('mounted');
@@ -114084,8 +114079,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		imperialLabels: function imperialLabels() {
 
 			return this.food_ingredients.map(function (ingredient) {
-
-				return ingredient.mass + "oz " + ingredient.ingredient.name;
+				if (Math.round(ingredient.mass / 16) === 0) {
+					return ingredient.mass + " oz " + ingredient.ingredient.name;
+				} else {
+					return Math.round(ingredient.mass / 16) + 'lb ' + Math.round(ingredient.mass % 16) + " oz " + ingredient.ingredient.name;
+				}
 			});
 		}
 
@@ -114094,7 +114092,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		// get array of ingredients
 		getQueryStringVariables: function getQueryStringVariables() {
-			this.isImperial = this.$route.query.isImperial;
+			this.isImperial = this.$route.query.isImperial === 'true' ? true : false;
 			this.ingredient1 = parseInt(this.$route.query.i1);
 			this.ingredient2 = parseInt(this.$route.query.i2);
 			this.ingredient3 = parseInt(this.$route.query.i3);
@@ -114238,17 +114236,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 		// get chart data
-		getChartData: function getChartData() {
+		getAverageCarbon: function getAverageCarbon() {
 			var _this2 = this;
 
 			this.mealName = "My dish";
 			this.totalCarbon = 0;
 			this.food_ingredients.forEach(function (i) {
-
 				_this2.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
 			});
-			this.totalCarbon = this.totalCarbon.toFixed(2);
+
 			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) / 100;
+
+			if (this.isImperial === false) {
+				this.totalCarbonDisplay = this.totalCarbon.toFixed(2) + " kg";
+			} else {
+				this.totalCarbonOunces = Math.round(this.totalCarbon * 1000 * 100 * 0.035274) / 100;
+				console.log(this.totalCarbonOunces);
+				console.log(this.totalCarbonOunces / 16);
+				if (Math.round(this.totalCarbonOunces / 16) === 0) {
+					this.totalCarbonDisplay = this.totalCarbonOunces + " ozs";
+				} else {
+					this.totalCarbonDisplay = Math.round(this.totalCarbonOunces / 16) + " lbs" + Math.round(this.totalCarbonOunces % 16) + " ozs";
+				}
+			}
 		},
 
 
@@ -114284,6 +114294,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			context.clearRect(0, 0, ctx.width, ctx.height);
 
 			var labels1 = [];
+			console.log(this.isImperial);
 			if (this.isImperial === true) {
 				console.log('is ium');
 				labels1 = this.imperialLabels;
@@ -114428,7 +114439,7 @@ var render = function() {
               _vm._v(" "),
               _c("v-flex", { attrs: { xs6: "" } }, [
                 _c("div", { style: _vm.valueStyle }, [
-                  _vm._v(" " + _vm._s(_vm.totalCarbon))
+                  _vm._v(" " + _vm._s(_vm.totalCarbonDisplay))
                 ])
               ])
             ],
@@ -114445,9 +114456,9 @@ var render = function() {
               _vm._v(" "),
               _c("v-flex", { attrs: { xs6: "" } }, [
                 _c("div", { style: _vm.unitStyle }, [
-                  _vm._v("total kg of CO"),
+                  _vm._v("CO"),
                   _c("sub", [_vm._v("2")]),
-                  _vm._v("e")
+                  _vm._v("e emissions")
                 ])
               ])
             ],
