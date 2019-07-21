@@ -34,8 +34,8 @@
              * set photo values in vue-store
              */
             setStoreValues(){
-                console.log(this.composer.meals_with_ingredients );
-                this.$store.commit( 'food_ingredients' );
+                this.$store.commit( 'green_ratings', [17, 10, 5, 2.5, 1.5 ]);
+                this.$store.commit( 'food_ingredients', this.composer.food_ingredients );
                 this.$store.commit( 'meals', this.composer.meals );
                 this.$store.commit( 'meals_with_ingredients', this.composer.meals_with_ingredients );
             },

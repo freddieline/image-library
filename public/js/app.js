@@ -48990,8 +48990,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_material_design_icons_iconfont_dist_material_design_icons_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_CustomResults_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_CustomResults_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_CustomResults_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_material_design_icons_iconfont_dist_material_design_icons_css__);
 /**
  * First, we will load all of this project's Javascript utilities and other
  * dependencies. Then, we will be ready to develop a robust and powerful
@@ -49000,6 +49002,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(150);
 
 // index.js or main.js
+
 
 
 
@@ -49024,7 +49027,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('app', __WEBPACK_IMPORTED_MODULE_4__App_vue___default.a);
 
-var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-dishes', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default.a }, { path: '/make-a-dish', component: __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue___default.a }];
+var routes = [{ path: '/results', component: __WEBPACK_IMPORTED_MODULE_6__components_Results_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_Menu_vue___default.a }, { path: '/search-dishes', component: __WEBPACK_IMPORTED_MODULE_8__components_SearchDishes_vue___default.a }, { path: '/make-a-dish', component: __WEBPACK_IMPORTED_MODULE_9__components_MakeADish_vue___default.a }, { path: '/custom-results', component: __WEBPACK_IMPORTED_MODULE_10__components_CustomResults_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     routes: routes // short for `routes: routes
@@ -49034,7 +49037,8 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
     state: {
         meals: [],
         food_ingredients: [],
-        meals_with_ingredients: []
+        meals_with_ingredients: [],
+        green_ratings: []
 
     },
     mutations: {
@@ -49046,6 +49050,9 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
         },
         meals_with_ingredients: function meals_with_ingredients(state, payload) {
             state.meals_with_ingredients = payload;
+        },
+        green_ratings: function green_ratings(state, payload) {
+            state.green_ratings = payload;
         }
     },
     getters: {
@@ -49057,6 +49064,9 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
         },
         getMealsWithIngredients: function getMealsWithIngredients(state) {
             return state.meals_with_ingredients;
+        },
+        getGreenRatings: function getGreenRatings(state) {
+            return state.green_ratings;
         }
     }
 });
@@ -70574,8 +70584,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * set photo values in vue-store
          */
         setStoreValues: function setStoreValues() {
-            console.log(this.composer.meals_with_ingredients);
-            this.$store.commit('food_ingredients');
+            this.$store.commit('green_ratings', [17, 10, 5, 2.5, 1.5]);
+            this.$store.commit('food_ingredients', this.composer.food_ingredients);
             this.$store.commit('meals', this.composer.meals);
             this.$store.commit('meals_with_ingredients', this.composer.meals_with_ingredients);
         }
@@ -113147,6 +113157,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'SearchMakeARecipe',
@@ -113158,25 +113191,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			imperial: false,
 			checkboxStyle: "margin-top:5px;",
 			buttonStyle: "margin-top:20px;" + "text-transform:lowercase;",
-			placeholder: "Search dishes",
+			placeholder: "Search ingredients",
 			items: [],
 			search: null,
 			select: null,
-			dishItems: ["Caesar salad", "Vegan burger", "Beef burger", "Beef burger (UK produced)"],
-			slider: 45,
+			slider: 0,
 			sliderStyle: "margin-right:12px;",
 			valueStyle: "width:60px;" + "font-size:20px;",
-			unit: "oz",
+			unit: "g",
 			unitType: "Imperial",
 			dataTableStyle: "height:120px;" + "margin:30px;" + "overflow:scroll;",
 			columnStyle: "padding:0px;",
-			ingredients: [{ name: 'chicken', quantity: "20g" }, { name: 'lettuce', quantity: "8g" }, { name: 'anchovies', quantity: "8g" }, { name: 'croutons', quantity: "3g" }, { name: 'extra item', quantity: "2g" }]
+			selectedIngredients: [],
+			isImperial: false,
+			valid: true,
+			searchRules: [function (v) {
+				return !!v || 'An ingredient is required';
+			}],
+			massRules: [function (v) {
+				return v !== 0 || "Mass must not be zero";
+			}]
 		};
 	},
 	created: function created() {
 		document.body.style.backgroundColor = "#ffffff";
+		this.foodIngredients = this.$store.getters.getFoodIngredients;
+		console.log(this.foodIngredients);
+		if (this.isImperial === true) {
+			this.unit = "oz";
+		}
 	},
 
+	computed: {
+		dishItems: function dishItems() {
+			return this.foodIngredients.map(function (ingredient) {
+				return ingredient.name;
+			});
+		}
+	},
 	watch: {
 		search: function search(val) {
 			val && val !== this.select && this.querySelections(val);
@@ -113194,7 +113246,93 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		getIngredients: function getIngredients() {
 			var index = 4;
-			return this.ingredients.slice(0, index);
+			return this.selectedIngredients.slice(0, index);
+		},
+		getUnitText: function getUnitText() {
+			if (this.isImperial) {
+				this.unit = "oz";
+				return "Imperial";
+			} else {
+				this.unit = "g";
+				return "metric";
+			}
+		},
+		addIngredient: function addIngredient() {
+
+			// check that an ingredient has been selected and a mass given
+			this.$refs.form.validate();
+
+			// continue only if a meal is selected
+			if (this.$refs.form.validate()) {
+
+				console.log('valid');
+
+				// find meal id
+				this.foodIngredients.forEach(function (ingredient) {
+					if (ingredient.name === this.select) {
+						this.ingredientId = ingredient.id;
+					}
+				}.bind(this));
+
+				// find out whether ingredient exists already
+				this.ingredientExists = false;
+				this.selectedIngredients.forEach(function (ingredient) {
+					if (this.ingredientId === ingredient.id) {
+						this.ingredientExists = true;
+					}
+				}.bind(this));
+
+				// only add ingredient if it does not already exist
+				if (this.ingredientExists === false) {
+					console.log('exisit');
+					// add selected ingredient to ingredients
+					var unit = this.isImperial === false ? "g" : "oz";
+
+					// add selected ingredient to ingredients
+					var selectedIngredient = {
+						name: this.select,
+						quantity: this.slider,
+						unit: unit,
+						id: this.ingredientId
+					};
+
+					// add selected ingredient to ingredients
+					this.selectedIngredients.push(selectedIngredient);
+
+					// reset validation and reset form
+					this.$refs.form.resetValidation();
+				}
+			}
+
+			// remove ingredient from search
+			this.select = "";
+
+			// set slider to 0
+			this.slider = 0;
+		},
+		removeItem: function removeItem(id) {
+			this.selectedIngredients = this.selectedIngredients.filter(function (ingredient) {
+				if (ingredient.id !== id) {
+					return ingredient;
+				}
+			});
+		},
+		submitCustomDish: function submitCustomDish() {
+
+			this.$router.push({
+				path: 'custom-results',
+				query: {
+					isImperial: this.isImperial,
+					i1: this.selectedIngredients[0]['id'],
+					i2: this.selectedIngredients[1] ? this.selectedIngredients[1]['id'] : 0,
+					i3: this.selectedIngredients[2] ? this.selectedIngredients[2]['id'] : 0,
+					i4: this.selectedIngredients[3] ? this.selectedIngredients[3]['id'] : 0,
+					m1: this.selectedIngredients[0] ? this.selectedIngredients[0]['quantity'] : 0,
+					m2: this.selectedIngredients[1] ? this.selectedIngredients[1]['quantity'] : 0,
+					m3: this.selectedIngredients[2] ? this.selectedIngredients[2]['quantity'] : 0,
+					m4: this.selectedIngredients[3] ? this.selectedIngredients[3]['quantity'] : 0
+				}
+			});
 		}
 	}
 });
@@ -113212,172 +113350,118 @@ var render = function() {
     { style: _vm.containerStyle },
     [
       _c(
-        "v-layout",
-        { attrs: { column: "" } },
+        "v-form",
+        {
+          ref: "form",
+          attrs: { "flex-start": "", "lazy-validation": "" },
+          model: {
+            value: _vm.valid,
+            callback: function($$v) {
+              _vm.valid = $$v
+            },
+            expression: "valid"
+          }
+        },
         [
           _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
-              _c("h1", [_vm._v("Make a dish")]),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                {
-                  attrs: {
-                    column: "",
-                    "align-center": "",
-                    "justify-center": ""
-                  }
-                },
-                [
-                  _c("v-autocomplete", {
-                    style: _vm.searchBoxStyle,
-                    attrs: {
-                      "allow-overflow": false,
-                      items: _vm.items,
-                      "append-icon": "undefined",
-                      "append-outer-icon": "search",
-                      flat: "",
-                      placeholder: "Search dishes",
-                      "hide-no-data": "",
-                      "cache-items": "",
-                      "search-input": _vm.search
-                    },
-                    on: {
-                      "update:searchInput": function($event) {
-                        _vm.search = $event
-                      },
-                      "update:search-input": function($event) {
-                        _vm.search = $event
-                      }
-                    },
-                    model: {
-                      value: _vm.select,
-                      callback: function($$v) {
-                        _vm.select = $$v
-                      },
-                      expression: "select"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
+            "v-layout",
+            { attrs: { column: "" } },
             [
               _c(
-                "v-layout",
-                {
-                  attrs: {
-                    column: "",
-                    "align-center": "",
-                    "justify-center": ""
-                  }
-                },
+                "v-flex",
+                { attrs: { xs12: "" } },
                 [
+                  _c("h1", [_vm._v("Design a dish")]),
+                  _vm._v(" "),
                   _c(
                     "v-layout",
                     {
-                      staticStyle: { width: "80%" },
                       attrs: {
-                        row: "",
+                        column: "",
                         "align-center": "",
                         "justify-center": ""
                       }
                     },
                     [
-                      _c("v-slider", {
-                        style: _vm.sliderStyle,
-                        model: {
-                          value: _vm.slider,
-                          callback: function($$v) {
-                            _vm.slider = $$v
+                      _c("v-autocomplete", {
+                        style: _vm.searchBoxStyle,
+                        attrs: {
+                          "allow-overflow": false,
+                          items: _vm.items,
+                          "append-icon": "undefined",
+                          "append-outer-icon": "search",
+                          flat: "",
+                          placeholder: _vm.placeholder,
+                          "hide-no-data": "",
+                          "cache-items": "",
+                          "search-input": _vm.search,
+                          rules: _vm.searchRules
+                        },
+                        on: {
+                          "update:searchInput": function($event) {
+                            _vm.search = $event
                           },
-                          expression: "slider"
+                          "update:search-input": function($event) {
+                            _vm.search = $event
+                          }
+                        },
+                        model: {
+                          value: _vm.select,
+                          callback: function($$v) {
+                            _vm.select = $$v
+                          },
+                          expression: "select"
                         }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { style: _vm.valueStyle }, [
-                        _vm._v(
-                          " " + _vm._s(_vm.slider) + " " + _vm._s(_vm.unit)
-                        )
-                      ])
+                      })
                     ],
                     1
                   )
                 ],
                 1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
+              ),
+              _vm._v(" "),
               _c(
-                "v-layout",
-                {
-                  attrs: { column: "", "align-center": "", "fill-height": "" }
-                },
+                "v-flex",
+                { attrs: { xs12: "" } },
                 [
                   _c(
                     "v-layout",
                     {
-                      staticStyle: { width: "80%" },
                       attrs: {
-                        row: "",
+                        column: "",
                         "align-center": "",
-                        "justify-space-around": ""
+                        "justify-center": ""
                       }
                     },
                     [
                       _c(
-                        "v-flex",
-                        { attrs: { xs6: "" } },
+                        "v-layout",
+                        {
+                          staticStyle: { width: "80%" },
+                          attrs: {
+                            row: "",
+                            "align-center": "",
+                            "justify-center": ""
+                          }
+                        },
                         [
-                          _c("v-switch", {
-                            attrs: { color: "primary", label: _vm.unitType }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs6: "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            { attrs: { row: "", "justify-end": "" } },
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  attrs: {
-                                    small: "",
-                                    fab: "",
-                                    dark: "",
-                                    color: "primary"
-                                  }
-                                },
-                                [
-                                  _c("v-icon", { attrs: { dark: "" } }, [
-                                    _vm._v("add")
-                                  ])
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
+                          _c("v-slider", {
+                            style: _vm.sliderStyle,
+                            attrs: { rules: _vm.massRules },
+                            model: {
+                              value: _vm.slider,
+                              callback: function($$v) {
+                                _vm.slider = $$v
+                              },
+                              expression: "slider"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { style: _vm.valueStyle }, [
+                            _vm._v(
+                              " " + _vm._s(_vm.slider) + " " + _vm._s(_vm.unit)
+                            )
+                          ])
                         ],
                         1
                       )
@@ -113386,95 +113470,213 @@ var render = function() {
                   )
                 ],
                 1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
-              _c("v-layout", { attrs: { column: "", "align-center": "" } }, [
-                _c(
-                  "div",
-                  { style: _vm.dataTableStyle },
-                  [
-                    _c("v-data-table", {
-                      attrs: {
-                        id: "ingredients",
-                        light: "",
-                        "hide-actions": "",
-                        "hide-headers": "",
-                        items: _vm.getIngredients()
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "items",
-                          fn: function(props) {
-                            return [
-                              _c("tr", [
-                                _c(
-                                  "td",
-                                  {
-                                    style: _vm.columnStyle,
-                                    attrs: { width: "200" }
-                                  },
-                                  [_vm._v(_vm._s(props.item.name))]
-                                ),
-                                _vm._v(" "),
-                                _c("td", { style: _vm.columnStyle }, [
-                                  _vm._v(_vm._s(props.item.quantity))
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  [
-                                    _c(
-                                      "v-icon",
-                                      { attrs: { color: "primary" } },
-                                      [_vm._v("remove")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ])
-                            ]
-                          }
-                        }
-                      ])
-                    })
-                  ],
-                  1
-                )
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
+              ),
+              _vm._v(" "),
               _c(
-                "v-layout",
-                {
-                  attrs: { row: "", "align-center": "", "justify-center": "" }
-                },
+                "v-flex",
+                { attrs: { xs12: "" } },
                 [
                   _c(
-                    "v-btn",
+                    "v-layout",
                     {
-                      style: _vm.buttonStyle,
+                      attrs: { row: "", "align-center": "", "fill-height": "" }
+                    },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs6: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                small: "",
+                                fab: "",
+                                dark: "",
+                                color: "primary"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  attrs: { dark: "" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.addIngredient()
+                                    }
+                                  }
+                                },
+                                [_vm._v("add")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs6: "" } },
+                        [
+                          _c("v-switch", {
+                            style: _vm.checkboxStyle,
+                            attrs: {
+                              label: _vm.getUnitText(),
+                              color: "primary",
+                              small: ""
+                            },
+                            model: {
+                              value: _vm.isImperial,
+                              callback: function($$v) {
+                                _vm.isImperial = $$v
+                              },
+                              expression: "isImperial"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "" } },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { column: "", "align-center": "" } },
+                    [
+                      _c(
+                        "div",
+                        { style: _vm.dataTableStyle },
+                        [
+                          _c("v-data-table", {
+                            attrs: {
+                              id: "ingredients",
+                              light: "",
+                              "hide-actions": "",
+                              "hide-headers": "",
+                              items: _vm.getIngredients()
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "items",
+                                fn: function(props) {
+                                  return [
+                                    _c("tr", [
+                                      _c(
+                                        "td",
+                                        {
+                                          style: _vm.columnStyle,
+                                          attrs: { width: "200" }
+                                        },
+                                        [_vm._v(_vm._s(props.item.name))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          style: _vm.columnStyle,
+                                          attrs: { width: "70" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(props.item.quantity) +
+                                              " " +
+                                              _vm._s(_vm.unit)
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        [
+                                          _c(
+                                            "v-icon",
+                                            {
+                                              attrs: { color: "primary" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.removeItem(
+                                                    props.item.id
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("remove")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ])
+                                  ]
+                                }
+                              },
+                              {
+                                key: "no-data",
+                                fn: function() {
+                                  return [
+                                    _c(
+                                      "div",
+                                      { staticStyle: { color: "#999" } },
+                                      [_vm._v("Add ingredients")]
+                                    )
+                                  ]
+                                },
+                                proxy: true
+                              }
+                            ])
+                          })
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "" } },
+                [
+                  _c(
+                    "v-layout",
+                    {
                       attrs: {
-                        to: "/results",
-                        outline: "",
-                        large: "",
-                        round: "",
-                        color: "primary"
+                        row: "",
+                        "align-center": "",
+                        "justify-center": ""
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\tcarbon check\n\t\t\t\t\t")]
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          style: _vm.buttonStyle,
+                          attrs: {
+                            outline: "",
+                            large: "",
+                            round: "",
+                            color: "primary"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.submitCustomDish()
+                            }
+                          }
+                        },
+                        [_vm._v("\n\t\t\t\t\tcarbon check\n\t\t\t\t\t")]
+                      )
+                    ],
+                    1
                   )
                 ],
                 1
@@ -113596,6 +113798,981 @@ module.exports = "/fonts/vendor/material-design-icons-icondist/MaterialIcons-Reg
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 213 */,
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(215)
+}
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(217)
+/* template */
+var __vue_template__ = __webpack_require__(218)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-a0b077c4"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/CustomResults.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a0b077c4", Component.options)
+  } else {
+    hotAPI.reload("data-v-a0b077c4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(216);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("6b282f28", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a0b077c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CustomResults.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a0b077c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CustomResults.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-a0b077c4]{   -webkit-box-sizing: border-box;   box-sizing: border-box;\n}\nbody[data-v-a0b077c4]{  \n\n  margin: 0px;\n  padding: 0px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 217 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	name: 'Results',
+	props: {
+		msg: String
+	},
+	data: function data() {
+		return {
+			showData: false,
+			chartSize: 0,
+			maxChartSize: 600,
+			chartMargin: 0,
+			windowWidth: 0,
+			containerPadding: 12,
+			containerStyle: "padding:26px 14px 0 14px;" + "margin-right:0px;",
+			container2Style: "margin-top:28px;" + "padding-bottom:50px;",
+			container3Style: "z-index:1;" + "text-align:center;" + "position:absolute;" + "left:0px;" + "top:0px;" + "background-color:#ffffff;" + "padding:20px;" + "width:100%;",
+			container3Height: 600,
+			valueStyle: "text-align:center;" + "fontSize:3em;" + "font-weight:200;" + "line-height:1.5em;",
+			unitStyle: "text-align:center;" + "fontSize:17px;",
+			dataStyle: "font-weight:700;" + "text-align:left;" + "width:100%;" + "font-size:15px;",
+			data2Style: "text-align:left;" + "font-size:15px;" + "width:100%;",
+			sourceStyle: "padding:8px 22px 8px 22px;" + "height:100%;" + "font-size:13px;" + "clear:both;" + "background-color:#fafafa;",
+			container4Style: "margin-top:40px;",
+			valueTitleStyle: "fontSize:18px",
+			chart: "margin-top:0px;" + "margin-bottom:30px;",
+			accuracyStyle: "fontSize:14px;",
+			leftColumn: "width:50%;",
+			rightColumn: "width:50%;" + "text-align:right;",
+			mealName: "",
+			totalCarbon: 0
+		};
+	},
+	created: function created() {
+		console.log('created custom results');
+
+		// get query string variables
+		this.getQueryStringVariables();
+		this.getIngredientsMasses();
+		this.getMealIngredients();
+		this.getTotalMassInGrams();
+		this.getChartData();
+		this.getRating();
+
+		//get meal info
+		window.addEventListener('resize', this.handleResize);
+		document.body.style.backgroundColor = "#FFFFFF";
+
+		// get chart data
+		this.getChartData();
+	},
+	mounted: function mounted() {
+		console.log('mounted');
+		this.handleResize();
+		this.createChart();
+	},
+
+	computed: {
+		ingredientsSources: function ingredientsSources() {
+			return this.food_ingredients.map(function (ingredient) {
+				return {
+					name: ingredient.ingredient.name,
+					value: ingredient.ingredient.average_kgCO2e_per_kg_food,
+					sd: Math.round(ingredient.ingredient.standard_deviation * 100 * 100 / ingredient.ingredient.average_kgCO2e_per_kg_food) / 100,
+					food_sources: ingredient.ingredient.food_sources
+				};
+			});
+		},
+		ingredientsCarbon: function ingredientsCarbon() {
+
+			return this.food_ingredients.map(function (i) {
+
+				return Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
+			});
+		},
+		metricLabels: function metricLabels() {
+
+			return this.food_ingredients.map(function (ingredient) {
+
+				return ingredient.mass + "g " + ingredient.ingredient.name;
+			});
+		},
+		imperialLabels: function imperialLabels() {
+
+			return this.food_ingredients.map(function (ingredient) {
+
+				return ingredient.mass + "oz " + ingredient.ingredient.name;
+			});
+		}
+
+	},
+	methods: {
+
+		// get array of ingredients
+		getQueryStringVariables: function getQueryStringVariables() {
+			this.isImperial = this.$route.query.isImperial;
+			this.ingredient1 = parseInt(this.$route.query.i1);
+			this.ingredient2 = parseInt(this.$route.query.i2);
+			this.ingredient3 = parseInt(this.$route.query.i3);
+			this.ingredient4 = parseInt(this.$route.query.i4);
+			this.mass1 = parseInt(this.$route.query.m1);
+			this.mass2 = parseInt(this.$route.query.m2);
+			this.mass3 = parseInt(this.$route.query.m3);
+			this.mass4 = parseInt(this.$route.query.m4);
+		},
+		getRating: function getRating() {
+			this.rating = 5;
+			var count = 0;
+
+			this.greenRatings = this.$store.getters.getGreenRatings;
+			console.log(this.greenRatings);
+			console.log(this.averageCarbon);
+
+			if (this.averageCarbon > this.greenRatings[0]) {
+				this.rating = 0;
+			} else if (this.greenRatings[0] > this.averageCarbon && this.averageCarbon > this.greenRatings[1]) {
+				this.rating = 1;
+			} else if (this.greenRatings[1] > this.averageCarbon && this.averageCarbon > this.greenRatings[2]) {
+				this.rating = 2;
+			} else if (this.greenRatings[2] > this.averageCarbon && this.averageCarbon > this.greenRatings[3]) {
+				this.rating = 3;
+			} else if (this.greenRatings[3] > this.averageCarbon && this.averageCarbon > this.greenRatings[4]) {
+				this.rating = 4;
+			} else {
+				this.rating = 5;
+			}
+			console.log(this.rating);
+		},
+
+
+		// get total mass in grams
+		getTotalMassInGrams: function getTotalMassInGrams() {
+
+			this.totalMassInGrams = 0;
+			if (this.isImperial === true) {
+				this.ingredientsMasses.forEach(function (im) {
+					this.totalMassInGrams += im.mass / 0.035274;
+				}.bind(this));
+			} else {
+				this.ingredientsMasses.forEach(function (im) {
+					this.totalMassInGrams += im.mass;
+				}.bind(this));
+			}
+			this.totalMassInGrams = Math.round(this.totalMassInGrams);
+			console.log(this.totalMassInGrams);
+		},
+
+
+		// get array of ingredients
+		getIngredientsMasses: function getIngredientsMasses() {
+			this.ingredientsMasses = [];
+			if (this.ingredient1 !== 0) {
+				this.ingredientsMasses.push({ id: this.ingredient1, mass: this.mass1 });
+			}
+			if (this.ingredient2 !== 0) {
+				this.ingredientsMasses.push({ id: this.ingredient2, mass: this.mass2 });
+			}
+			if (this.ingredient3 !== 0) {
+				this.ingredientsMasses.push({ id: this.ingredient3, mass: this.mass3 });
+			}
+			if (this.ingredient4 !== 0) {
+				this.ingredientsMasses.push({ id: this.ingredient4, mass: this.mass4 });
+			}
+			console.log(this.ingredientsMasses);
+		},
+
+
+		// get array of ingredients
+		getMealIngredients: function getMealIngredients() {
+			var _this = this;
+
+			this.food_ingredients = this.$store.getters.getFoodIngredients.filter(function (i) {
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+
+				try {
+					for (var _iterator = _this.ingredientsMasses[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var ingredientMass = _step.value;
+
+						if (ingredientMass.id === i.id) {
+							return {
+								mass: ingredientMass.mass,
+								ingredient: i
+							};
+						}
+					}
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion && _iterator.return) {
+							_iterator.return();
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError;
+						}
+					}
+				}
+			});
+			this.food_ingredients = [];
+			this.$store.getters.getFoodIngredients.forEach(function (i) {
+				var _iteratorNormalCompletion2 = true;
+				var _didIteratorError2 = false;
+				var _iteratorError2 = undefined;
+
+				try {
+					for (var _iterator2 = this.ingredientsMasses[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+						var ingredientMass = _step2.value;
+
+						if (ingredientMass.id === i.id) {
+							this.food_ingredients.push({
+								mass: ingredientMass.mass,
+								ingredient: i
+							});
+						}
+					}
+				} catch (err) {
+					_didIteratorError2 = true;
+					_iteratorError2 = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion2 && _iterator2.return) {
+							_iterator2.return();
+						}
+					} finally {
+						if (_didIteratorError2) {
+							throw _iteratorError2;
+						}
+					}
+				}
+			}.bind(this));
+			console.log(this.food_ingredients);
+		},
+
+
+		// get chart data
+		getChartData: function getChartData() {
+			var _this2 = this;
+
+			this.mealName = "My dish";
+			this.totalCarbon = 0;
+			this.food_ingredients.forEach(function (i) {
+
+				_this2.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
+			});
+			this.totalCarbon = this.totalCarbon.toFixed(2);
+			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) / 100;
+		},
+
+
+		// close more info
+		close: function close() {
+			this.showData = false;
+		},
+
+
+		// open more info
+		open: function open() {
+			console.log('open');
+			this.showData = true;
+		},
+
+
+		// navigate to home
+		toHome: function toHome() {
+			this.$router.push('/');
+		},
+
+
+		// create chart
+		createChart: function createChart() {
+
+			var ctx = document.getElementById('myChart');
+			if (this.myDoughnutChart != null) {
+
+				this.myDoughnutChart.destroy();
+			}
+
+			var context = ctx.getContext('2d');
+			context.clearRect(0, 0, ctx.width, ctx.height);
+
+			var labels1 = [];
+			if (this.isImperial === true) {
+				console.log('is ium');
+				labels1 = this.imperialLabels;
+			} else {
+				labels1 = this.metricLabels;
+			}
+			var data = {
+
+				datasets: [{
+					label: 'CO2e',
+					data: this.ingredientsCarbon,
+					backgroundColor: ['#fdd378', '#b9a2ff', '#ff93f9', "#7000bb"]
+				}],
+
+				// These labels appear in the legend and in the tooltips when hovering different arcs
+				labels: labels1
+			};
+			// And for a doughnut chart
+			this.myDoughnutChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
+				type: 'doughnut',
+				data: data,
+				options: {
+					legend: {
+						labels: {
+							padding: 10,
+							fontSize: 14,
+							fontColor: "#434343"
+						},
+						position: 'left',
+						usePointStyle: true
+
+					},
+					layout: {
+						padding: {
+							left: 0,
+							right: 0,
+							top: 0,
+							bottom: 0
+						}
+					},
+					animation: {
+						animateScale: true
+					},
+					cutoutPercentage: 50,
+					tooltips: {
+						xPadding: 10,
+						yPadding: 10,
+						//backgroundColor: 'rgba(54, 68, 77, 0.95)',
+						callbacks: {
+							title: function title(tooltipItem, data) {
+								return [data.labels[tooltipItem[0].index]];
+							},
+							label: function label(tooltipItem, data) {
+								return [" " + data.datasets[0].data[tooltipItem.index] + " kg CO2e"];
+							}
+						}
+					}
+				}
+			});
+			this.myDoughnutChart.canvas.parentNode.style.width = this.chartSize + 'px';
+		},
+
+
+		/**
+  * handle resize
+  */
+		handleResize: function handleResize() {
+			this.windowWidth = window.innerWidth;
+			if (this.windowWidth > this.maxChartSize) {
+				this.chartSize = this.maxChartSize;
+				this.containerSize = this.maxChartSize;
+				document.getElementById('chart-container').style.width = this.chartSize + 'px';
+				document.getElementById('container').style.width = this.chartSize + 'px';
+			} else {
+				this.chartSize = this.windowWidth - 50;
+				this.containerSize = this.windowWidth - 25;
+				document.getElementById('chart-container').style.width = this.chartSize + 'px';
+				document.getElementById('container').style.width = this.containerSize + 'px';
+			}
+			this.container3Height = this.chartSize + 230;
+			console.log(this.container3Height);
+			document.getElementById('more-info-popup').style.height = this.container3Height + "px";
+			var marginLeft = this.windowWidth / 2 - (this.containerSize + this.containerPadding) / 2 + 'px';
+			document.getElementById('container').style.marginLeft = marginLeft;
+		},
+
+
+		/**
+  * handle resize
+  */
+		destroyed: function destroyed() {
+			window.removeEventListener('resize', this.handleResize);
+		}
+	}
+
+});
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { style: _vm.containerStyle, attrs: { id: "container" } }, [
+      _c("h1", [_vm._v(_vm._s(_vm.mealName))]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { style: _vm.container2Style },
+        [
+          _c(
+            "v-layout",
+            { attrs: { "flex-start": "", row: "", "fill-height": "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs6: "" } },
+                [
+                  _c("v-rating", {
+                    staticStyle: { "margin-top": "20px" },
+                    attrs: {
+                      readonly: "",
+                      size: "20",
+                      "background-color": "#fcba03",
+                      color: "#fcba03",
+                      dense: ""
+                    },
+                    model: {
+                      value: _vm.rating,
+                      callback: function($$v) {
+                        _vm.rating = $$v
+                      },
+                      expression: "rating"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { style: _vm.valueStyle }, [
+                  _vm._v(" " + _vm._s(_vm.totalCarbon))
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { "flex-start": "", row: "", "fill-height": "" } },
+            [
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { style: _vm.unitStyle }, [_vm._v("green rating")])
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { style: _vm.unitStyle }, [
+                  _vm._v("total kg of CO"),
+                  _c("sub", [_vm._v("2")]),
+                  _vm._v("e")
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "chart-container" } }, [
+        _c("canvas", { style: _vm.chart, attrs: { id: "myChart" } })
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: this.showData,
+              expression: "this.showData"
+            }
+          ],
+          style: _vm.container3Style,
+          attrs: { id: "more-info-popup" }
+        },
+        [
+          _c(
+            "v-icon",
+            {
+              staticStyle: { float: "right" },
+              attrs: { color: "primary", large: "" },
+              on: {
+                click: function($event) {
+                  return _vm.close()
+                }
+              }
+            },
+            [_vm._v("clear")]
+          ),
+          _vm._v(" "),
+          _c("h1", [_vm._v("More info")]),
+          _vm._v(" "),
+          _c("div", { staticStyle: { padding: "12px 24px" } }, [
+            _c("div", { style: _vm.data2Style }, [
+              _vm._v("Total kg CO"),
+              _c("sub", [_vm._v("2")]),
+              _vm._v("e: " + _vm._s(_vm.totalCarbon))
+            ]),
+            _vm._v(" "),
+            _c("div", { style: _vm.data2Style }, [
+              _vm._v("Average kg CO"),
+              _c("sub", [_vm._v("2")]),
+              _vm._v("e per kg: " + _vm._s(_vm.averageCarbon))
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticStyle: { "box-shadow": "none" } },
+            _vm._l(this.ingredientsSources, function(item, i) {
+              return _c(
+                "v-expansion-panel-content",
+                {
+                  key: i,
+                  staticStyle: {
+                    "background-color": "transparent",
+                    border: "none",
+                    "font-size": "15px"
+                  },
+                  attrs: { color: "primary" },
+                  scopedSlots: _vm._u(
+                    [
+                      {
+                        key: "header",
+                        fn: function() {
+                          return [
+                            _c(
+                              "v-layout",
+                              {
+                                attrs: {
+                                  "flex-start": "",
+                                  column: "",
+                                  "fill-height": ""
+                                }
+                              },
+                              [
+                                _c("v-flex", { style: _vm.dataStyle }, [
+                                  _vm._v(_vm._s(item.name))
+                                ]),
+                                _vm._v(" "),
+                                _c("v-flex", { style: _vm.data2Style }, [
+                                  _vm._v(_vm._s(item.value) + " CO"),
+                                  _c("sub", [_vm._v("2")]),
+                                  _vm._v("e per kg ± " + _vm._s(item.sd) + "%")
+                                ])
+                              ],
+                              1
+                            )
+                          ]
+                        },
+                        proxy: true
+                      }
+                    ],
+                    null,
+                    true
+                  )
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-icon",
+                    {
+                      attrs: { slot: "actions", color: "primary" },
+                      slot: "actions"
+                    },
+                    [_vm._v("$vuetify.icons.expand")]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(item["food_sources"], function(it) {
+                    return _c(
+                      "div",
+                      { style: _vm.sourceStyle },
+                      [
+                        [
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "flex-start": "",
+                                row: "",
+                                "fill-height": ""
+                              }
+                            },
+                            [
+                              _c("v-flex", { style: _vm.leftColumn }, [
+                                _vm._v("Food:")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-flex", { style: _vm.rightColumn }, [
+                                _vm._v(" " + _vm._s(it.food) + " ")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "flex-start": "",
+                                row: "",
+                                "fill-height": ""
+                              }
+                            },
+                            [
+                              _c("v-flex", { style: _vm.leftColumn }, [
+                                _vm._v("Emission value:")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-flex", { style: _vm.rightColumn }, [
+                                _vm._v(
+                                  " " + _vm._s(it.kgCO2e_per_kg_food) + " C0"
+                                ),
+                                _c("sub", [_vm._v("2")]),
+                                _vm._v("e")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "flex-start": "",
+                                row: "",
+                                "fill-height": ""
+                              }
+                            },
+                            [
+                              _c("v-flex", { style: _vm.leftColumn }, [
+                                _vm._v("Title:")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-flex", { style: _vm.rightColumn }, [
+                                _vm._v(" " + _vm._s(it.source_title))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "flex-start": "",
+                                row: "",
+                                "fill-height": ""
+                              }
+                            },
+                            [
+                              _c("v-flex", { style: _vm.leftColumn }, [
+                                _vm._v("External reference:")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-flex", { style: _vm.rightColumn }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { target: "_blank", href: it.link }
+                                  },
+                                  [_vm._v(_vm._s(it.authors))]
+                                )
+                              ])
+                            ],
+                            1
+                          )
+                        ]
+                      ],
+                      2
+                    )
+                  })
+                ],
+                2
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { style: _vm.container4Style },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "" } },
+            [
+              _c(
+                "v-layout",
+                {
+                  attrs: {
+                    "justify-space-around": "",
+                    row: "",
+                    "fill-height": ""
+                  }
+                },
+                [
+                  _c(
+                    "v-flex",
+                    { staticStyle: { "align-content": "center" } },
+                    [
+                      _c(
+                        "v-icon",
+                        {
+                          attrs: { color: "primary", medium: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.toHome()
+                            }
+                          }
+                        },
+                        [_vm._v("keyboard_return")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { staticStyle: { "align-content": "center" } },
+                    [
+                      _c(
+                        "v-icon",
+                        { attrs: { color: "primary", medium: "" } },
+                        [_vm._v("share")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { staticStyle: { "align-content": "center" } },
+                    [
+                      _c(
+                        "v-icon",
+                        {
+                          attrs: { color: "primary", medium: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.open()
+                            }
+                          }
+                        },
+                        [_vm._v("more_horiz")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-a0b077c4", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

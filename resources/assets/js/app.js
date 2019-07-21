@@ -16,6 +16,7 @@ import Results from './components/Results.vue'
 import Menu from './components/Menu.vue'
 import SearchDishes from './components/SearchDishes.vue'
 import MakeADish from './components/MakeADish.vue'
+import CustomResults from './components/CustomResults.vue'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 
@@ -36,7 +37,8 @@ const routes = [
     { path: '/results', component: Results },
     { path: '/', component: Menu },
     { path: '/search-dishes', component: SearchDishes },
-    { path: '/make-a-dish', component: MakeADish }
+    { path: '/make-a-dish', component: MakeADish },
+    { path: '/custom-results', component: CustomResults }
 ]
 
 const router = new VueRouter({
@@ -48,6 +50,7 @@ const store = new Vuex.Store({
         meals: [],
         food_ingredients: [],
         meals_with_ingredients: [],
+        green_ratings: []
 
     },
     mutations: {
@@ -59,6 +62,9 @@ const store = new Vuex.Store({
         },
         meals_with_ingredients (state, payload){
             state.meals_with_ingredients = payload;
+        },
+        green_ratings (state, payload){
+            state.green_ratings = payload;
         }
 
     },
@@ -72,6 +78,9 @@ const store = new Vuex.Store({
             },
             getMealsWithIngredients(state){
                 return state.meals_with_ingredients;
+            },
+            getGreenRatings(state){
+                return state.green_ratings;
             }
         }
 });

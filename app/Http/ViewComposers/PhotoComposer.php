@@ -28,8 +28,15 @@ class PhotoComposer {
     {
 
         // get food_ingredients
-        $ingredients = FoodIngredients::all()->toArray();
-        $meals = Meals::all()->toArray();
+        $ingredients = FoodIngredients::
+            with('foodSources')
+            ->get()
+            ->toArray();
+        
+        // meals
+        $meals = Meals::
+            all()
+            ->toArray();
 
         // get meals_ingredients
         $mealsWithIngredients = Meals::
