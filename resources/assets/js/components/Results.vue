@@ -5,10 +5,23 @@
 
 		<h1>{{mealName}}</h1>
 		<div :style="container2Style">
-			<div :style="valueContainerStyle">
-				<div id="" :style="valueStyle"> {{totalCarbon}}</div>
-				<div :style="unitStyle">total kg of CO<sub>2</sub>e</div>
-			</div>
+			<v-layout flex-start row fill-height>
+				<v-flex xs6>
+					<v-rating readonly size="20" style="margin-top:10px;" background-color="#fcba03" color="#fcba03" dense
+						v-model="rating"></v-rating>
+				</v-flex>
+				<v-flex xs6>
+					<div :style="valueStyle">{{totalCarbonDisplay}}</div>
+				</v-flex >
+			</v-layout>
+			<v-layout flex-start row fill-height>
+				<v-flex xs6>
+					<div :style="unitStyle">green rating</div>
+				</v-flex>
+				<v-flex xs6>
+					<div :style="unitStyle">CO<sub>2</sub>e emissions</div>
+				</v-flex >
+			</v-layout>
 
 		</div>
 		<div id="chart-container">
@@ -16,15 +29,22 @@
 		</div>
 		<div :style="container3Style" id="more-info-popup" v-show="this.showData">
 			<v-icon @click="close()" style="float:right;" color="primary" large>clear</v-icon>
-			<h1>Ingredients info</h1>
+			<h1>More info</h1>
+				<div style="padding:12px 24px 0px 24px;">
+					<div :style="dataStyle">Summary:</div>
+					<div :style="data2Style"> {{totalCarbon}} kg CO<sub>2</sub>e emissions</div>
+					<div :style="data2Style">{{averageCarbon}} kg CO<sub>2</sub>e emissions per kg food </div>
+					<br/>
+					<div :style="dataStyle">Ingredients:</div>
+				</div>
 				<v-expansion-panel style="box-shadow:none;">
 					  <v-expansion-panel-content  color="primary"
 						v-for="(item,i) in this.ingredientsSources"
 						:key="i" style="background-color:transparent;border:none;font-size:15px;">
 						<template v-slot:header color="primary">
 							<v-layout flex-start column fill-height>
-						  		<v-flex :style="dataStyle">{{item.name}}</v-flex>
-								<v-flex :style="data2Style">Av. CO<sub>2</sub>e per kg: {{item.value}} &#177; {{item.sd}}&#37;</v-flex>
+						  		<v-flex :style="data2Style">{{item.name}}</v-flex>
+								<v-flex :style="data2Style">{{item.value}} CO<sub>2</sub>e per kg &#177; {{item.sd}}&#37;</v-flex>
 							</v-layout>
 						</template>
 						<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
@@ -93,9 +113,8 @@ export default {
 			containerPadding:   12,
 			containerStyle:     "padding:26px 14px 0 14px;"+
 								"margin-right:0px;",
-			container2Style:    "margin-top:28px;" +
-								"height:130px;" +
-								"padding-bottom:0px;",
+			container2Style:    "margin-top:40px;" +
+								"padding-bottom:60px;",
 			container3Style:    "z-index:1;"+
 								"text-align:center;"+
 								"position:absolute;"+
@@ -105,16 +124,20 @@ export default {
 								"padding:20px;" +
 								"width:100%;",             
 			container3Height:   600,
-			valueStyle:         "fontSize:4em;" +
+			valueStyle:         "text-align:center;"+
+								"fontSize:2.3em;" +
 								"font-weight:200;" +
 								"line-height:1.5em;",
-			unitStyle:          "fontSize:17px;" ,
-			dataStyle:          "font-weight:700;"+
+			unitStyle:          "text-align:center;"+ 
+								"fontSize:15px;" +
+								"color:#555;",
+			dataStyle:          "margin-bottom:8px;"+
 								"text-align:left;"+
 								"width:100%;" +
 								"font-size:15px;" ,
 			data2Style:          "text-align:left;"+
-								"font-size:15px;" ,
+								"font-style:italic;"+
+								"font-size:15px;",
 			sourceStyle:        "padding:8px 22px 8px 22px;" +
 								"height:100%;"+
 								"font-size:13px;"+
@@ -137,7 +160,7 @@ export default {
 	created(){
 		console.log('created results');
 		var id  = parseInt(this.$route.query.id);
-		this.isImperial  =  this.$route.query.isImperial;
+		this.isImperial  = ( this.$route.query.isImperial === 'true') ? true : false;
 
 		//get meal info
 		window.addEventListener('resize', this.handleResize);
@@ -148,6 +171,9 @@ export default {
 		
 		// get chart data
 		this.getChartData();
+
+		// get rating
+		this.getRating();
 
 	},
 	mounted() {
@@ -177,15 +203,25 @@ export default {
 		metricLabels: function(){
 
 			return this.meal.meals_ingredients.map((ingredient) => {
-			
-				return ingredient.mass_of_ingredient_in_grams + "g " + ingredient.ingredient.name;
+				if(ingredient.ingredient.name.length > 11){
+					var newName = ingredient.ingredient.name.slice(0,9) + "..";
+					return ingredient.mass_of_ingredient_in_grams + "g " + newName;
+				}
+				else{
+					return ingredient.mass_of_ingredient_in_grams + "g " + ingredient.ingredient.name;
+				}
 			});
 		},
 		imperialLabels: function(){
 
 			return this.meal.meals_ingredients.map((ingredient) => {
-			
-				return Math.round(ingredient.mass_of_ingredient_in_grams * 0.035274 * 100) / 100 + "oz " + ingredient.ingredient.name;
+				if(ingredient.ingredient.name.length > 11){
+					var newName = ingredient.ingredient.name.slice(0,9) + "..";
+					return Math.round(ingredient.mass_of_ingredient_in_grams * 0.035274 * 100) / 100 + "oz " + newName;
+				}
+				else{
+					return Math.round(ingredient.mass_of_ingredient_in_grams * 0.035274 * 100) / 100 + "oz " + ingredient.ingredient.name;
+				}
 			});
 		},
 
@@ -196,7 +232,61 @@ export default {
 		getChartData(){
 			this.mealName = this.meal.name;
 			this.totalCarbon = this.meal.total_kgCO2e;
+
+			// get total emissions
+			if(this.isImperial === true){
+				this.totalCarbonOunces = Math.round(this.totalCarbon * 1000 * 100 * 0.035274 ) / 100;
+				if(Math.round(this.totalCarbonOunces / 16)  === 0){
+					this.totalCarbonDisplay = this.totalCarbonOunces + " ozs";
+				}
+				else{
+					this.totalCarbonDisplay = Math.round(this.totalCarbonOunces / 16) + "lbs " +  Math.round(this.totalCarbonOunces % 16) + "ozs";
+				}
+			}
+			else{
+				this.totalCarbonDisplay = this.meal.total_kgCO2e + " kg";
+			}
+
+			// gte total mass of ingredients
+			this.totalMassInKg = 0;
+			this.meal.meals_ingredients.forEach((ingredient) => {
+				this.totalMassInKg += ingredient.mass_of_ingredient_in_grams / 1000;
+			})
+
+			// get average
+			this.averageCarbon = this.totalCarbon / this.totalMassInKg;
 		},
+
+		
+		getRating(){
+			this.rating = 5;
+			var count = 0;
+
+			this.greenRatings = this.$store.getters.getGreenRatings;
+			console.log(this.greenRatings);
+			console.log(this.averageCarbon );
+
+			if ( this.averageCarbon > this.greenRatings[0] ){
+				this.rating = 0;
+			}
+			else if ( (this.greenRatings[0] > this.averageCarbon) && ( this.averageCarbon > this.greenRatings[1])){
+				this.rating = 1;
+			}
+			else if ( (this.greenRatings[1] > this.averageCarbon) && ( this.averageCarbon > this.greenRatings[2])){
+				this.rating = 2;
+			}
+			else if ( (this.greenRatings[2] > this.averageCarbon) && ( this.averageCarbon > this.greenRatings[3])){
+				this.rating = 3;
+			}
+			else if ( (this.greenRatings[3] > this.averageCarbon) && ( this.averageCarbon > this.greenRatings[4])){
+				this.rating = 4;
+			}
+			else{
+				this.rating = 5;
+			}			
+			console.log(this.rating);
+		},
+
 
 		// close more info
 		close(){
@@ -252,7 +342,7 @@ export default {
 						labels:{
 							padding:10,
 							fontSize:14,
-							fontColor:"#434343"
+							color:"#555;"
 						},
 						position:'left',
 						usePointStyle: true,

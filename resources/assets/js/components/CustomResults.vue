@@ -7,11 +7,11 @@
 		<div :style="container2Style">
 			<v-layout flex-start row fill-height>
 				<v-flex xs6>
-					<v-rating readonly size="20" style="margin-top:20px;" background-color="#fcba03" color="#fcba03" dense
+					<v-rating readonly size="20" style="margin-top:10px;" background-color="#fcba03" color="#fcba03" dense
 						v-model="rating"></v-rating>
 				</v-flex>
 				<v-flex xs6>
-					<div :style="valueStyle"> {{totalCarbonDisplay}}</div>
+					<div :style="valueStyle">{{totalCarbonDisplay}}</div>
 				</v-flex >
 			</v-layout>
 			<v-layout flex-start row fill-height>
@@ -29,9 +29,12 @@
 		<div :style="container3Style" id="more-info-popup" v-show="this.showData">
 			<v-icon @click="close()" style="float:right;" color="primary" large>clear</v-icon>
 			<h1>More info</h1>
-				<div style="padding:12px 24px;">
-					<div :style="data2Style">Total kg CO<sub>2</sub>e: {{totalCarbon}}</div>
-					<div :style="data2Style">Average kg CO<sub>2</sub>e per kg: {{averageCarbon}}</div>
+				<div style="padding:12px 24px 0px 24px;">
+					<div :style="dataStyle">Summary:</div>
+					<div :style="data2Style"> {{totalCarbon}} kg CO<sub>2</sub>e emissions</div>
+					<div :style="data2Style">{{averageCarbon}} kg CO<sub>2</sub>e emissions per kg food </div>
+					<br/>
+					<div :style="dataStyle">Ingredients:</div>
 				</div>
 				<v-expansion-panel style="box-shadow:none;">
 		
@@ -40,7 +43,7 @@
 						:key="i" style="background-color:transparent;border:none;font-size:15px;">
 						<template v-slot:header color="primary">
 							<v-layout flex-start column fill-height>
-						  		<v-flex :style="dataStyle">{{item.name}}</v-flex>
+						  		<v-flex :style="data2Style">{{item.name}}</v-flex>
 								<v-flex :style="data2Style">{{item.value}} CO<sub>2</sub>e per kg &#177; {{item.sd}}&#37;</v-flex>
 							</v-layout>
 						</template>
@@ -110,8 +113,8 @@ export default {
 			containerPadding:   12,
 			containerStyle:     "padding:26px 14px 0 14px;"+
 								"margin-right:0px;",
-			container2Style:    "margin-top:28px;" +			
-								"padding-bottom:50px;",
+			container2Style:    "margin-top:50px;" +			
+								"padding-bottom:60px;",
 			container3Style:    "z-index:1;"+
 								"text-align:center;"+
 								"position:absolute;"+
@@ -122,17 +125,19 @@ export default {
 								"width:100%;",             
 			container3Height:   600,
 			valueStyle:         "text-align:center;"+
-								"fontSize:3em;" +
+								"fontSize:2.3em;" +
 								"font-weight:200;" +
 								"line-height:1.5em;",
 			unitStyle:          "text-align:center;"+ 
-								"fontSize:17px;" ,
-			dataStyle:          "font-weight:700;"+
+								"fontSize:15px;" +
+								"color:#555;",
+			dataStyle:          "margin-bottom:8px;"+
 								"text-align:left;"+
 								"width:100%;" +
 								"font-size:15px;" ,
-			data2Style:         "text-align:left;"+
-								"font-size:15px;" +"width:100%;",
+			data2Style:          "text-align:left;"+
+								"font-style:italic;"+
+								"font-size:15px;",
 			sourceStyle:        "padding:8px 22px 8px 22px;" +
 								"height:100%;"+
 								"font-size:13px;"+
@@ -143,8 +148,10 @@ export default {
 			chart:              "margin-top:0px;" +
 								"margin-bottom:30px;",
 			accuracyStyle:      "fontSize:14px;",
-			leftColumn:			"width:50%;",
+			leftColumn:			"width:50%;"+ 
+								"color:#555;",
 			rightColumn:		"width:50%;"+
+								"color:#555;"+
 								"text-align:right;",
 			mealName:			"",
 			totalCarbon:		0
@@ -159,6 +166,7 @@ export default {
 		this.getMealIngredients();
 		this.getTotalMassInGrams();
 		this.getAverageCarbon();
+		this.getTotalCarbonDisplay();
 		this.getRating();
 
 		//get meal info
@@ -202,10 +210,10 @@ export default {
 
 			return this.food_ingredients.map((ingredient) => {
 				if(Math.round(ingredient.mass / 16) === 0){
-					return ingredient.mass + " oz " + ingredient.ingredient.name;
+					return ingredient.mass + " ozs " + ingredient.ingredient.name;
 				}
 				else{
-					return Math.round(ingredient.mass / 16) + 'lb ' + Math.round(ingredient.mass % 16)+ " oz " + ingredient.ingredient.name;
+					return Math.round(ingredient.mass / 16) + 'lbs ' + Math.round(ingredient.mass % 16)+ "ozs " + ingredient.ingredient.name;
 				}
 
 			});
@@ -225,6 +233,103 @@ export default {
 			this.mass2 = parseInt(this.$route.query.m2);
 			this.mass3 = parseInt(this.$route.query.m3);
 			this.mass4 = parseInt(this.$route.query.m4);
+			console.log(this.$route.query.isImperial);
+		},
+
+		// get array of ingredients
+		getIngredientsMasses(){
+			this.ingredientsMasses = [];
+			if(this.ingredient1 !== 0){
+				this.ingredientsMasses.push({ id: this.ingredient1, mass: this.mass1 });
+			}
+			if(this.ingredient2 !== 0){
+				this.ingredientsMasses.push({ id: this.ingredient2, mass: this.mass2 });
+			}
+			if(this.ingredient3 !== 0){
+				this.ingredientsMasses.push({ id: this.ingredient3, mass: this.mass3 });
+			}
+			if(this.ingredient4 !== 0){
+				this.ingredientsMasses.push({ id: this.ingredient4, mass: this.mass4 });
+			}
+			console.log(this.ingredientsMasses);
+		},
+
+		// get total mass in grams
+		getTotalMassInGrams(){
+
+			this.totalMassInGrams = 0;
+			if(this.isImperial === true){
+				this.ingredientsMasses.forEach(function(im){
+					this.totalMassInGrams += im.mass / 0.035274;
+				}.bind(this));
+			}
+			else{
+				this.ingredientsMasses.forEach(function(im){
+					this.totalMassInGrams += im.mass ;
+				}.bind(this));
+			}
+			this.totalMassInGrams = Math.round(this.totalMassInGrams);
+			console.log("total mass in grams" + this.totalMassInGrams);
+		},
+
+
+		// get array of ingredients
+		getMealIngredients(){
+			this.food_ingredients = this.$store.getters.getFoodIngredients.filter((i) => {
+					for(var ingredientMass of this.ingredientsMasses){
+						if(ingredientMass.id === i.id){
+							return {
+									mass:ingredientMass.mass,
+									ingredient:i
+								};
+						}
+					}
+			});
+			this.food_ingredients = [];
+			this.$store.getters.getFoodIngredients.forEach(function(i){
+				for(var ingredientMass of this.ingredientsMasses){
+						if(ingredientMass.id === i.id){
+							this.food_ingredients.push({
+									mass:ingredientMass.mass,
+									ingredient:i
+								});
+						}
+					}
+			}.bind(this));
+			console.log(this.food_ingredients);
+		},
+
+		
+
+		// get chart data
+		getAverageCarbon(){
+			this.mealName = "My dish";
+			this.totalCarbon = 0;
+			this.food_ingredients.forEach((i) => {
+				this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / (10 * 0.035274)) / 100;
+			});
+			console.log('total carbon kg' + this.totalCarbon);
+			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) /100;
+			console.log('average kg carbon per kg' + this.totalCarbon);
+
+		
+		},
+
+		getTotalCarbonDisplay(){
+			if(this.isImperial === false){
+				this.totalCarbonDisplay = this.totalCarbon.toFixed(2) + " kg";
+			}
+			else{
+				this.totalCarbonOunces = Math.round(this.totalCarbon * 1000 * 100 * 0.035274 ) / 100;
+				console.log('total carbon ounces'+this.totalCarbonOunces);
+		
+				if(Math.round(this.totalCarbonOunces / 16)  === 0){
+					this.totalCarbonDisplay =  this.totalCarbonOunces + " ozs";
+				}
+				else{
+					this.totalCarbonDisplay = Math.round(this.totalCarbonOunces / 16) + "lbs " +  Math.round(this.totalCarbonOunces % 16) + "ozs";
+				}
+			}
 		},
 
 		getRating(){
@@ -256,98 +361,6 @@ export default {
 			console.log(this.rating);
 		},
 
-		// get total mass in grams
-		getTotalMassInGrams(){
-
-			this.totalMassInGrams = 0;
-			if(this.isImperial === true){
-				this.ingredientsMasses.forEach(function(im){
-					this.totalMassInGrams += im.mass / 0.035274;
-				}.bind(this));
-			}
-			else{
-				this.ingredientsMasses.forEach(function(im){
-					this.totalMassInGrams += im.mass ;
-				}.bind(this));
-			}
-			this.totalMassInGrams = Math.round(this.totalMassInGrams);
-			console.log(this.totalMassInGrams);
-		},
-
-
-
-		// get array of ingredients
-		getIngredientsMasses(){
-			this.ingredientsMasses = [];
-			if(this.ingredient1 !== 0){
-				this.ingredientsMasses.push({ id: this.ingredient1, mass: this.mass1 });
-			}
-			if(this.ingredient2 !== 0){
-				this.ingredientsMasses.push({ id: this.ingredient2, mass: this.mass2 });
-			}
-			if(this.ingredient3 !== 0){
-				this.ingredientsMasses.push({ id: this.ingredient3, mass: this.mass3 });
-			}
-			if(this.ingredient4 !== 0){
-				this.ingredientsMasses.push({ id: this.ingredient4, mass: this.mass4 });
-			}
-			console.log(this.ingredientsMasses);
-		},
-
-
-		// get array of ingredients
-		getMealIngredients(){
-			this.food_ingredients = this.$store.getters.getFoodIngredients.filter((i) => {
-					for(var ingredientMass of this.ingredientsMasses){
-						if(ingredientMass.id === i.id){
-							return {
-									mass:ingredientMass.mass,
-									ingredient:i
-								};
-						}
-					}
-			});
-			this.food_ingredients = [];
-			this.$store.getters.getFoodIngredients.forEach(function(i){
-				for(var ingredientMass of this.ingredientsMasses){
-						if(ingredientMass.id === i.id){
-							this.food_ingredients.push({
-									mass:ingredientMass.mass,
-									ingredient:i
-								});
-						}
-					}
-			}.bind(this));
-			console.log(this.food_ingredients);
-		},
-
-		// get chart data
-		getAverageCarbon(){
-			this.mealName = "My dish";
-			this.totalCarbon = 0;
-			this.food_ingredients.forEach((i) => {
-				this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
-			});
-
-			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) /100;
-
-			if(this.isImperial === false){
-				this.totalCarbonDisplay = this.totalCarbon.toFixed(2) + " kg";
-			}
-			else{
-				this.totalCarbonOunces = Math.round(this.totalCarbon * 1000 * 100 * 0.035274 ) / 100;
-				console.log(this.totalCarbonOunces);
-				console.log(this.totalCarbonOunces / 16);
-				if(Math.round(this.totalCarbonOunces / 16)  === 0){
-					this.totalCarbonDisplay =  this.totalCarbonOunces + " ozs";
-				}
-				else{
-					this.totalCarbonDisplay = Math.round(this.totalCarbonOunces / 16) + " lbs" +  Math.round(this.totalCarbonOunces % 16) + " ozs";
-				}
-			}
-		
-		},
-
 		// close more info
 		close(){
 			this.showData = false;
@@ -368,8 +381,8 @@ export default {
 		createChart(){ 
 
 			var ctx = document.getElementById('myChart');
+
 			if(this.myDoughnutChart!=null){
-			
 				this.myDoughnutChart.destroy();
 			}
 			
