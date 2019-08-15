@@ -29,47 +29,59 @@
 		<div :style="container3Style" id="more-info-popup" v-show="this.showData">
 			<v-icon @click="close()" style="float:right;" color="primary" large>clear</v-icon>
 			<h1>More info</h1>
-				<div style="padding:12px 24px 0px 24px;">
-					<div :style="dataStyle">Summary:</div>
-					<div :style="data2Style"> {{totalCarbon}} kg CO<sub>2</sub>e emissions</div>
-					<div :style="data2Style">{{averageCarbon}} kg CO<sub>2</sub>e emissions per kg food </div>
-					<br/>
-					<div :style="dataStyle">Ingredients:</div>
+			
+				<div :style="SummaryStyle">
+					<h3 :style="titleStyle">Summary</h3>
+					<div :style="lightBackground">
+						<div :style="dataStyle"> {{totalCarbon}} kg CO<sub>2</sub>e emissions</div>
+						<div :style="dataStyle">{{averageCarbon}} kg CO<sub>2</sub>e emissions per kg food </div>
+						<br/>
+					</div>
 				</div>
-				<v-expansion-panel style="box-shadow:none;">
-		
-					  <v-expansion-panel-content  color="primary"
-						v-for="(item,i) in this.ingredientsSources"
-						:key="i" style="background-color:transparent;border:none;font-size:15px;">
-						<template v-slot:header color="primary">
-							<v-layout flex-start column fill-height>
-						  		<v-flex :style="data2Style">{{item.name}}</v-flex>
-								<v-flex :style="data2Style">{{item.value}} CO<sub>2</sub>e per kg &#177; {{item.sd}}&#37;</v-flex>
-							</v-layout>
-						</template>
-						<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
-						<div :style="sourceStyle" v-for="it in item['food_sources']">
-							<template color="primary">
-								<v-layout flex-start row fill-height>
-									<v-flex :style="leftColumn">Food:</v-flex>
-									<v-flex :style="rightColumn"> {{it.food}} </v-flex>
+
+				<div :style="SummaryStyle">
+								<h3 :style="titleStyle">Ingredients</h3>
+					<v-expansion-panel style="box-shadow:none;">
+						  <v-expansion-panel-content  color="primary"
+							v-for="(item,i) in this.ingredientsSources"
+							:key="i" :style="expansionPanel">
+							<template v-slot:header color="primary">
+								<v-layout flex-start column fill-height>
+							  		<v-flex :style="dataStyle">{{item.name}}</v-flex>
+									<v-flex :style="dataStyle">{{item.value}} CO<sub>2</sub>e per kg &#177; {{item.sd}}&#37;</v-flex>
+
 								</v-layout>
-								<v-layout flex-start row fill-height>
-									<v-flex :style="leftColumn">Emission value:</v-flex>
-									<v-flex :style="rightColumn"> {{it.kgCO2e_per_kg_food}} C0<sub>2</sub>e</v-flex>
-								</v-layout>
-								<v-layout flex-start row fill-height>
-									<v-flex :style="leftColumn">Title:</v-flex>
-									<v-flex :style="rightColumn"> {{it.source_title}}</v-flex>
-								</v-layout>
-								<v-layout flex-start row fill-height>
-									<v-flex :style="leftColumn">External reference:</v-flex>
-									<v-flex :style="rightColumn"><a target="_blank" :href="it.link">{{it.authors}}</a></v-flex>
-								</v-layout>
+
 							</template>
-						</div>
-					</v-expansion-panel-content>
-				</v-expansion-panel>
+
+							<v-icon slot="actions" color="primary">$vuetify.icons.expand</v-icon>
+							<div :style="sourceStyle" v-for="it in item['food_sources']">
+								<template color="primary">
+									<v-layout flex-start row fill-height>
+										<v-flex :style="leftColumn">Food:</v-flex>
+										<v-flex :style="rightColumn"> {{it.food}} </v-flex>
+									</v-layout>
+									<v-layout flex-start row fill-height>
+										<v-flex :style="leftColumn">Emission value:</v-flex>
+										<v-flex :style="rightColumn"> {{it.kgCO2e_per_kg_food}} C0<sub>2</sub>e</v-flex>
+									</v-layout>
+									<v-layout flex-start row fill-height>
+										<v-flex :style="leftColumn">Title:</v-flex>
+										<v-flex :style="rightColumn"> {{it.source_title}}</v-flex>
+									</v-layout>
+									<v-layout flex-start row fill-height>
+										<v-flex :style="leftColumn">External reference:</v-flex>
+										<v-flex :style="rightColumn"><a target="_blank" :href="it.link">{{it.authors}}</a>	</v-flex>
+
+									</v-layout>
+							
+								</template>
+							</div>
+
+						</v-expansion-panel-content>
+
+					</v-expansion-panel>
+				</div>
 		</div>
 		<div :style="container4Style">
 			<v-flex xs12>
@@ -131,7 +143,7 @@ export default {
 			unitStyle:          "text-align:center;"+ 
 								"fontSize:15px;" +
 								"color:#555;",
-			dataStyle:          "margin-bottom:8px;"+
+			dataStyle:          "margin-bottom:5px;"+
 								"text-align:left;"+
 								"width:100%;" +
 								"font-size:15px;" ,
@@ -141,20 +153,40 @@ export default {
 			sourceStyle:        "padding:8px 22px 8px 22px;" +
 								"height:100%;"+
 								"font-size:13px;"+
-								"clear:both;"+
-								"background-color:#fafafa;",
+								"clear:both;",
+								
 			container4Style:    "margin-top:40px;",
 			valueTitleStyle:    "fontSize:18px",
 			chart:              "margin-top:0px;" +
 								"margin-bottom:30px;",
 			accuracyStyle:      "fontSize:14px;",
 			leftColumn:			"width:50%;"+ 
-								"color:#555;",
+								"font-style:italic;"+
+								"font-size:14px;"+
+								"color:#474747;",
 			rightColumn:		"width:50%;"+
-								"color:#555;"+
+								"color:#474747;"+
+								"font-size:14px;"+
+								"font-style:italic;"+
 								"text-align:right;",
 			mealName:			"",
-			totalCarbon:		0
+			totalCarbon:		0,
+			titleStyle:			"font-size:18px;"+
+								"margin:10px 0 20px 0;"+
+								"font-weight:500;"+
+								"color:#2c3e50;",
+			SummaryStyle:		"padding:5px 10px;" +
+								"border: 2px solid #f8deff;"+
+								"border-radius:7px;"+	
+								"background-color:#fdf5ff;"+
+								"margin:20px 0px;",
+			expansionContainer:	"border: 2px solid #f8deff;",
+			expansionPanel:		
+								"border: 2px solid #f8deff !important;"+
+								"font-size:15px;"+
+								"margin:5px;"+
+								"border-radius:5px;",
+	
 		}
 	},
 	created(){

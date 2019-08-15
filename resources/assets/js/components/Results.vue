@@ -40,7 +40,7 @@
 				<v-expansion-panel style="box-shadow:none;">
 					  <v-expansion-panel-content  color="primary"
 						v-for="(item,i) in this.ingredientsSources"
-						:key="i" style="background-color:transparent;border:none;font-size:15px;">
+						:key="i" :style="expansionPanel">
 						<template v-slot:header color="primary">
 							<v-layout flex-start column fill-height>
 						  		<v-flex :style="data2Style">{{item.name}}</v-flex>
@@ -155,6 +155,7 @@ export default {
 								"text-align:right;",
 			mealName:			"",
 			totalCarbon:		0,
+			expansionPanel:		"background-color:transparent;border:none;font-size:15px;"
 		}
 	},
 	created(){

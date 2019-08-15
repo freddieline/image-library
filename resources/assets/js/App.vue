@@ -48,11 +48,12 @@
 html{
 	height:100%;
 	box-sizing:border-box;
+    color:#5e5e5e;
 }
 h1{
 	font-weight:300;
     font-size:30px;
-    margin-top:8px;
+    margin-bottom:25px;
     line-height:1.2em;
   
 }
