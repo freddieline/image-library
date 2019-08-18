@@ -2,10 +2,9 @@
 
 namespace App\Console;
 
-use App\Console\Commands\FindAverageAndSd;
+use App\Console\Commands\FindValues;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Console\Commands\TotalCarbonForMeals;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,8 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        FindAverageAndSd::class,
-        TotalCarbonForMeals::class
+        FindValues::class,
     ];
 
     /**
