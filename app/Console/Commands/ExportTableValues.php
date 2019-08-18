@@ -43,21 +43,25 @@ class ExportTableValues extends Command
     {
 
         // get meals_ingredients
-        $meals = Meals::
+        $mealsT = Meals::
             with('mealsIngredients.ingredient.foodSources')
             ->get()
             ->toArray();
 
-            $meals= json_encode($meals);
+        $meals['meals'] = $mealsT;
+
+        $meals = json_encode($meals);
 
         file_put_contents(storage_path('meals.json'), stripslashes($meals));
 
 
         // get food_ingredients
-        $ingredients = FoodIngredients::
+        $ingredientsT = FoodIngredients::
             with('foodSources')
             ->get()
             ->toArray();
+
+        $ingredients['ingredients'] = $ingredientsT;
 
         $ingredients = json_encode($ingredients);
 
