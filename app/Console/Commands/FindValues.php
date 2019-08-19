@@ -41,11 +41,11 @@ class FindValues extends Command
     public function handle()
     {
 
-
         $this->findAverageAndSd();
 
         $this->findTotalCarbon();
     }
+
 
     public function findAverageAndSd(){
 
@@ -111,17 +111,17 @@ class FindValues extends Command
 
         foreach($mealsI as $mealIngredient){
 
-                // get current carbon
-                $currentCarbon = DB::table('meals')->where('name', '=', $mealIngredient->name )->select('total_kgCO2e')->first()->total_kgCO2e;
-            
-                // if null convert to 0
-                $currentCarbon = ($currentCarbon === null) ? 0 : $currentCarbon;
+            // get current carbon
+            $currentCarbon = DB::table('meals')->where('name', '=', $mealIngredient->name )->select('total_kgCO2e')->first()->total_kgCO2e;
         
-                // add carbon to existing value
-                $totalCarbon = ($mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams /1000 )+ $currentCarbon;
-                
-                // update 
-                DB::table('meals')->where('name', '=', $mealIngredient->name )->update(['total_kgCO2e' => $totalCarbon ]);
+            // if null convert to 0
+            $currentCarbon = ($currentCarbon === null) ? 0 : $currentCarbon;
+    
+            // add carbon to existing value
+            $totalCarbon = ($mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams /1000 )+ $currentCarbon;
+            
+            // update 
+            DB::table('meals')->where('name', '=', $mealIngredient->name )->update(['total_kgCO2e' => $totalCarbon ]);
    
   
         }

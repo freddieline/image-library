@@ -2109,7 +2109,11 @@ __webpack_require__.r(__webpack_exports__);
       this.mealName = "My dish";
       this.totalCarbon = 0;
       this.food_ingredients.forEach(function (i) {
-        _this2.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / (10 * 0.035274)) / 100;
+        if (_this2.isImperial) {
+          _this2.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / (10 * 0.035274)) / 100;
+        } else {
+          _this2.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
+        }
       });
       console.log('total carbon kg' + this.totalCarbon);
       this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) / 100;
@@ -71798,7 +71802,7 @@ var render = function() {
           _c("div", { style: _vm.SummaryStyle }, [
             _c("h3", { style: _vm.titleStyle }, [_vm._v("Summary")]),
             _vm._v(" "),
-            _c("div", { style: _vm.lightBackground }, [
+            _c("div", [
               _c("div", { style: _vm.dataStyle }, [
                 _vm._v(" " + _vm._s(_vm.totalCarbon) + " kg CO"),
                 _c("sub", [_vm._v("2")]),

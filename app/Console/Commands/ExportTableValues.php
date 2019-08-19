@@ -61,6 +61,8 @@ class ExportTableValues extends Command
             ->get()
             ->toArray();
 
+        
+
         $ingredients['ingredients'] = $ingredientsT;
 
         $ingredients = json_encode($ingredients);

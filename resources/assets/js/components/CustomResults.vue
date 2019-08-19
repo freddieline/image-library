@@ -32,7 +32,7 @@
 			
 				<div :style="SummaryStyle">
 					<h3 :style="titleStyle">Summary</h3>
-					<div :style="lightBackground">
+					<div>
 						<div :style="dataStyle"> {{totalCarbon}} kg CO<sub>2</sub>e emissions</div>
 						<div :style="dataStyle">{{averageCarbon}} kg CO<sub>2</sub>e emissions per kg food </div>
 						<br/>
@@ -338,7 +338,12 @@ export default {
 			this.mealName = "My dish";
 			this.totalCarbon = 0;
 			this.food_ingredients.forEach((i) => {
-				this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / (10 * 0.035274)) / 100;
+				if(this.isImperial){
+					this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / (10 * 0.035274)) / 100;
+				}
+				else{
+					this.totalCarbon += Math.round(i.ingredient.average_kgCO2e_per_kg_food * i.mass / 10) / 100;
+				}
 			});
 			console.log('total carbon kg' + this.totalCarbon);
 			this.averageCarbon = Math.round(this.totalCarbon * 1000 * 100 / this.totalMassInGrams) /100;
