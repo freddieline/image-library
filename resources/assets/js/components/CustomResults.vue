@@ -82,22 +82,6 @@
 					</v-expansion-panel>
 				</div>
 		</div>
-		<div :style="container4Style">
-			<v-flex xs12>
-				<v-layout justify-space-around row fill-height>	
-						<v-flex style="align-content:center;">
-							<v-icon  @click="toHome()"  color="primary"  medium>arrow_back_ios</v-icon>
-						</v-flex>
-						<v-flex style="align-content:center;">
-							<v-icon color="primary" medium>share</v-icon>
-						</v-flex>
-						<v-flex style="align-content:center;">
-							<v-icon color="primary" @click="open()" medium>info</v-icon>
-						</v-flex>
-				
-				</v-layout>
-			</v-flex>
-		</div>
 	</div>
 </div>
 
@@ -440,14 +424,6 @@ export default {
 					  label: 'CO2e',
 					data: this.ingredientsCarbon,
 					backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd","#99ffbe", "#69ffaf"],
-
-
-// 					final Color chartColour1 = Color(0xff1fa9ff);
-// final Color chartColour2 = Color(0xff1fd2ff);
-// final Color chartColour3 = Color(0xff1ff8ff);
-// final Color chartColour4 = Color(0xffa1fffd);
-// final Color chartColour5 = Color(0xff99ffbe);
-// final Color chartColour6 = Color(0xff69ffaf);
 				}],
 
 				// These labels appear in the legend and in the tooltips when hovering different arcs

@@ -1862,22 +1862,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2192,13 +2176,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           label: 'CO2e',
           data: this.ingredientsCarbon,
-          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", "#69ffaf"] // 					final Color chartColour1 = Color(0xff1fa9ff);
-          // final Color chartColour2 = Color(0xff1fd2ff);
-          // final Color chartColour3 = Color(0xff1ff8ff);
-          // final Color chartColour4 = Color(0xffa1fffd);
-          // final Color chartColour5 = Color(0xff99ffbe);
-          // final Color chartColour6 = Color(0xff69ffaf);
-
+          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", "#69ffaf"]
         }],
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: labels1
@@ -2696,21 +2674,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2891,13 +2854,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           label: 'CO2e',
           data: this.ingredientsCarbon,
-          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", '69ffaf'] // 					final Color chartColour1 = Color(0xff1fa9ff);
-          // final Color chartColour2 = Color(0xff1fd2ff);
-          // final Color chartColour3 = Color(0xff1ff8ff);
-          // final Color chartColour4 = Color(0xffa1fffd);
-          // final Color chartColour5 = Color(0xff99ffbe);
-          // final Color chartColour6 = Color(0xff69ffaf);
-
+          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", '69ffaf']
         }],
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: labels1
@@ -72016,86 +71973,6 @@ var render = function() {
           )
         ],
         1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { style: _vm.container4Style },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
-              _c(
-                "v-layout",
-                {
-                  attrs: {
-                    "justify-space-around": "",
-                    row: "",
-                    "fill-height": ""
-                  }
-                },
-                [
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        {
-                          attrs: { color: "primary", medium: "" },
-                          on: {
-                            click: function($event) {
-                              return _vm.toHome()
-                            }
-                          }
-                        },
-                        [_vm._v("arrow_back_ios")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        { attrs: { color: "primary", medium: "" } },
-                        [_vm._v("share")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        {
-                          attrs: { color: "primary", medium: "" },
-                          on: {
-                            click: function($event) {
-                              return _vm.open()
-                            }
-                          }
-                        },
-                        [_vm._v("info")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
       )
     ])
   ])
@@ -72980,86 +72857,6 @@ var render = function() {
                 2
               )
             }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { style: _vm.container4Style },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "" } },
-            [
-              _c(
-                "v-layout",
-                {
-                  attrs: {
-                    "justify-space-around": "",
-                    row: "",
-                    "fill-height": ""
-                  }
-                },
-                [
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        {
-                          attrs: { color: "primary", medium: "" },
-                          on: {
-                            click: function($event) {
-                              return _vm.toHome()
-                            }
-                          }
-                        },
-                        [_vm._v("arrow_back_ios")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        { attrs: { color: "primary", medium: "" } },
-                        [_vm._v("share")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { staticStyle: { "align-content": "center" } },
-                    [
-                      _c(
-                        "v-icon",
-                        {
-                          attrs: { color: "primary", medium: "" },
-                          on: {
-                            click: function($event) {
-                              return _vm.open()
-                            }
-                          }
-                        },
-                        [_vm._v("more_horiz")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
             1
           )
         ],
