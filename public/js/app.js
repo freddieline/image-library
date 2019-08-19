@@ -1878,7 +1878,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2193,7 +2192,13 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           label: 'CO2e',
           data: this.ingredientsCarbon,
-          backgroundColor: ['#fdd378', '#b9a2ff', '#ff93f9', "#7000bb"]
+          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", "#69ffaf"] // 					final Color chartColour1 = Color(0xff1fa9ff);
+          // final Color chartColour2 = Color(0xff1fd2ff);
+          // final Color chartColour3 = Color(0xff1ff8ff);
+          // final Color chartColour4 = Color(0xffa1fffd);
+          // final Color chartColour5 = Color(0xff99ffbe);
+          // final Color chartColour6 = Color(0xff69ffaf);
+
         }],
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: labels1
@@ -2886,7 +2891,13 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           label: 'CO2e',
           data: this.ingredientsCarbon,
-          backgroundColor: ['#fdd378', '#b9a2ff', '#ff93f9', "#7000bb"]
+          backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe", '69ffaf'] // 					final Color chartColour1 = Color(0xff1fa9ff);
+          // final Color chartColour2 = Color(0xff1fd2ff);
+          // final Color chartColour3 = Color(0xff1ff8ff);
+          // final Color chartColour4 = Color(0xffa1fffd);
+          // final Color chartColour5 = Color(0xff99ffbe);
+          // final Color chartColour6 = Color(0xff69ffaf);
+
         }],
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: labels1
@@ -72039,7 +72050,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("keyboard_return")]
+                        [_vm._v("arrow_back_ios")]
                       )
                     ],
                     1
@@ -72072,7 +72083,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("more_horiz")]
+                        [_vm._v("info")]
                       )
                     ],
                     1
@@ -72646,7 +72657,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Search ingredients")]
+                [_vm._v("Search references")]
               )
             ],
             1
@@ -73007,7 +73018,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("keyboard_return")]
+                        [_vm._v("arrow_back_ios")]
                       )
                     ],
                     1
@@ -115123,7 +115134,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js"); //
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_5___default.a, {
   iconfont: 'md',
   theme: {
-    primary: '#b462cc'
+    primary: '#1e88e5'
   }
 });
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_3__["default"]);

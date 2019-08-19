@@ -75,7 +75,7 @@
 			<v-flex xs12>
 				<v-layout justify-space-around row fill-height>
 						<v-flex style="align-content:center;">
-							<v-icon  @click="toHome()"  color="primary"  medium>keyboard_return</v-icon>
+							<v-icon  @click="toHome()"  color="primary"  medium>arrow_back_ios</v-icon>
 						</v-flex>		
 						<v-flex style="align-content:center;">
 							<v-icon color="primary" medium>share</v-icon>
@@ -328,7 +328,14 @@ export default {
 				datasets: [{
 					  label: 'CO2e',
 					data: this.ingredientsCarbon,
-					backgroundColor: ['#fdd378', '#b9a2ff', '#ff93f9', "#7000bb"],
+					backgroundColor: ['#1fa9ff', '#1fd2ff', '#1ff8ff', "#a1fffd", "#99ffbe",'69ffaf'],
+
+					// 					final Color chartColour1 = Color(0xff1fa9ff);
+// final Color chartColour2 = Color(0xff1fd2ff);
+// final Color chartColour3 = Color(0xff1ff8ff);
+// final Color chartColour4 = Color(0xffa1fffd);
+// final Color chartColour5 = Color(0xff99ffbe);
+// final Color chartColour6 = Color(0xff69ffaf);
 				}],
 
 				// These labels appear in the legend and in the tooltips when hovering different arcs

@@ -21,7 +21,7 @@
 				
 					<div @click="clickMakeADish()" class="clickable"  outline large round color="primary" :style="makeADishStyle">Make a dish</div>
 
-					<div @click="clickDishes()" class="clickable"  outline large round color="primary" :style="ingredientsStyle">Search ingredients</div>
+					<div @click="clickDishes()" class="clickable"  outline large round color="primary" :style="ingredientsStyle">Search references</div>
 			
 			</v-layout>
 	  	</v-flex>

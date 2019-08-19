@@ -24,7 +24,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.use( Vuetify, {
     iconfont: 'md',
     theme: {
-        primary: '#b462cc'
+        primary: '#1e88e5'
         
     },
 } );
