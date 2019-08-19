@@ -44,7 +44,7 @@
     }
     </script>
 
-    <style>
+<style>
 html{
 	height:100%;
 	box-sizing:border-box;
@@ -52,9 +52,10 @@ html{
 }
 h1{
 	font-weight:300;
-    font-size:30px;
+    font-size:40px;
     margin-bottom:25px;
     line-height:1.2em;
+    font-family: 'Pompiere', cursive;
   
 }
 .logo{
