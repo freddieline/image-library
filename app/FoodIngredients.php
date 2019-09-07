@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FoodIngredients extends Model
 {
     protected $table  = "food_ingredients";
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'calories_per_g', 'carbon_per_calorie'];
 
     public function foodSources(){
         return $this->belongsToMany('App\FoodSources','food_ingredients_sources', 'food_ingredient_id', 'food_source_id');

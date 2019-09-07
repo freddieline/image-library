@@ -13,7 +13,7 @@ class AddCaloriesPerGToIngredients extends Migration
      */
     public function up()
     {
-        Schema::table('food_ingredients', function (Blueprint $table) {
+        Schema::table('food_ingredients', function (Blueprint $table){
             $table->float('calories_per_g',9,5)->nullable();
         });
 

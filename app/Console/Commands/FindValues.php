@@ -26,6 +26,9 @@ class FindValues extends Command
      */
     protected $description = 'Command description';
 
+
+    private $meals;
+
     /**
      * Create a new command instance.
      *
@@ -44,13 +47,29 @@ class FindValues extends Command
     public function handle()
     {
 
+        $this->loadObjects();
+
         $this->findIngredientsData();
+
+        $this->findCaloriesData();
 
         $this->findMealsData();
 
-        $this->findCaloriesData();
     }
 
+
+    public function loadObjects(){
+
+        // get ingredients
+        $this->ingredients = FoodIngredients::all();
+
+        $this->meals = Meals::with('mealsIngredients')->get();
+
+        // get calories info
+        $this->foodCalories = Calories::get();
+
+
+    }
 
 
 
@@ -61,11 +80,10 @@ class FindValues extends Command
      */
     public function findIngredientsData(){
 
-        // get ingredients
-        $ingredients = FoodIngredients::all();
 
+     dump('i got here');
         // iterate through each ingredient
-        foreach($ingredients as $ingredient){
+        foreach($this->ingredients as $ingredient){
 
 
             $ingredient = $this->findAverage($ingredient);
@@ -73,9 +91,11 @@ class FindValues extends Command
 
             $ingredient = $this->findStandardDeviation($ingredient);
 
-
-            $ingredient->save();
         }
+     dump('i got here');
+        $this->findIngredientsCalories();
+
+        $this->findCarbonPerCalorie();
     }
 
     /**
@@ -87,12 +107,17 @@ class FindValues extends Command
 
         // find average
         $totalCarbon = 0;
+        //   dump($ingredient->name);
         foreach($ingredient->foodSources()->get() as $foodSource){
+         
             $totalCarbon += $foodSource->kgCO2e_per_kg_food;
+       //     dump($foodSource->kgCO2e_per_kg_food);
+         //   dump($foodSource->source_title);
         }
-        dump($ingredient->name);
-        $this->average = $totalCarbon /  count($ingredient->foodSources()->get());
-        $ingredient->average_kgCO2e_per_kg_food = $this->average;
+
+   //     dump(count($ingredient->foodSources()->get()));
+        $ingredient->average_kgCO2e_per_kg_food = $totalCarbon /  count($ingredient->foodSources()->get());
+
 
         return $ingredient;
     }
@@ -107,7 +132,7 @@ class FindValues extends Command
         // find standard deviation
         $sum = 0;
         foreach($ingredient->foodSources()->get() as $foodSource){
-            $sum += pow(($foodSource->kgCO2e_per_kg_food - $this->average), 2);
+            $sum += pow(($foodSource->kgCO2e_per_kg_food - $ingredient->average_kgCO2e_per_kg_food), 2);
         }
         $standardDeviation = pow(( $sum / count($ingredient->foodSources()->get())), 0.5);
         if($standardDeviation == 0){
@@ -116,6 +141,8 @@ class FindValues extends Command
        else{
            $ingredient->standard_deviation = $standardDeviation;
        }
+
+       $ingredient->save();
        return $ingredient;
     }
 
@@ -148,6 +175,7 @@ class FindValues extends Command
             ->select('meals_ingredients.mass_of_ingredient_in_grams', 'meals.name', 'food_ingredients.average_kgCO2e_per_kg_food')
             ->get();
 
+$cumulativeCalories = 0;
 
         foreach($mealsI as $mealIngredient){
 
@@ -160,13 +188,16 @@ class FindValues extends Command
     
             // add carbon to existing value
             $totalCarbon = ($mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams /1000 )+ $currentCarbon;
+
             
             // update 
-            DB::table('meals')->where('name', '=', $mealIngredient->name )->update(['total_kgCO2e' => $totalCarbon ]);
+            DB::table('meals')
+                ->where('name', '=', $mealIngredient->name )
+                ->update([
+                    'total_kgCO2e' => $totalCarbon
 
+                     ]);
 
-
-  
         }
     }
 
@@ -178,21 +209,26 @@ class FindValues extends Command
     public function findMealAverageCarbon(){
 
         // get meals_ingredients
-        $meals = Meals::with('mealsIngredients')->get()->toArray();
+    dump('s');
 
-        foreach($meals as $meal) {
+        foreach($this->meals->toArray() as $meal) {
 
             $cumulativeMealMass = 0;
 
                 foreach($meal['meals_ingredients'] as $mealI) {
-                    var_dump($mealI);
+                   
                       $cumulativeMealMass += $mealI['mass_of_ingredient_in_grams'] /1000;
                 };
+
 
                 $averageCarbon = $meal['total_kgCO2e'] / $cumulativeMealMass;
 
                  // update 
-                DB::table('meals')->where('id', '=', $meal['id'] )->update(['average_carbon' => $averageCarbon ]);
+                DB::table('meals')->where('id', '=', $meal['id'] )->update([
+                    'average_carbon' => $averageCarbon,
+                    'mass' => round($cumulativeMealMass * 1000),
+
+                ]);
 
         };
 
@@ -205,7 +241,14 @@ class FindValues extends Command
      */
     public function findCaloriesData(){
 
+
         $this->findIngredientsCalories();
+
+        $this->findCarbonPerCalorie();
+
+        $this->findMealCalories();
+
+        $this->findMealCarbonPerCalorie();
 
     }
 
@@ -216,13 +259,12 @@ class FindValues extends Command
      * @return mixed
      */
     public function findIngredientsCalories(){
-        $ingredients = FoodIngredients::get();
-        $foodCalories = Calories::get();
-
-        $ingredients->each(function($ingredient)use ($foodCalories){
 
 
-            $foodCalories->each(function($fc) use ($ingredient){
+        $this->ingredients->each(function($ingredient) {
+
+
+            $this->foodCalories->each(function($fc) use ($ingredient){
     
                 if(strpos(strtolower($fc->food), strtolower($ingredient->name)) > -1){
          
@@ -231,9 +273,55 @@ class FindValues extends Command
                     $ingredient->save();
                 }
             });
-            dump($ingredient->calories_per_g );
-            dump($ingredient->name);
 
+        });
+    }
+
+    public function findCarbonPerCalorie(){
+
+
+        $this->ingredients->each(function($ingredient) {
+        if(!empty($ingredient->calories_per_g)){
+            $ingredient->carbon_per_calorie = $ingredient->average_kgCO2e_per_kg_food / $ingredient->calories_per_g;
+            $ingredient->save();
+        }
+
+        });
+
+    }
+
+    public function findMealCalories(){
+  
+        $this->meals->each(function($meal){
+
+            $mealIngredients = $meal->mealsIngredients();
+            $meal->calories = 0;
+            $cumulativeCalories = 0;
+
+            $mealIngredients->each(function($mealI) use($cumulativeCalories, $meal){
+
+                $ingredient = $mealI->ingredient;
+
+                if(!empty($ingredient->calories_per_g )){
+
+                    // find calories
+                    $cumulativeCalories = $cumulativeCalories+ $ingredient->calories_per_g * $mealI->mass_of_ingredient_in_grams;
+                }
+
+                $meal->calories += round($cumulativeCalories);
+
+            });
+
+            $meal->save();
+        });
+    }
+
+    public function findMealCarbonPerCalorie(){
+
+        $this->meals->each(function($meal){
+
+            $meal->gCO2e_per_calorie = $meal->total_kgCO2e * 1000 / $meal->calories;
+            $meal->save();
         });
     }
 
