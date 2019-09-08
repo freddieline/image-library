@@ -10,12 +10,11 @@ class MealsIngredients extends Model
     protected $fillable = ['meal_id','ingredient_id','mass_of_ingredient_in_grams', 'created_at', 'updated_at'];
 
 
-    public function ingredient()
-    {
+    public function ingredient(){
         return $this->belongsTo('App\FoodIngredients', 'ingredient_id');
     }
-    public function meal()
-    {
+
+    public function meal(){
         return $this->belongsTo('App\Meal', 'meal_id');
     }
 }

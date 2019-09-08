@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\FoodIngredients;
+use App\IngredientsSizes;
 use App\Meals;
 use App\Ingredients;
 use Illuminate\Support\Facades\Storage;
@@ -42,11 +43,25 @@ class ExportTableValues extends Command
     public function handle()
     {
 
-        // get meals_ingredients
+        $this->exportMeals();
+
+        $this->exportIngredients();
+ 
+        $this->exportFoodProducts();
+    }
+
+    /**
+     * Export meals
+     *
+     */
+    public function exportMeals(){
+
+         // get meals_ingredients
         $mealsT = Meals::
-            with('mealsIngredients.ingredient.foodSources')
-            ->get()
-            ->toArray();
+                    with('mealsIngredients.ingredient.foodSources')
+                    ->get()
+                    ->toArray()
+                ;
 
         $meals['meals'] = $mealsT;
 
@@ -54,13 +69,20 @@ class ExportTableValues extends Command
 
         file_put_contents(storage_path('meals.json'), stripslashes($meals));
 
+    }
 
-        // get food_ingredients
+    /**
+     * Export ingredients
+     *
+     */
+    public function exportIngredients(){
+
+       // get food_ingredients
         $ingredientsT = FoodIngredients::
             with('foodSources')
             ->get()
-            ->toArray();
-
+            ->toArray()
+        ;
         
 
         $ingredients['ingredients'] = $ingredientsT;
@@ -68,5 +90,26 @@ class ExportTableValues extends Command
         $ingredients = json_encode($ingredients);
 
         file_put_contents(storage_path('ingredients.json'), stripslashes($ingredients));
+
+    }
+
+    /**
+     * Export food products
+     *
+     */
+    public function exportFoodProducts(){
+
+        $foodProductsT = IngredientsSizes::
+                            with('foodSize')
+                            ->with('ingredient.foodSources')
+                            ->get()
+                            ->toArray();
+
+        $foodProducts['food_products'] = $foodProductsT;
+
+        $foodProducts = json_encode($foodProducts);
+
+        file_put_contents(storage_path("food_products.json"), stripslashes($foodProducts));
+
     }
 }
