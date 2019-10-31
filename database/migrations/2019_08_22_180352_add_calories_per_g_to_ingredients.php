@@ -37,6 +37,20 @@ class AddCaloriesPerGToIngredients extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('food_ingredients', function (Blueprint $table){
+            $table->dropColumn('calories_per_g');
+        });
+
+        Schema::table('meals', function (Blueprint $table) {
+            $table->dropColumn('mass');
+        });
+
+        Schema::table('meals', function (Blueprint $table) {
+            $table->dropColumn('calories');
+        });
+
+        Schema::table('meals', function (Blueprint $table) {
+            $table->dropColumn('gCO2e_per_calorie');
+        });
     }
 }

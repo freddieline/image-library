@@ -25,6 +25,8 @@ class AddIdColumnToMealsIngredients extends Migration
      */
     public function down()
     {
-        //
+       Schema::table('meals_ingredients', function (Blueprint $table) {
+            $table->dropColumn('id');
+        });
     }
 }

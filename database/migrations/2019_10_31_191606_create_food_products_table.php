@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAverageCarbonToMeals extends Migration
+class CreateFoodProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddAverageCarbonToMeals extends Migration
      */
     public function up()
     {
-        Schema::table('meals', function (Blueprint $table) {
-            $table->float('average_carbon',9,2)->nullable();
+        Schema::create('food_products', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->string('name');
+            $table->float('average_kgCO2e_per_kg_food',9,2)->nullable();
         });
     }
 
@@ -25,8 +28,6 @@ class AddAverageCarbonToMeals extends Migration
      */
     public function down()
     {
-         Schema::table('meals', function (Blueprint $table) {
-        $table->dropColumn('average_carbon');
-                });
+        Schema::dropIfExists('food_products');
     }
 }

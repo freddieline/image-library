@@ -16,7 +16,7 @@ class IngredientsSizesSeeder extends Seeder
     public function run()
     {
         
-        $reader = Reader::createFromPath(storage_path().'/Food_products.csv', 'r');
+        $reader = Reader::createFromPath(storage_path().'/Ingredients_sizes.csv', 'r');
 
         $results = $reader->getRecords();
 

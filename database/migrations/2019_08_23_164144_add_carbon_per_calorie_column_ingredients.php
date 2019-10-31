@@ -25,6 +25,8 @@ class AddCarbonPerCalorieColumnIngredients extends Migration
      */
     public function down()
     {
-        //
+         Schema::table('food_ingredients', function (Blueprint $table){
+            $table->dropColumn('carbon_per_calorie');
+        });
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAverageCarbonToMeals extends Migration
+class AddIsLiquidToFoodIngredients extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddAverageCarbonToMeals extends Migration
      */
     public function up()
     {
-        Schema::table('meals', function (Blueprint $table) {
-            $table->float('average_carbon',9,2)->nullable();
+        Schema::table('food_ingredients', function (Blueprint $table){
+            $table->boolean('is_liquid')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddAverageCarbonToMeals extends Migration
      */
     public function down()
     {
-         Schema::table('meals', function (Blueprint $table) {
-        $table->dropColumn('average_carbon');
-                });
+        Schema::table('food_ingredients', function (Blueprint $table){
+            $table->dropColumn('is_liquid');
+        });
     }
 }
