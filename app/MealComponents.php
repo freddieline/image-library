@@ -14,6 +14,10 @@ class MealComponents extends Model
         return $this->belongsTo('App\FoodIngredients', 'ingredient_id');
     }
 
+    public function foodProduct(){
+        return $this->belongsTo('App\FoodProducts', 'food_product_id');
+    }
+
     public function meal(){
         return $this->belongsTo('App\Meal', 'meal_id');
     }

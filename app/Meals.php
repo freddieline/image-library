@@ -12,7 +12,7 @@ class Meals extends Model
     public function ingredients(){
         return $this->belongsToMany('App\FoodIngredients','meal_components', 'meal_id', 'ingredient_id');
     }
-    public function mealsIngredients(){
+    public function mealComponents(){
         return $this->hasMany('App\MealComponents', 'meal_id');
     }
 }

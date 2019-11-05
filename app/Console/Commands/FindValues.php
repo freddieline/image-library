@@ -8,6 +8,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use App\MealComponenets;
 use App\Meals;
+use App\FoodProducts;
 use App\Calories;
 
 class FindValues extends Command
@@ -51,11 +52,11 @@ class FindValues extends Command
 
         $this->findIngredientsData();
 
-        $this->findCaloriesData();
+      //  $this->findCaloriesData();
 
         $this->findFoodProductsData();
 
-      //  $this->findMealsData();
+        $this->findMealsData();
 
     }
 
@@ -64,7 +65,7 @@ class FindValues extends Command
 
         $this->ingredients = FoodIngredients::all();
 
-        $this->meals = Meals::with('mealsIngredients')->get();
+        $this->meals = Meals::with('mealComponents')->get();
 
         $this->foodCalories = Calories::get();
 
@@ -106,7 +107,7 @@ class FindValues extends Command
             $totalCarbon += $foodSource->kgCO2e_per_kg_food;
         }
 
-       dump(count($ingredient->foodSources()->get()));
+
         $ingredient->average_kgCO2e_per_kg_food = $totalCarbon /  count($ingredient->foodSources()->get());
 
 
@@ -148,18 +149,16 @@ class FindValues extends Command
         $foodProducts = FoodProducts::all();
 
         $foodProducts->each(function($foodProduct){
-            $cumulativeTotalCarbon = 0;
-            $cumulativeTotalMass = 0;
-            $foodProduct->foodProductIngredient()->each(function($foodProductIngredient) use ($cumulativeTotalCarbon, $cumulativeTotalMass){
-                $cumulativeTotalCarbon += $foodProductIngredient->ingredient()->average_kgCO2e_per_kg_food *
+            $this->cumulativeTotalCarbon = 0;
+            $this->cumulativeTotalMass = 0;
+            $foodProduct->foodProductsIngredients()->each(function($foodProductIngredient) {
+                $this->cumulativeTotalCarbon += $foodProductIngredient->ingredient()->first()->average_kgCO2e_per_kg_food *
                 $foodProductIngredient->ratio;
-                $cumulativeTotalMass += $foodProductIngredient->ratio;
-                
+                $this->cumulativeTotalMass += $foodProductIngredient->ratio;
             });
-            dump($cumulativeTotalCarbon);
-            dump($cumulativeTotalMass);
 
-            $foofProduct->average_kgCO2e_per_kg_food = $cumulativeTotalCarbon / $cumulativeTotalMass;
+            $foodProduct->average_kgCO2e_per_kg_food = $this->cumulativeTotalCarbon / $this->cumulativeTotalMass;
+            $foodProduct->save();
         });
     }
 
@@ -170,85 +169,40 @@ class FindValues extends Command
      */
     public function findMealsData(){
 
-        $this->findTotalCarbon();
+        $meals = Meals::all();
 
-        $this->findMealAverageCarbon();
-    }
+        $meals->each(function($meal){
+            $this->cumulativeTotalMass = 0;
+            $this->cumulativeTotalCarbon = 0;
+            $meal->mealComponents()->each(function($mealComponent){
 
+                    dump($mealComponent->id);
+                if(!empty($mealComponent->ingredient()->first())){
+                    dump($mealComponent->ingredient()->first()->average_kgCO2e_per_kg_food);
+                    $this->cumulativeTotalCarbon += $mealComponent->ingredient()->first()->average_kgCO2e_per_kg_food * 
+                        $mealComponent->mass_in_grams;
+                    $this->cumulativeTotalMass += $mealComponent->mass_in_grams;
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function findTotalCarbon(){
+                }
+                else{
+                
 
-                // reset cartbon to zero
-        DB::table('meals')->update(['total_kgCO2e'=>0]);
+                    $this->cumulativeTotalCarbon += $mealComponent->foodProduct()->first()->average_kgCO2e_per_kg_food * 
+                        $mealComponent->mass_in_grams;
+                    $this->cumulativeTotalMass += $mealComponent->mass_in_grams;
+                }
 
-        $mealsI = DB::table('meals_ingredients')
-            ->join('meals', 'meals.id',"=", 'meals_ingredients.meal_id')
-            ->join('food_ingredients', 'food_ingredients.id',"=",'meals_ingredients.ingredient_id')
-            ->select('meals_ingredients.mass_of_ingredient_in_grams', 'meals.name', 'food_ingredients.average_kgCO2e_per_kg_food')
-            ->get();
+            });
 
-$cumulativeCalories = 0;
-
-        foreach($mealsI as $mealIngredient){
-
-            // get current carbon
-            $currentCarbon = DB::table('meals')->where('name', '=', $mealIngredient->name )->select('total_kgCO2e')->first()->total_kgCO2e;
-        
-            // if null convert to 0
-            $currentCarbon = ($currentCarbon === null) ? 0 : $currentCarbon;
-
-    
-            // add carbon to existing value
-            $totalCarbon = ($mealIngredient->average_kgCO2e_per_kg_food * $mealIngredient->mass_of_ingredient_in_grams /1000 )+ $currentCarbon;
-
-            
-            // update 
-            DB::table('meals')
-                ->where('name', '=', $mealIngredient->name )
-                ->update([
-                    'total_kgCO2e' => $totalCarbon
-
-                     ]);
-
-        }
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function findMealAverageCarbon(){
-
-        // get meals_ingredients
-
-        foreach($this->meals->toArray() as $meal) {
-
-            $cumulativeMealMass = 0;
-
-                foreach($meal['meals_ingredients'] as $mealI) {
-                   
-                      $cumulativeMealMass += $mealI['mass_of_ingredient_in_grams'] /1000;
-                };
-
-
-                $averageCarbon = $meal['total_kgCO2e'] / $cumulativeMealMass;
-
-                 // update 
-                DB::table('meals')->where('id', '=', $meal['id'] )->update([
-                    'average_carbon' => $averageCarbon,
-                    'mass' => round($cumulativeMealMass * 1000),
-
-                ]);
-
-        };
+            $meal->average_kgCO2e_per_kg_food = $this->cumulativeTotalCarbon / $this->cumulativeTotalMass;
+            $meal->mass_in_grams = $this->cumulativeTotalMass;
+            $meal->save();
+        });
 
     }
+
+
+
 
     /**
      * Execute the console command.
@@ -310,7 +264,7 @@ $cumulativeCalories = 0;
   
         $this->meals->each(function($meal){
 
-            $mealIngredients = $meal->mealsIngredients();
+            $mealIngredients = $meal->mealsComponents();
             $meal->calories = 0;
             $cumulativeCalories = 0;
 
