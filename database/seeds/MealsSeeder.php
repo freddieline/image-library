@@ -5,7 +5,7 @@ use League\Csv\Reader;
 use App\Meals;
 use Illuminate\Support\Collection;
 use App\FoodIngredients;
-use App\MealsIngredients;
+use App\MealComponents;
 
 class MealsSeeder extends Seeder
 {
@@ -37,19 +37,19 @@ class MealsSeeder extends Seeder
              
                 // insert ingredient 1
                 $ingredient1 = $ingredients->where('name',$csvLine[1])->first()->id;
-                MealsIngredients::updateOrCreate([
+                MealComponents::updateOrCreate([
                         'meal_id' => $meal->id,
                         'ingredient_id' =>  $ingredient1,
-                        'mass_of_ingredient_in_grams' => (integer)$csvLine[4]
+                        'mass_in_grams' => (integer)$csvLine[4]
                     ]);
 
                 // insert ingredient 2
                 if(!empty($csvLine[3])){
                     $ingredient2 = $ingredients->where('name',$csvLine[3])->first()->id;
-                    MealsIngredients::updateOrCreate([
+                    MealComponents::updateOrCreate([
                         'meal_id' => $meal->id,
                         'ingredient_id' =>  $ingredient2,
-                        'mass_of_ingredient_in_grams' => (integer)$csvLine[4]
+                        'mass_in_grams' => (integer)$csvLine[4]
                     ]);
                 }
                 else{
@@ -59,10 +59,10 @@ class MealsSeeder extends Seeder
                 // insert ingredient 3
                 if(!empty($csvLine[5])){
                     $ingredient3 = $ingredients->where('name',$csvLine[5])->first()->id;
-                    MealsIngredients::updateOrCreate([
+                    MealComponents::updateOrCreate([
                         'meal_id' => $meal->id,
                         'ingredient_id' =>  $ingredient3,
-                        'mass_of_ingredient_in_grams' => (integer)$csvLine[6]
+                        'mass_in_grams' => (integer)$csvLine[6]
                     ]);
                 }
                 else{
@@ -72,10 +72,10 @@ class MealsSeeder extends Seeder
                  // insert ingredient 4
                 if(!empty($csvLine[7])){
                     $ingredient4 = $ingredients->where('name',$csvLine[7])->first()->id;
-                    MealsIngredients::updateOrCreate([
+                    MealComponents::updateOrCreate([
                         'meal_id' => $meal->id,
                         'ingredient_id' =>  $ingredient4,
-                        'mass_of_ingredient_in_grams' => (integer)$csvLine[8]
+                        'mass_in_grams' => (integer)$csvLine[8]
                     ]);
                 }
                 else{

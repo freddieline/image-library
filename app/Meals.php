@@ -10,9 +10,9 @@ class Meals extends Model
     protected $fillable = ['name', 'created_at', 'updated_at'];
 
     public function ingredients(){
-        return $this->belongsToMany('App\FoodIngredients','meals_ingredients', 'meal_id', 'ingredient_id');
+        return $this->belongsToMany('App\FoodIngredients','meal_components', 'meal_id', 'ingredient_id');
     }
     public function mealsIngredients(){
-        return $this->hasMany('App\MealsIngredients', 'meal_id');
+        return $this->hasMany('App\MealComponents', 'meal_id');
     }
 }
