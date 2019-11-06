@@ -169,33 +169,34 @@ class FindValues extends Command
      */
     public function findMealsData(){
 
-        $meals = Meals::all();
+        $meals = Meals::with('mealComponents.ingredient')
+                    ->with('mealComponents.foodProduct');
 
         $meals->each(function($meal){
             $this->cumulativeTotalMass = 0;
             $this->cumulativeTotalCarbon = 0;
             $meal->mealComponents()->each(function($mealComponent){
-
-                    dump($mealComponent->id);
-                if(!empty($mealComponent->ingredient()->first())){
-                    dump($mealComponent->ingredient()->first()->average_kgCO2e_per_kg_food);
-                    $this->cumulativeTotalCarbon += $mealComponent->ingredient()->first()->average_kgCO2e_per_kg_food * 
-                        $mealComponent->mass_in_grams;
+               
+                if($mealComponent->ingredient()->exists()){
+             
+                    $carbon = $mealComponent->ingredient()->first()->average_kgCO2e_per_kg_food;
+                    $mass = $mealComponent->mass_in_grams / 1000;
+                   
+                    $this->cumulativeTotalCarbon += $carbon * $mass;
                     $this->cumulativeTotalMass += $mealComponent->mass_in_grams;
-
                 }
-                else{
-                
-
+                else if ($mealComponent->foodProduct()->exists()){
+           
                     $this->cumulativeTotalCarbon += $mealComponent->foodProduct()->first()->average_kgCO2e_per_kg_food * 
-                        $mealComponent->mass_in_grams;
+                        $mealComponent->mass_in_grams / 1000;
                     $this->cumulativeTotalMass += $mealComponent->mass_in_grams;
                 }
 
             });
 
-            $meal->average_kgCO2e_per_kg_food = $this->cumulativeTotalCarbon / $this->cumulativeTotalMass;
-            $meal->mass_in_grams = $this->cumulativeTotalMass;
+            $meal->total_kgCO2e = $this->cumulativeTotalCarbon;
+            $meal->average_carbon = $this->cumulativeTotalCarbon * 1000 / $this->cumulativeTotalMass;
+            $meal->mass = $this->cumulativeTotalMass;
             $meal->save();
         });
 

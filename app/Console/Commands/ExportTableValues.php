@@ -16,7 +16,7 @@ class ExportTableValues extends Command
      *
      * @var string
      */
-    protected $signature = 'table-values:export';
+    protected $signature = 'tables:export';
 
     /**
      * The console command description.
@@ -58,7 +58,8 @@ class ExportTableValues extends Command
 
          // get meals_ingredients
         $mealsT = Meals::
-                    with('mealsIngredients.ingredient.foodSources')
+                    with('mealComponents.ingredient')
+                    ->with('mealComponents.foodProduct')
                     ->get()
                     ->toArray()
                 ;
@@ -105,11 +106,11 @@ class ExportTableValues extends Command
                             ->get()
                             ->toArray();
 
-        $foodProducts['food_products'] = $foodProductsT;
+        $foodProducts['food_sizes'] = $foodProductsT;
 
         $foodProducts = json_encode($foodProducts);
 
-        file_put_contents(storage_path("food_products.json"), stripslashes($foodProducts));
+        file_put_contents(storage_path("food_sizes.json"), stripslashes($foodProducts));
 
     }
 }
