@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
         $this->call(FoodSourcesSeeder::class);
         $this->call(FoodIngredientsSeeder::class);
         $this->call(IngredientsSourcesSeeder::class);
+        $this->call(FoodProductsSeeder::class);
         $this->call(MealsSeeder::class);
         $this->call(CaloriesSeeder::class);
-        $this->call(FoodSizesSeeder::class);
         $this->call(IngredientsSizesSeeder::class);
-        $this->call(FoodProductsSeeder::class);
+
     }
 }

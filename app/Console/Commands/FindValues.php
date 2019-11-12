@@ -107,7 +107,7 @@ class FindValues extends Command
             $totalCarbon += $foodSource->kgCO2e_per_kg_food;
         }
 
-
+        dump($ingredient->name);
         $ingredient->average_kgCO2e_per_kg_food = $totalCarbon /  count($ingredient->foodSources()->get());
 
 
@@ -156,7 +156,7 @@ class FindValues extends Command
                 $foodProductIngredient->ratio;
                 $this->cumulativeTotalMass += $foodProductIngredient->ratio;
             });
-
+dump($foodProduct->name);
             $foodProduct->average_kgCO2e_per_kg_food = $this->cumulativeTotalCarbon / $this->cumulativeTotalMass;
             $foodProduct->save();
         });
