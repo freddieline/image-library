@@ -14,7 +14,7 @@ class FoodSourcesSeeder extends Seeder
      */
     public function run()
     {
-        $reader = Reader::createFromPath(storage_path().'/Food_sources.csv', 'r');
+        $reader = Reader::createFromPath(storage_path() . '/Food_sources.csv', 'r');
 
         $results = $reader->getRecords();
 
@@ -27,13 +27,12 @@ class FoodSourcesSeeder extends Seeder
             ],[
                 'food' => $csvLine[1],
                 'tags' => $csvLine[2],
-                'kgCO2e_per_kg_food' => (float)$csvLine[3],
+                'kgCO2e_per_kg_food' => (float) $csvLine[3],
                 'origin_location' => $csvLine[4],
                 'source_title' => $csvLine[5],
                 'authors' => $csvLine[6],
-                'publisher' =>$csvLine[7],
+                'publisher' => $csvLine[7],
                 'link' => $csvLine[8]
-
             ]);
 
         };

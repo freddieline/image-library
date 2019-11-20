@@ -41,7 +41,7 @@ class FoodProductsSeeder extends Seeder
                 	FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient1,
-                        'ratio' => (integer)$csvLine[4]
+                        'ratio' => (integer)$csvLine[2]
                     ]);
 
                 // insert ingredient 2
