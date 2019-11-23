@@ -27,6 +27,8 @@ class FoodProductsSeeder extends Seeder
 
                 $foodProduct = App\FoodProducts::updateOrCreate([
                 	'name' => $csvLine[0]
+                ],[
+                    'category' => $csvLine[1],
                 ]);
 
                 $ingredient1 = 0;
@@ -36,68 +38,59 @@ class FoodProductsSeeder extends Seeder
                	$ingredient5 = 0;
              
                 // insert ingredient 1
-                $ingredient1 = $ingredients->where('name',$csvLine[1])->first()->id;
-                dump($ingredient1);
-                	FoodProductsIngredients::updateOrCreate([
-                        'food_product_id' => $foodProduct->id,
-                        'ingredient_id' =>  $ingredient1,
-                        'ratio' => (integer)$csvLine[2]
-                    ]);
+                $ingredient1 = $ingredients->where('name',$csvLine[2])->first()->id;
+ 
+            	FoodProductsIngredients::updateOrCreate([
+                    'food_product_id' => $foodProduct->id,
+                    'ingredient_id' =>  $ingredient1,
+                    'ratio' => (integer)$csvLine[3]
+                ]);
 
                 // insert ingredient 2
-                if(!empty($csvLine[3])){
-                    $ingredient2 = $ingredients->where('name',$csvLine[3])->first()->id;
+                if(!empty($csvLine[4])){
+                    $ingredient2 = $ingredients->where('name',$csvLine[4])->first()->id;
                       dump($ingredient2);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient2,
-                        'ratio' => (integer)$csvLine[4]
+                        'ratio' => (integer)$csvLine[5]
                     ]);
-                }
-                else{
-                    dump($csvLine[3]);
                 }
 
                 // insert ingredient 3
-                if(!empty($csvLine[5])){
-                    $ingredient3 = $ingredients->where('name',$csvLine[5])->first()->id;
-                      dump($ingredient3);
+                if(!empty($csvLine[6])){
+                                dump($csvLine[6]);
+                    $ingredient3 = $ingredients->where('name',$csvLine[6])->first()->id;
+          
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient3,
-                        'ratio' => (integer)$csvLine[6]
+                        'ratio' => (integer)$csvLine[7]
                     ]);
-                }
-                else{
-                    dump($csvLine[5]);
                 }
                 
                  // insert ingredient 4
-                if(!empty($csvLine[7])){
-                    $ingredient4 = $ingredients->where('name',$csvLine[7])->first()->id;
-                  	dump($ingredient4);
+                if(!empty($csvLine[8])){
+                                dump($csvLine[8]);
+                    $ingredient4 = $ingredients->where('name',$csvLine[8])->first()->id;
+          
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient4,
-                        'ratio' => (integer)$csvLine[8]
+                        'ratio' => (integer)$csvLine[9]
                     ]);
-                }
-                else{
-                    dump($csvLine[7]);
                 }
 
                                  // insert ingredient 4
-                if(!empty($csvLine[9])){
-                    $ingredient5 = $ingredients->where('name',$csvLine[9])->first()->id;
+                if(!empty($csvLine[10])){
+                     dump($csvLine[10]);
+                    $ingredient5 = $ingredients->where('name',$csvLine[10])->first()->id;
                   	dump($ingredient5);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient4,
-                        'ratio' => (integer)$csvLine[10]
+                        'ratio' => (integer)$csvLine[11]
                     ]);
-                }
-                else{
-                    dump($csvLine[9]);
                 }
 
         }

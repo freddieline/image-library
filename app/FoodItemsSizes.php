@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class IngredientsSizes extends Model
+class FoodItemsSizes extends Model
 {
-   protected $table  = "ingredients_sizes";
-       protected $fillable = ['id','ingredient_id','food_size_id','mass_of_ingredient_in_grams', 'created_at', 'updated_at'];
+   protected $table  = "food_items_sizes";
+       protected $fillable = ['id','ingredient_id','food_product_id','food_size_id','mass_in_grams', 'created_at', 'updated_at'];
 
        
     public function ingredient(){

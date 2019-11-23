@@ -4,7 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\FoodIngredients;
-use App\IngredientsSizes;
+use App\FoodProducts;
+use App\FoodItemsSizes;
 use App\Meals;
 use App\Ingredients;
 use Illuminate\Support\Facades\Storage;
@@ -48,6 +49,8 @@ class ExportTableValues extends Command
         $this->exportIngredients();
  
         $this->exportFoodProducts();
+
+        $this->exportFoodSizes();
     }
 
     /**
@@ -98,19 +101,36 @@ class ExportTableValues extends Command
      * Export food products
      *
      */
-    public function exportFoodProducts(){
+    public function exportFoodSizes(){
 
-        $foodProductsT = IngredientsSizes::
+        $foodSizesT = FoodItemsSizes::
                             with('foodSize')
-                            ->with('ingredient.foodSources')
                             ->get()
                             ->toArray();
 
-        $foodProducts['food_sizes'] = $foodProductsT;
+        $foodSizes['food_sizes'] = $foodSizesT;
+
+        $foodSizes = json_encode($foodSizes);
+
+        file_put_contents(storage_path("food_sizes.json"), stripslashes($foodSizes));
+
+    }
+
+        /**
+     * Export food products
+     *
+     */
+    public function exportFoodProducts(){
+
+        $foodProductsT = foodProducts::
+                            get()
+                            ->toArray();
+
+        $foodProducts['food_products'] = $foodProductsT;
 
         $foodProducts = json_encode($foodProducts);
 
-        file_put_contents(storage_path("food_sizes.json"), stripslashes($foodProducts));
+        file_put_contents(storage_path("food_products.json"), stripslashes($foodProducts));
 
     }
 }

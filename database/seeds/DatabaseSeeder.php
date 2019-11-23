@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FoodProductsSeeder::class);
         $this->call(MealsSeeder::class);
         $this->call(CaloriesSeeder::class);
-        $this->call(IngredientsSizesSeeder::class);
+        $this->call(FoodItemsSizesSeeder::class);
 
     }
 }
