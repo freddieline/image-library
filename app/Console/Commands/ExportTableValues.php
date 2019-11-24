@@ -105,6 +105,8 @@ class ExportTableValues extends Command
 
         $foodSizesT = FoodItemsSizes::
                             with('foodSize')
+                            ->with('foodProduct')
+                            ->with('ingredient')
                             ->get()
                             ->toArray();
 

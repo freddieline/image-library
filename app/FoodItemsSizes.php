@@ -14,6 +14,10 @@ class FoodItemsSizes extends Model
         return $this->belongsTo('App\FoodIngredients', 'ingredient_id');
     }
 
+    public function foodProduct(){
+        return $this->belongsTo('App\FoodProducts', 'food_product_id');
+    }
+
 
     public function foodSize(){
         return $this->belongsTo('App\FoodSizes', 'food_size_id');
