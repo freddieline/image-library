@@ -13,4 +13,8 @@ class FoodIngredients extends Model
         return $this->belongsToMany('App\FoodSources','food_ingredients_sources', 'food_ingredient_id', 'food_source_id');
     }
 
+    public function foodItemsSizes(){
+        return $this->hasMany('App\FoodItemsSizes', 'ingredient_id');
+    }
+
 }

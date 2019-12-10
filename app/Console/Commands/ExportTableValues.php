@@ -84,6 +84,7 @@ class ExportTableValues extends Command
        // get food_ingredients
         $ingredientsT = FoodIngredients::
             with('foodSources')
+            ->with('foodItemsSizes')
             ->get()
             ->toArray()
         ;
@@ -125,7 +126,8 @@ class ExportTableValues extends Command
     public function exportFoodProducts(){
 
         $foodProductsT = foodProducts::
-                            get()
+                            with('foodItemsSizes')
+                            ->get()
                             ->toArray();
 
         $foodProducts['food_products'] = $foodProductsT;

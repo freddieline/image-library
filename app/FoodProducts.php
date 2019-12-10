@@ -13,4 +13,9 @@ class FoodProducts extends Model
     public function foodProductsIngredients(){
         return $this->hasMany('App\FoodProductsIngredients', 'food_product_id');
     }
+
+
+    public function foodItemsSizes(){
+        return $this->hasMany('App\FoodItemsSizes', 'food_product_id');
+    }
 }
