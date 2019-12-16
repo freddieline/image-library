@@ -1,254 +1,250 @@
-Apple juice,drink
-Lettuce,vegetables
-Sole,"fish,seafood"
-Lobster,"seafood,crustaceans"
-Gherkins,preserved vegetables
-Turbot,"fish,seafood"
-Asparagus,vegetables
-Hake,"fish,seafood"
-Capsicums,vegetables
-Tomatoes,vegetables
-Beef,meat
-Swordfish,"fish,seafood"
-Strawberries,fruit
-Redcurrants,fruit
-Zucchini,vegetables
-Chicory,vegetables
-Blueberries,fuit
-Cottage cheese,dairy
-Blackcurrants,fruit
-Aubergines,vegetables
-Eggplants,vegetables
-Halloumi cheese,"dairy,cheese"
-Broccoli,vegetables
-Pumpkins,vegetables
-Cantaloupes,fruit
-Haddock,"fish,seafood"
-Mushrooms,vegetables
-Sugar,sweets
-Raisins,preserved fruit
-Cod,"fish,seafood"
-Squid,"cephalopods,seafood"
-Watermelons,fruit
-Olives,preserved vegetables
-Camembert cheese,"Mould cheese,cheese"
-Tequila,alcohol
-Mangoes,fruit
-Fennel,herb
-Sea bass,"fish,seafood"
-Skimmed milk,drink
-Stilton cheese,Blue cheese
-Beer,alcohol
-Cranberries,fruit
-Whole milk,drink
-Turkey,meat
-Whiting,"fish,seafood"
-Pineapples,fruit
-Pork,meat
-Cauliflower,vegetables
-Cider,alcohol
-Trout,"fish,seafood"
-Parmesan cheese,hard cheese
-Buttermilk,dairy
-Rice,cereal
-Papayas,fruit
-Spinach,vegetables
-Cream,dairy
-Wine,alcohol
-Ham,meat
-Raspberries,fruit
-Oranges,fruit
-Rum,alcohol
-Vodka,alcohol
-Butter,spreads
-Whisky,alcohol
-Pollock,"fish,seafood"
-Salmon,"fish,seafood"
-Cabbage,vegetables
-Bananas,fruit
-Apples,fruit
-Celery,vegetables
-Plantains,fruit
-Carp,"fish,seafood"
-Octopus,"cephalopods,seafood"
-Onions,vegetables
-Artichokes,"preserved vegetables,vegetables"
-Brussels sprouts,vegetables
-Cherries,fruit
-Green beans,vegetables
-Tangerines,fruit
-Apricots,fruit
-Quinces,fruit
-Duck,meat
-Soy beans,"beans,pulses"
-Rutabaga,vegetables
-Grapes,fruit
-Mackerel,"fish,seafood"
-Soy milk,drink
-Shallots,vegetables
-Figs,"preserved fruit,fruit"
-Beetroot,vegetables
-Avocados,vegetables
-Herring,"fish,seafood"
-Potatoes,vegetables
-Butternut squash,vegetables
-Garlic,seasoning
-Parsnips,vegetables
-Chicken,meat
-Sunflower seeds,"nuts,seeds,snack"
-Lentils,"beans,pulses"
-Baked Beans,"beans,pulses"
-Pinto beans,"beans,pulses"
-Olive oil,oils
-Sunflower oil,oils
-Sweet potatoes,vegetables
-Pistachios,"nuts,seeds,snack"
-Chickpeas,"beans,pulses"
-Cashew nuts,"nuts,seeds,snack"
-Almonds,"nuts,seeds,snack"
-Sesame seeds,"nuts,seeds"
-Coconut milk,drink
-Dates,preserved fruit
-Walnuts,"nuts,seeds,snack"
-Peanuts,"nuts,seeds,snack"
-Tea,drink
-Anise,spice
-Aniseed,spice
-Badian,spice
-Barley,"beans,pulses"
-Biscuits,sweets
-Black-eyed peas,"beans,pulses"
-Bok choy,vegetables
-Breakfast cereals,
-Brie cheese,"Mould cheese,cheese"
-Brill,"fish,seafood"
-Buffalo,meat
-Buffalo milk,drink
-Butter beans,"beans,pulses"
-Cantaloupes,fruit
-Cannellini Beans,"beans,pulses"
-Cardamom,spice
-Carrots,vegetables
-Cayenne pepper,spice
-Cheddar cheese,"Hard cheese,cheese"
-Chestnuts,"nuts,seeds"
-Chilli powder,spice
-Cinnamon,spice
-Cocoa powder,additive
-Coconuts,fruit
-Common ling,"fish,seafood"
-Couscous,"beans,pulses"
-Cowpeas,"beans,pulses"
-Crab,"crustaceans,seafood"
-Cream cheese,dairy
-Crème fraiche,dairy
-Crisp bread,bread
-Cucumbers,vegetables
-Dark chocolate,sweets
-Dried fruit,preserved fruit
-Dry chillies,spice
-Dry peas,"beans,pulses"
-Eggs,dairy
-Feta cheese,"cheese,dairy"
-Foam sweets,sweets
-French beans,vegetables
-Fresh chillies,spice
-Fresh coffee,drink
-Peas,vegetables
-Frites,vegetables
-Fruit juice,drink
-Gigante beans,"beans,pulses"
-Ginger,"seasoning,spice"
-Ginger beer,drink
-Goat meat,meat
-Gooseberries,fruit
-Gorgonzola cheese,"Blue cheese,cheese"
-Gouda cheese,"Hard cheese,cheese"
-Grapefruit,fruit
-Great northern beans,vegetables
-Groundnuts,"nuts,seeds"
-Guavas,fruit
-Hazelnuts,"nuts,seeds,snack"
-Hogget,meat
-Honey,sweets
-Instant coffee powder,drink
-Jam,jam
-Jelly sweets,sweets
-Kangaroo,meat
-Kiwi fruit,fruit
-Lamb,meat
-Lemonade,drink
-Lemons,fruit
-Limes,fruit
-Low fat cream,dairy
-Low fat cream cheese,dairy
-Low fat crème fraiche,dairy
-Low fat yogurt,dairy
-Mace,spice
-Maize,cereal
-Mandarines,fruit
-Margarine,spreads
-Marmalade,jam
-Maté,drink
-Meat substitutes,meat
-Megrim,"fish,seafood"
-Milk chocolate,sweets
-Millet,"fish,seafood"
-Mineral water,drink
-Mozzarella cheese,"cheese,dairy"
-Mussels,"fish,seafood"
-Mustard seed,"nuts,seeds"
-Mutton,meat
-Navy beans,"beans,pulses"
-Nectarines,fruit
-Nutmeg,spice
-Oats,cereals
-Game,meat
-Pasta,cereals
-Pastry,baking
-Pea beans,vegetables
-Peaches,fruit
-Pears,fruit
-Peppers,vegetables
-Pheasant,vegetables
-Pita bread,bread
-Plain flour,cereals
-Plums,fruit
-Pomelo,fruit
-Pomfret,"fish,seafood"
-Porbeagle,"fish,seafood"
-Potato crisps,snack
-Prawns,seafood
-Quorn,meat
-Rabbit,meat
-Tuna,"fish,seafood"
-Roquefort cheese,"Blue cheese,cheese"
-Runner beans,vegetables
-Rye,cereals
-Rye bread,bread
-Saffron,spice
-Saithe,"fish,seafood"
-Semi skimmed milk,drink
-Shrimps,"crustaceans,seafood"
-Sloes,fruit
-Sorghum,cereals
-Soya drink,drink
-Soy oil,oils
-Swedes,vegetables
-Sweets,sweets
-Golden syrup,sweets
-Tonic water,drink
-Truffles,seasoning
-Tumeric,spice
-Vegetable crisps,snack
-Vegetable oil,oils
-White bread,bread
-Wholemeal bread,bread
-Yams,vegetables
-Yogurt,dairy
-Apple cyder vinegar,vinegar
-Balsamic vinegar,vinegar
-Red wine vinegar,vinegar
-White wine vinegar,vinegar
-Tap water,drink
-Marzipan,sweets
+Apple juice,drink,yes,glass,240
+Lettuce,vegetables,,portion,80
+Sole,"fish,seafood",,portion,140
+Lobster,"seafood,crustaceans",,portion,140
+Gherkins,preserved vegetables,,portion,80
+Turbot,"fish,seafood",,portion,140
+Asparagus,vegetables,,portion,80
+Hake,"fish,seafood",,portion,140
+Capsicums,vegetables,,portion,80
+Tomatoes,vegetables,,portion,80
+Beef,meat,,portion,80
+Swordfish,"fish,seafood",,portion,140
+Strawberries,fruit,,portion,80
+Redcurrants,fruit,,portion,80
+Zucchini,vegetables,,portion,80
+Chicory,vegetables,,portion,80
+Blueberries,fuit,,portion,80
+Cottage cheese,dairy,,portion,30
+Blackcurrants,fruit,,portion,80
+Aubergines,vegetables,,portion,80
+Eggplants,vegetables,,portion,80
+Halloumi cheese,"dairy,cheese",,portion,30
+Broccoli,vegetables,,portion,80
+Pumpkins,vegetables,,portion,80
+Cantaloupes,fruit,,portion,80
+Haddock,"fish,seafood",,portion,140
+Mushrooms,vegetables,,portion,80
+Sugar,sweets,,,
+Raisins,preserved fruit,,portion,30
+Cod,"fish,seafood",,portion,140
+Squid,"cephalopods,seafood",,portion,140
+Watermelons,fruit,,portion,80
+Olives,preserved vegetables,,portion,30
+Camembert cheese,"Mould cheese,cheese",,portion,30
+Tequila,alcohol,yes,,
+Mangoes,fruit,,portion,80
+Fennel,herb,,,
+Sea bass,"fish,seafood",,portion,140
+Skimmed milk,drink,yes,glass,240
+Stilton cheese,Blue cheese,,portion,30
+Beer,alcohol,yes,,
+Cranberries,fruit,,portion,80
+Whole milk,drink,yes,glass,240
+Turkey,meat,,portion,80
+Whiting,"fish,seafood",,portion,140
+Pineapples,fruit,,portion,80
+Pork,meat,,portion,80
+Cauliflower,vegetables,,portion,80
+Cider,alcohol,yes,,
+Trout,"fish,seafood",,portion,140
+Parmesan cheese,hard cheese,,portion,30
+Buttermilk,dairy,yes,,
+Rice,cereal,,portion,75
+Papayas,fruit,,portion,80
+Spinach,vegetables,,portion,80
+Cream,dairy,yes,,
+Wine,alcohol,yes,glass,140
+Ham,meat,,portion,80
+Raspberries,fruit,,portion,80
+Oranges,fruit,,portion,80
+Rum,alcohol,yes,,
+Vodka,alcohol,yes,,
+Butter,spreads,,,
+Whisky,alcohol,yes,,
+Pollock,"fish,seafood",,portion,80
+Salmon,"fish,seafood",,portion,140
+Cabbage,vegetables,,portion,80
+Bananas,fruit,,portion,80
+Apples,fruit,,portion,80
+Celery,vegetables,,portion,80
+Plantains,fruit,,portion,80
+Carp,"fish,seafood",,portion,140
+Octopus,"cephalopods,seafood",,portion,140
+Onions,vegetables,,portion,80
+Artichokes,"preserved vegetables,vegetables",,portion,80
+Brussels sprouts,vegetables,,portion,80
+Cherries,fruit,,portion,80
+Green beans,vegetables,,portion,80
+Tangerines,fruit,,portion,80
+Apricots,fruit,,portion,80
+Quinces,fruit,,portion,80
+Duck,meat,,portion,80
+Soy beans,"beans,pulses",,portion,75
+Rutabaga,vegetables,,portion,80
+Grapes,fruit,,portion,80
+Mackerel,"fish,seafood",,portion,140
+Soy milk,drink,yes,glass,240
+Shallots,vegetables,,portion,80
+Figs,"preserved fruit,fruit",,portion,30
+Beetroot,vegetables,,portion,80
+Avocados,vegetables,,portion,80
+Herring,"fish,seafood",,portion,140
+Potatoes,vegetables,,portion,185
+Butternut squash,vegetables,,portion,80
+Garlic,seasoning,,,
+Parsnips,vegetables,,portion,80
+Chicken,meat,,portion,80
+Sunflower seeds,"nuts,seeds,snack",,portion,30
+Lentils,"beans,pulses",,portion,30
+Baked Beans,"beans,pulses",,,
+Pinto beans,"beans,pulses",,portion,30
+Olive oil,oils,,,
+Sunflower oil,oils,,,
+Sweet potatoes,vegetables,,portion,80
+Pistachios,"nuts,seeds,snack",,portion,30
+Chickpeas,"beans,pulses",,portion,30
+Cashew nuts,"nuts,seeds,snack",,portion,30
+Almonds,"nuts,seeds,snack",,portion,30
+Sesame seeds,"nuts,seeds",,,
+Coconut milk,drink,,,
+Dates,preserved fruit,,portion,30
+Walnuts,"nuts,seeds,snack",,portion,30
+Peanuts,"nuts,seeds,snack",,portion,30
+Tea,drink,,,
+Anise,spice,,,
+Aniseed,spice,,,
+Badian,spice,,,
+Barley,"beans,pulses",,portion,75
+Biscuits,sweets,,,
+Black-eyed peas,"beans,pulses",,portion,30
+Bok choy,vegetables,,portion,80
+Breakfast cereals,,,portion,40
+Brie cheese,"Mould cheese,cheese",,portion,30
+Brill,"fish,seafood",,portion,140
+Butter beans,"beans,pulses",,portion,30
+Cantaloupes,fruit,,portion,80
+Cannellini Beans,"beans,pulses",,portion,30
+Cardamom,spice,,,
+Carrots,vegetables,,portion,80
+Cayenne pepper,spice,,,
+Cheddar cheese,"Hard cheese,cheese",,portion,30
+Chestnuts,"nuts,seeds",,portion,30
+Chilli powder,spice,,,
+Cinnamon,spice,,,
+Cocoa powder,additive,,,
+Coconuts,fruit,,portion,30
+Common ling,"fish,seafood",,portion,140
+Couscous,"beans,pulses",,portion,30
+Cowpeas,"beans,pulses",,portion,30
+Crab,"crustaceans,seafood",,portion,140
+Cream cheese,dairy,,portion,30
+Crème fraiche,dairy,,portion,30
+Crisp bread,bread,,,
+Cucumbers,vegetables,,portion,80
+Dark chocolate,sweets,,,
+Dried fruit,preserved fruit,,portion,30
+Dry chillies,spice,,,
+Dry peas,"beans,pulses",,portion,30
+Eggs,dairy,,,
+Feta cheese,"cheese,dairy",,portion,30
+Foam sweets,sweets,,,
+French beans,vegetables,,portion,80
+Fresh chillies,spice,,,
+Fresh coffee,drink,,,
+Peas,vegetables,,portion,80
+Frites,vegetables,,portion,185
+Fruit juice,drink,yes,glass,240
+Gigante beans,"beans,pulses",,portion,80
+Ginger,"seasoning,spice",,,
+Ginger beer,drink,yes,glass,240
+Goat meat,meat,,portion,80
+Gooseberries,fruit,,portion,80
+Gorgonzola cheese,"Blue cheese,cheese",,portion,30
+Gouda cheese,"Hard cheese,cheese",,portion,30
+Grapefruit,fruit,,portion,80
+Great northern beans,vegetables,,portion,80
+Groundnuts,"nuts,seeds",,portion,30
+Guavas,fruit,,portion,80
+Hazelnuts,"nuts,seeds,snack",,portion,30
+Hogget,meat,,portion,80
+Honey,sweets,,,
+Instant coffee powder,drink,,,
+Jam,jam,,,
+Jelly sweets,sweets,,,
+Kiwi fruit,fruit,,portion,80
+Lamb,meat,,portion,80
+Lemonade,drink,,glass,240
+Lemons,fruit,,,
+Limes,fruit,,,
+Low fat cream,dairy,,portion,30
+Low fat cream cheese,dairy,,portion,30
+Low fat crème fraiche,dairy,,portion,30
+Low fat yogurt,dairy,,portion,30
+Mace,spice,,,
+Maize,cereal,,,
+Mandarines,fruit,,portion,80
+Margarine,spreads,,,
+Marmalade,jam,,,
+Maté,drink,,,
+Meat substitutes,meat,,portion,80
+Megrim,"fish,seafood",,portion,140
+Milk chocolate,sweets,,,
+Millet,"fish,seafood",,portion,140
+Mineral water,drink,yes,,
+Mozzarella cheese,"cheese,dairy",,portion,30
+Mussels,"fish,seafood",,portion,140
+Mustard seed,"nuts,seeds",,,
+Mutton,meat,,portion,80
+Navy beans,"beans,pulses",,portion,30
+Nectarines,fruit,,portion,80
+Nutmeg,spice,,,
+Oats,cereals,,portion,40
+Game,meat,,portion,80
+Pasta,cereals,,portion,75
+Pastry,baking,,portion,185
+Pea beans,vegetables,,portion,30
+Peaches,fruit,,portion,80
+Pears,fruit,,portion,80
+Peppers,vegetables,,portion,80
+Pita bread,bread,,portion,50
+Plain flour,cereals,,,
+Plums,fruit,,portion,80
+Pomelo,fruit,,portion,80
+Pomfret,"fish,seafood",,portion,140
+Porbeagle,"fish,seafood",,portion,140
+Potato crisps,snack,,,
+Prawns,seafood,,portion,140
+Quorn,meat,,portion,80
+Rabbit,meat,,portion,80
+Tuna,"fish,seafood",,portion,80
+Roquefort cheese,"Blue cheese,cheese",,portion,30
+Runner beans,vegetables,,portion,80
+Rye,cereals,,portion,40
+Rye bread,bread,,portion,50
+Saffron,spice,,,
+Saithe,"fish,seafood",,portion,140
+Semi skimmed milk,drink,yes,glass,240
+Shrimps,"crustaceans,seafood",,portion,140
+Sloes,fruit,,portion,80
+Sorghum,cereals,,portion,40
+Soya drink,drink,yes,glass,240
+Soy oil,oils,,,
+Swedes,vegetables,,portion,80
+Sweets,sweets,,,
+Golden syrup,sweets,,,
+Tonic water,drink,yes,,
+Truffles,seasoning,,,
+Tumeric,spice,,,
+Vegetable crisps,snack,,,
+Vegetable oil,oils,,,
+White bread,bread,,portion,50
+Wholemeal bread,bread,,portion,50
+Yams,vegetables,,portion,80
+Yogurt,dairy,,portion,125
+Apple cyder vinegar,vinegar,yes,,
+Balsamic vinegar,vinegar,yes,,
+Red wine vinegar,vinegar,yes,,
+White wine vinegar,vinegar,yes,,
+Tap water,drink,yes,,
+Marzipan,sweets,,,

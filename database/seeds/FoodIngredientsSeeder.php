@@ -21,9 +21,12 @@ class FoodIngredientsSeeder extends Seeder
             dump($csvLine);
 
                 App\FoodIngredients::updateOrCreate([
-                'name' => $csvLine[0]
+                    'name' => $csvLine[0]
                 ], [
-                    'category' =>$csvLine[1]
+                    'category' => $csvLine[1],
+                    'is_liquid' =>( $csvLine[2] == "yes"),
+                    'portion_type' =>$csvLine[3],
+                    'portion_size' =>(int)$csvLine[4],
                 ]);
 
         };
