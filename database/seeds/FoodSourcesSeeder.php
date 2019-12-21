@@ -26,13 +26,14 @@ class FoodSourcesSeeder extends Seeder
                 'unique_id' => $csvLine[0],
             ],[
                 'food' => $csvLine[1],
-                'tags' => $csvLine[2],
-                'kgCO2e_per_kg_food' => (float) $csvLine[3],
-                'origin_location' => $csvLine[4],
-                'source_title' => $csvLine[5],
-                'authors' => $csvLine[6],
-                'publisher' => $csvLine[7],
-                'link' => $csvLine[8]
+                'include' => ($csvLine[2] === 'yes'),
+                'tags' => $csvLine[3],
+                'kgCO2e_per_kg_food' => (float) $csvLine[4],
+                'origin_location' => $csvLine[5],
+                'source_title' => $csvLine[6],
+                'authors' => $csvLine[7],
+                'publisher' => $csvLine[8],
+                'link' => $csvLine[9]
             ]);
 
         };

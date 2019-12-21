@@ -7,6 +7,8 @@ Turbot,"fish,seafood",,portion,140
 Asparagus,vegetables,,portion,80
 Hake,"fish,seafood",,portion,140
 Capsicums,vegetables,,portion,80
+Passata,vegetables,,portion,80
+Tinned tomatoes,vegetables,,portion,80
 Tomatoes,vegetables,,portion,80
 Beef,meat,,portion,80
 Swordfish,"fish,seafood",,portion,140
@@ -38,7 +40,8 @@ Fennel,herb,,,
 Sea bass,"fish,seafood",,portion,140
 Skimmed milk,drink,yes,glass,240
 Stilton cheese,Blue cheese,,portion,30
-Beer,alcohol,yes,,
+Beer (440ml can),alcohol,yes,glass,240
+Beer (250ml bottle),alcohol,yes,glass,240
 Cranberries,fruit,,portion,80
 Whole milk,drink,yes,glass,240
 Turkey,meat,,portion,80
@@ -53,8 +56,10 @@ Buttermilk,dairy,yes,,
 Rice,cereal,,portion,75
 Papayas,fruit,,portion,80
 Spinach,vegetables,,portion,80
-Cream,dairy,yes,,
-Wine,alcohol,yes,glass,140
+Single cream,dairy,yes,,
+Double cream,dairy,yes,,
+Whipping cream,dairy,yes,,
+Wine,alcohol,yes,glass,175
 Ham,meat,,portion,80
 Raspberries,fruit,,portion,80
 Oranges,fruit,,portion,80
@@ -64,7 +69,8 @@ Butter,spreads,,,
 Whisky,alcohol,yes,,
 Pollock,"fish,seafood",,portion,80
 Salmon,"fish,seafood",,portion,140
-Cabbage,vegetables,,portion,80
+White cabbage,vegetables,,portion,80
+Red cabbage,vegetables,,portion,80
 Bananas,fruit,,portion,80
 Apples,fruit,,portion,80
 Celery,vegetables,,portion,80
@@ -99,7 +105,11 @@ Sunflower seeds,"nuts,seeds,snack",,portion,30
 Lentils,"beans,pulses",,portion,30
 Baked Beans,"beans,pulses",,,
 Pinto beans,"beans,pulses",,portion,30
-Olive oil,oils,,,
+Olive oil (1L),oils,,,
+Olive oil (750ml),oils,,,
+Olive oil (500ml),oils,,,
+Olive oil (250ml),oils,,,
+Olive oil (125ml),oils,,,
 Sunflower oil,oils,,,
 Sweet potatoes,vegetables,,portion,80
 Pistachios,"nuts,seeds,snack",,portion,30
@@ -117,14 +127,14 @@ Aniseed,spice,,,
 Badian,spice,,,
 Barley,"beans,pulses",,portion,75
 Biscuits,sweets,,,
-Black-eyed peas,"beans,pulses",,portion,30
+Black-eyed peas,"beans,pulses",,portion,40
 Bok choy,vegetables,,portion,80
 Breakfast cereals,,,portion,40
 Brie cheese,"Mould cheese,cheese",,portion,30
 Brill,"fish,seafood",,portion,140
-Butter beans,"beans,pulses",,portion,30
+Butter beans,"beans,pulses",,portion,40
 Cantaloupes,fruit,,portion,80
-Cannellini Beans,"beans,pulses",,portion,30
+Cannellini Beans,"beans,pulses",,portion,40
 Cardamom,spice,,,
 Carrots,vegetables,,portion,80
 Cayenne pepper,spice,,,
@@ -135,8 +145,8 @@ Cinnamon,spice,,,
 Cocoa powder,additive,,,
 Coconuts,fruit,,portion,30
 Common ling,"fish,seafood",,portion,140
-Couscous,"beans,pulses",,portion,30
-Cowpeas,"beans,pulses",,portion,30
+Couscous,"beans,pulses",,portion,40
+Cowpeas,"beans,pulses",,portion,40
 Crab,"crustaceans,seafood",,portion,140
 Cream cheese,dairy,,portion,30
 Crème fraiche,dairy,,portion,30
@@ -154,8 +164,11 @@ Fresh chillies,spice,,,
 Fresh coffee,drink,,,
 Peas,vegetables,,portion,80
 Frites,vegetables,,portion,185
+Orange juice (not from concentrate),drink,yes,glass,240
+Orange juice (from concentrate),drink,yes,glass,240
+Fruit squash,concentrate,yes,,
 Fruit juice,drink,yes,glass,240
-Gigante beans,"beans,pulses",,portion,80
+Gigante beans,"beans,pulses",,portion,40
 Ginger,"seasoning,spice",,,
 Ginger beer,drink,yes,glass,240
 Goat meat,meat,,portion,80
@@ -163,7 +176,7 @@ Gooseberries,fruit,,portion,80
 Gorgonzola cheese,"Blue cheese,cheese",,portion,30
 Gouda cheese,"Hard cheese,cheese",,portion,30
 Grapefruit,fruit,,portion,80
-Great northern beans,vegetables,,portion,80
+Great northern beans,vegetables,,portion,40
 Groundnuts,"nuts,seeds",,portion,30
 Guavas,fruit,,portion,80
 Hazelnuts,"nuts,seeds,snack",,portion,30
@@ -174,10 +187,16 @@ Jam,jam,,,
 Jelly sweets,sweets,,,
 Kiwi fruit,fruit,,portion,80
 Lamb,meat,,portion,80
-Lemonade,drink,,glass,240
+Cola drink (2L),drink,,glass,240
+Cola drink (500ml),drink,,glass,240
+Cola drink (330ml),drink,,glass,240
+Diet cola drink (2L),drink,,glass,240
+Diet cola drink (500ml),drink,,glass,240
+Diet cola drink (330ml),drink,,glass,240
+Diet lemonade (2L),drink,,glass,240
+Lemonade (2L),drink,,glass,240
 Lemons,fruit,,,
 Limes,fruit,,,
-Low fat cream,dairy,,portion,30
 Low fat cream cheese,dairy,,portion,30
 Low fat crème fraiche,dairy,,portion,30
 Low fat yogurt,dairy,,portion,30
@@ -191,7 +210,10 @@ Meat substitutes,meat,,portion,80
 Megrim,"fish,seafood",,portion,140
 Milk chocolate,sweets,,,
 Millet,"fish,seafood",,portion,140
-Mineral water,drink,yes,,
+Sparkling water (500ml),drink,yes,glass,240
+Sparkling water (2L),drink,yes,glass,240
+Still water (500ml),drink,yes,glass,240
+Still water (2L),drink,yes,glass,240
 Mozzarella cheese,"cheese,dairy",,portion,30
 Mussels,"fish,seafood",,portion,140
 Mustard seed,"nuts,seeds",,,
@@ -224,7 +246,7 @@ Rye,cereals,,portion,40
 Rye bread,bread,,portion,50
 Saffron,spice,,,
 Saithe,"fish,seafood",,portion,140
-Semi skimmed milk,drink,yes,glass,240
+Semi-skimmed milk,drink,yes,glass,240
 Shrimps,"crustaceans,seafood",,portion,140
 Sloes,fruit,,portion,80
 Sorghum,cereals,,portion,40
@@ -248,3 +270,4 @@ Red wine vinegar,vinegar,yes,,
 White wine vinegar,vinegar,yes,,
 Tap water,drink,yes,,
 Marzipan,sweets,,,
+Quinoa,cereal,,portion,40
