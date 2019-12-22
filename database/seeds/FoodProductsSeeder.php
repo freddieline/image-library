@@ -48,6 +48,7 @@ class FoodProductsSeeder extends Seeder
 
                 // insert ingredient 2
                 if(!empty($csvLine[4])){
+                         dump($csvLine[4]);
                     $ingredient2 = $ingredients->where('name',$csvLine[4])->first()->id;
                       dump($ingredient2);
                     FoodProductsIngredients::updateOrCreate([

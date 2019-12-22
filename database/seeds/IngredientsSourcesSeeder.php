@@ -36,18 +36,22 @@ class IngredientsSourcesSeeder extends Seeder
 
                     // check ingredient name against each tag
                     if( strtolower($ingredient->name) === strtolower($tag)){
-                        IngredientsSources::firstOrCreate([
+                        if($source->include){
+                            IngredientsSources::firstOrCreate([
                             'food_source_id' => $source->id,
                             'food_ingredient_id' => $ingredient->id
-                        ]);
+                            ]);
+                        }
                     }
                     // check category name against each tage
                     if(!empty($ingredient->category)){
                         if( strtolower($ingredient->category) === strtolower($tag)){
-                            IngredientsSources::firstOrCreate([
+                            if($source->include){
+                                IngredientsSources::firstOrCreate([
                                 'food_source_id' => $source->id,
                                 'food_ingredient_id' => $ingredient->id
                             ]);
+                            }   
                         }
                     }
                 }

@@ -67,7 +67,7 @@ class FindValues extends Command
 
         $this->meals = Meals::with('mealComponents')->get();
 
-        $this->foodCalories = Calories::get();
+       // $this->foodCalories = Calories::get();
 
     }
 
@@ -87,9 +87,9 @@ class FindValues extends Command
             $ingredient = $this->findStandardDeviation($ingredient);
         }
 
-        $this->findIngredientsCalories();
+        // $this->findIngredientsCalories();
 
-        $this->findCarbonPerCalorie();
+        // $this->findCarbonPerCalorie();
     }
 
     /**

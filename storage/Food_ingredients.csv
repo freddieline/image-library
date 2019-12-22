@@ -40,8 +40,8 @@ Fennel,herb,,,
 Sea bass,"fish,seafood",,portion,140
 Skimmed milk,drink,yes,glass,240
 Stilton cheese,Blue cheese,,portion,30
-Beer (440ml can),alcohol,yes,glass,240
 Beer (250ml bottle),alcohol,yes,glass,240
+Beer (440ml can),alcohol,yes,glass,240
 Cranberries,fruit,,portion,80
 Whole milk,drink,yes,glass,240
 Turkey,meat,,portion,80
@@ -90,7 +90,6 @@ Soy beans,"beans,pulses",,portion,75
 Rutabaga,vegetables,,portion,80
 Grapes,fruit,,portion,80
 Mackerel,"fish,seafood",,portion,140
-Soy milk,drink,yes,glass,240
 Shallots,vegetables,,portion,80
 Figs,"preserved fruit,fruit",,portion,30
 Beetroot,vegetables,,portion,80
@@ -105,11 +104,11 @@ Sunflower seeds,"nuts,seeds,snack",,portion,30
 Lentils,"beans,pulses",,portion,30
 Baked Beans,"beans,pulses",,,
 Pinto beans,"beans,pulses",,portion,30
-Olive oil (1L),oils,,,
-Olive oil (750ml),oils,,,
-Olive oil (500ml),oils,,,
-Olive oil (250ml),oils,,,
-Olive oil (125ml),oils,,,
+Olive oil (1l bottle),oils,,,
+Olive oil (750ml bottle),oils,,,
+Olive oil (500ml bottle),oils,,,
+Olive oil (250ml bottle),oils,,,
+Olive oil (125ml bottle),oils,,,
 Sunflower oil,oils,,,
 Sweet potatoes,vegetables,,portion,80
 Pistachios,"nuts,seeds,snack",,portion,30
@@ -121,7 +120,7 @@ Coconut milk,drink,,,
 Dates,preserved fruit,,portion,30
 Walnuts,"nuts,seeds,snack",,portion,30
 Peanuts,"nuts,seeds,snack",,portion,30
-Tea,drink,,,
+Tea,concentrate,,,
 Anise,spice,,,
 Aniseed,spice,,,
 Badian,spice,,,
@@ -187,14 +186,14 @@ Jam,jam,,,
 Jelly sweets,sweets,,,
 Kiwi fruit,fruit,,portion,80
 Lamb,meat,,portion,80
-Cola drink (2L),drink,,glass,240
-Cola drink (500ml),drink,,glass,240
-Cola drink (330ml),drink,,glass,240
-Diet cola drink (2L),drink,,glass,240
-Diet cola drink (500ml),drink,,glass,240
-Diet cola drink (330ml),drink,,glass,240
-Diet lemonade (2L),drink,,glass,240
-Lemonade (2L),drink,,glass,240
+Cola drink (2l bottle),drink,,glass,240
+Cola drink (500ml bottle),drink,,glass,240
+Cola drink (330ml can),drink,,glass,240
+Diet cola drink (2l bottle),drink,,glass,240
+Diet cola drink (500ml bottle),drink,,glass,240
+Diet cola drink (330ml can),drink,,glass,240
+Diet lemonade (2l bottle),drink,,glass,240
+Lemonade (2l bottle),drink,,glass,240
 Lemons,fruit,,,
 Limes,fruit,,,
 Low fat cream cheese,dairy,,portion,30
@@ -210,10 +209,10 @@ Meat substitutes,meat,,portion,80
 Megrim,"fish,seafood",,portion,140
 Milk chocolate,sweets,,,
 Millet,"fish,seafood",,portion,140
-Sparkling water (500ml),drink,yes,glass,240
-Sparkling water (2L),drink,yes,glass,240
-Still water (500ml),drink,yes,glass,240
-Still water (2L),drink,yes,glass,240
+Sparkling water (500ml bottle),drink,yes,glass,240
+Sparkling water (2l bottle),drink,yes,glass,240
+Still water (500ml bottle),drink,yes,glass,240
+Still water (2l bottle),drink,yes,glass,240
 Mozzarella cheese,"cheese,dairy",,portion,30
 Mussels,"fish,seafood",,portion,140
 Mustard seed,"nuts,seeds",,,
@@ -250,7 +249,7 @@ Semi-skimmed milk,drink,yes,glass,240
 Shrimps,"crustaceans,seafood",,portion,140
 Sloes,fruit,,portion,80
 Sorghum,cereals,,portion,40
-Soya drink,drink,yes,glass,240
+Soya milk,drink,yes,glass,240
 Soy oil,oils,,,
 Swedes,vegetables,,portion,80
 Sweets,sweets,,,
