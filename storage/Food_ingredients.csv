@@ -1,272 +1,265 @@
-Apple juice,drink,yes,glass,240
-Lettuce,vegetables,,portion,80
-Sole,"fish,seafood",,portion,140
-Lobster,"seafood,crustaceans",,portion,140
-Gherkins,preserved vegetables,,portion,80
-Turbot,"fish,seafood",,portion,140
-Asparagus,vegetables,,portion,80
-Hake,"fish,seafood",,portion,140
-Capsicums,vegetables,,portion,80
-Passata,vegetables,,portion,80
-Tinned tomatoes,vegetables,,portion,80
-Tomatoes,vegetables,,portion,80
-Beef,meat,,portion,80
-Swordfish,"fish,seafood",,portion,140
-Strawberries,fruit,,portion,80
-Redcurrants,fruit,,portion,80
-Zucchini,vegetables,,portion,80
-Chicory,vegetables,,portion,80
-Blueberries,fuit,,portion,80
-Cottage cheese,dairy,,portion,30
-Blackcurrants,fruit,,portion,80
-Aubergines,vegetables,,portion,80
-Eggplants,vegetables,,portion,80
-Halloumi cheese,"dairy,cheese",,portion,30
-Broccoli,vegetables,,portion,80
-Pumpkins,vegetables,,portion,80
-Cantaloupes,fruit,,portion,80
-Haddock,"fish,seafood",,portion,140
-Mushrooms,vegetables,,portion,80
-Sugar,sweets,,,
-Raisins,preserved fruit,,portion,30
-Cod,"fish,seafood",,portion,140
-Squid,"cephalopods,seafood",,portion,140
-Watermelons,fruit,,portion,80
-Olives,preserved vegetables,,portion,30
-Camembert cheese,"Mould cheese,cheese",,portion,30
-Tequila,alcohol,yes,,
-Mangoes,fruit,,portion,80
-Fennel,herb,,,
-Sea bass,"fish,seafood",,portion,140
-Skimmed milk,drink,yes,glass,240
-Stilton cheese,Blue cheese,,portion,30
-Beer (250ml bottle),alcohol,yes,glass,240
-Beer (440ml can),alcohol,yes,glass,240
-Cranberries,fruit,,portion,80
-Whole milk,drink,yes,glass,240
-Turkey,meat,,portion,80
-Whiting,"fish,seafood",,portion,140
-Pineapples,fruit,,portion,80
-Pork,meat,,portion,80
-Cauliflower,vegetables,,portion,80
-Cider,alcohol,yes,,
-Trout,"fish,seafood",,portion,140
-Parmesan cheese,hard cheese,,portion,30
-Buttermilk,dairy,yes,,
-Rice,cereal,,portion,75
-Papayas,fruit,,portion,80
-Spinach,vegetables,,portion,80
-Single cream,dairy,yes,,
-Double cream,dairy,yes,,
-Whipping cream,dairy,yes,,
-Wine,alcohol,yes,glass,175
-Ham,meat,,portion,80
-Raspberries,fruit,,portion,80
-Oranges,fruit,,portion,80
-Rum,alcohol,yes,,
-Vodka,alcohol,yes,,
-Butter,spreads,,,
-Whisky,alcohol,yes,,
-Pollock,"fish,seafood",,portion,80
-Salmon,"fish,seafood",,portion,140
-White cabbage,vegetables,,portion,80
-Red cabbage,vegetables,,portion,80
-Bananas,fruit,,portion,80
-Apples,fruit,,portion,80
-Celery,vegetables,,portion,80
-Plantains,fruit,,portion,80
-Carp,"fish,seafood",,portion,140
-Octopus,"cephalopods,seafood",,portion,140
-Onions,vegetables,,portion,80
-Artichokes,"preserved vegetables,vegetables",,portion,80
-Brussels sprouts,vegetables,,portion,80
-Cherries,fruit,,portion,80
-Green beans,vegetables,,portion,80
-Tangerines,fruit,,portion,80
-Apricots,fruit,,portion,80
-Quinces,fruit,,portion,80
-Duck,meat,,portion,80
-Soy beans,"beans,pulses",,portion,75
-Rutabaga,vegetables,,portion,80
-Grapes,fruit,,portion,80
-Mackerel,"fish,seafood",,portion,140
-Shallots,vegetables,,portion,80
-Figs,"preserved fruit,fruit",,portion,30
-Beetroot,vegetables,,portion,80
-Avocados,vegetables,,portion,80
-Herring,"fish,seafood",,portion,140
-Potatoes,vegetables,,portion,185
-Butternut squash,vegetables,,portion,80
-Garlic,seasoning,,,
-Parsnips,vegetables,,portion,80
-Chicken,meat,,portion,80
-Sunflower seeds,"nuts,seeds,snack",,portion,30
-Lentils,"beans,pulses",,portion,30
-Baked Beans,"beans,pulses",,,
-Pinto beans,"beans,pulses",,portion,30
-Olive oil (1l bottle),oils,,,
-Olive oil (750ml bottle),oils,,,
-Olive oil (500ml bottle),oils,,,
-Olive oil (250ml bottle),oils,,,
-Olive oil (125ml bottle),oils,,,
-Sunflower oil,oils,,,
-Sweet potatoes,vegetables,,portion,80
-Pistachios,"nuts,seeds,snack",,portion,30
-Chickpeas,"beans,pulses",,portion,30
-Cashew nuts,"nuts,seeds,snack",,portion,30
-Almonds,"nuts,seeds,snack",,portion,30
-Sesame seeds,"nuts,seeds",,,
-Coconut milk,drink,,,
-Dates,preserved fruit,,portion,30
-Walnuts,"nuts,seeds,snack",,portion,30
-Peanuts,"nuts,seeds,snack",,portion,30
-Tea,concentrate,,,
-Anise,spice,,,
-Aniseed,spice,,,
-Badian,spice,,,
-Barley,"beans,pulses",,portion,75
-Biscuits,sweets,,,
-Black-eyed peas,"beans,pulses",,portion,40
-Bok choy,vegetables,,portion,80
-Breakfast cereals,,,portion,40
-Brie cheese,"Mould cheese,cheese",,portion,30
-Brill,"fish,seafood",,portion,140
-Butter beans,"beans,pulses",,portion,40
-Cantaloupes,fruit,,portion,80
-Cannellini Beans,"beans,pulses",,portion,40
-Cardamom,spice,,,
-Carrots,vegetables,,portion,80
-Cayenne pepper,spice,,,
-Cheddar cheese,"Hard cheese,cheese",,portion,30
-Chestnuts,"nuts,seeds",,portion,30
-Chilli powder,spice,,,
-Cinnamon,spice,,,
-Cocoa powder,additive,,,
-Coconuts,fruit,,portion,30
-Common ling,"fish,seafood",,portion,140
-Couscous,"beans,pulses",,portion,40
-Cowpeas,"beans,pulses",,portion,40
-Crab,"crustaceans,seafood",,portion,140
-Cream cheese,dairy,,portion,30
-Crème fraiche,dairy,,portion,30
-Crisp bread,bread,,,
-Cucumbers,vegetables,,portion,80
-Dark chocolate,sweets,,,
-Dried fruit,preserved fruit,,portion,30
-Dry chillies,spice,,,
-Dry peas,"beans,pulses",,portion,30
-Eggs,dairy,,,
-Feta cheese,"cheese,dairy",,portion,30
-Foam sweets,sweets,,,
-French beans,vegetables,,portion,80
-Fresh chillies,spice,,,
-Fresh coffee,drink,,,
-Peas,vegetables,,portion,80
-Frites,vegetables,,portion,185
-Orange juice (not from concentrate),drink,yes,glass,240
-Orange juice (from concentrate),drink,yes,glass,240
-Fruit squash,concentrate,yes,,
-Fruit juice,drink,yes,glass,240
-Gigante beans,"beans,pulses",,portion,40
-Ginger,"seasoning,spice",,,
-Ginger beer,drink,yes,glass,240
-Goat meat,meat,,portion,80
-Gooseberries,fruit,,portion,80
-Gorgonzola cheese,"Blue cheese,cheese",,portion,30
-Gouda cheese,"Hard cheese,cheese",,portion,30
-Grapefruit,fruit,,portion,80
-Great northern beans,vegetables,,portion,40
-Groundnuts,"nuts,seeds",,portion,30
-Guavas,fruit,,portion,80
-Hazelnuts,"nuts,seeds,snack",,portion,30
-Hogget,meat,,portion,80
-Honey,sweets,,,
-Instant coffee powder,drink,,,
-Jam,jam,,,
-Jelly sweets,sweets,,,
-Kiwi fruit,fruit,,portion,80
-Lamb,meat,,portion,80
-Cola drink (2l bottle),drink,,glass,240
-Cola drink (500ml bottle),drink,,glass,240
-Cola drink (330ml can),drink,,glass,240
-Diet cola drink (2l bottle),drink,,glass,240
-Diet cola drink (500ml bottle),drink,,glass,240
-Diet cola drink (330ml can),drink,,glass,240
-Diet lemonade (2l bottle),drink,,glass,240
-Lemonade (2l bottle),drink,,glass,240
-Lemons,fruit,,,
-Limes,fruit,,,
-Low fat cream cheese,dairy,,portion,30
-Low fat crème fraiche,dairy,,portion,30
-Low fat yogurt,dairy,,portion,30
-Mace,spice,,,
-Maize,cereal,,,
-Mandarines,fruit,,portion,80
-Margarine,spreads,,,
-Marmalade,jam,,,
-Maté,drink,,,
-Meat substitutes,meat,,portion,80
-Megrim,"fish,seafood",,portion,140
-Milk chocolate,sweets,,,
-Millet,"fish,seafood",,portion,140
-Sparkling water (500ml bottle),drink,yes,glass,240
-Sparkling water (2l bottle),drink,yes,glass,240
-Still water (500ml bottle),drink,yes,glass,240
-Still water (2l bottle),drink,yes,glass,240
-Mozzarella cheese,"cheese,dairy",,portion,30
-Mussels,"fish,seafood",,portion,140
-Mustard seed,"nuts,seeds",,,
-Mutton,meat,,portion,80
-Navy beans,"beans,pulses",,portion,30
-Nectarines,fruit,,portion,80
-Nutmeg,spice,,,
-Oats,cereals,,portion,40
-Game,meat,,portion,80
-Pasta,cereals,,portion,75
-Pastry,baking,,portion,185
-Pea beans,vegetables,,portion,30
-Peaches,fruit,,portion,80
-Pears,fruit,,portion,80
-Peppers,vegetables,,portion,80
-Pita bread,bread,,portion,50
-Plain flour,cereals,,,
-Plums,fruit,,portion,80
-Pomelo,fruit,,portion,80
-Pomfret,"fish,seafood",,portion,140
-Porbeagle,"fish,seafood",,portion,140
-Potato crisps,snack,,,
-Prawns,seafood,,portion,140
-Quorn,meat,,portion,80
-Rabbit,meat,,portion,80
-Tuna,"fish,seafood",,portion,80
-Roquefort cheese,"Blue cheese,cheese",,portion,30
-Runner beans,vegetables,,portion,80
-Rye,cereals,,portion,40
-Rye bread,bread,,portion,50
-Saffron,spice,,,
-Saithe,"fish,seafood",,portion,140
-Semi-skimmed milk,drink,yes,glass,240
-Shrimps,"crustaceans,seafood",,portion,140
-Sloes,fruit,,portion,80
-Sorghum,cereals,,portion,40
-Soya milk,drink,yes,glass,240
-Soy oil,oils,,,
-Swedes,vegetables,,portion,80
-Sweets,sweets,,,
-Golden syrup,sweets,,,
-Tonic water,drink,yes,,
-Truffles,seasoning,,,
-Tumeric,spice,,,
-Vegetable crisps,snack,,,
-Vegetable oil,oils,,,
-White bread,bread,,portion,50
-Wholemeal bread,bread,,portion,50
-Yams,vegetables,,portion,80
-Yogurt,dairy,,portion,125
-Apple cyder vinegar,vinegar,yes,,
-Balsamic vinegar,vinegar,yes,,
-Red wine vinegar,vinegar,yes,,
-White wine vinegar,vinegar,yes,,
-Tap water,drink,yes,,
-Marzipan,sweets,,,
-Quinoa,cereal,,portion,40
+almonds,"vegan,gluten-free,dairy-free,vegetarian","nuts & seeds,snacks",,portion,30
+anise,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+aniseed,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+apple cyder vinegar,"vegan,gluten-free,dairy-free,vegetarian",vinegar,yes,,
+apple juice,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+apples,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+apricots,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+artichokes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+asparagus,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+aubergines,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+avocados,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+badian,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+baked beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,,
+balsamic vinegar,"vegan,gluten-free,dairy-free,vegetarian",condiments,yes,,
+bananas,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+barley,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,75
+beef,"gluten-free,dairy-free",meat,,portion,80
+beer (250ml bottle),"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+beer (440ml can),"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+beetroot,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+biscuits,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+black-eyed peas,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+blackcurrants,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+blueberries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+bok choy,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+breakfast cereals,"vegan,gluten-free,dairy-free,vegetarian",breakfast bowls,,portion,40
+brie cheese,"vegan,gluten-free,dairy-free,vegetarian",cheese & vegan cheese,,portion,30
+brill,"gluten-free,dairy-free",fish & seafood,,portion,140
+broccoli,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+brussels sprouts,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+butter,"vegetarian,gluten-free",spreads,,,
+butter beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+buttermilk,"gluten-free,vegetarian",dairy & vegan alternatives,yes,,
+butternut squash,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+camembert cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+cannellini beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+cantaloupes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+cantaloupes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+capsicums,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+cardamom,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+carp,"gluten-free,dairy-free",seafood,,portion,140
+carrots,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+cashew nuts,"vegan,gluten-free,dairy-free,vegetarian","nuts & seeds,snacks",,portion,30
+cauliflower,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+cayenne pepper,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+celery,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+cheddar cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+cherries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+chestnuts,"vegan,gluten-free,dairy-free,vegetarian",nuts & seeds,,portion,30
+chicken,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+chickpeas,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,30
+chicory,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+chilli powder,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+cider,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+cinnamon,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+cocoa powder,"vegan,gluten-free,dairy-free,vegetarian",baking,,,
+coconut milk,"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+coconuts,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,30
+cod,"gluten-free,dairy-free",seafood,,portion,140
+cola drink (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,glass,240
+cola drink (330ml can),"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+cola drink (500ml bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+common ling,"gluten-free,dairy-free",seafood,,portion,140
+cottage cheese,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+couscous,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+cowpeas,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+crab,"gluten-free,vegetarian",seafood,,portion,140
+cranberries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+cream cheese,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+crème fraiche,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+crisp bread,"vegan,dairy-free,vegetarian",bread,,,
+cucumbers,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+dark chocolate,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+dates,"vegan,gluten-free,dairy-free,vegetarian",preserved fruit,,portion,30
+diet cola drink (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,glass,240
+diet cola drink (330ml can),"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+diet cola drink (500ml bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+diet lemonade (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,glass,240
+double cream,"gluten-free,vegetarian",dairy & vegan alternatives,yes,,
+dried fruit,"vegan,gluten-free,dairy-free,vegetarian",preserved fruit,,portion,30
+dry chillies,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+dry peas,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,30
+duck,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+eggplants,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+eggs,"vegetarian,gluten-free",dairy & vegan alternatives,,,
+fennel,"vegan,gluten-free,dairy-free,vegetarian",herb,,,
+feta cheese,"vegetarian,gluten-free",cheese & vegan cheese,,portion,30
+figs,"vegan,gluten-free,dairy-free,vegetarian","preserved fruit,fruit",,portion,30
+foam sweets,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+french beans,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+fresh chillies,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+fresh coffee,"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+frites,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,185
+fruit juice,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+fruit squash,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,,
+game,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+garlic,"vegan,gluten-free,dairy-free,vegetarian",spices and seasoning,,,
+gherkins,"vegan,gluten-free,dairy-free,vegetarian",preserved vegetables,,portion,80
+gigante beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+ginger,"vegan,gluten-free,dairy-free,vegetarian",spices and seasoning,,,
+ginger beer,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+goat meat,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+golden syrup,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+gooseberries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+gorgonzola cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+gouda cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+grapefruit,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+grapes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+great northern beans,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,40
+green beans,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+guavas,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+haddock,"gluten-free,dairy-free",seafood,,portion,140
+hake,"gluten-free,dairy-free","fish,seafood",,portion,140
+halloumi cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+ham,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+hazelnuts,"vegan,gluten-free,dairy-free,vegetarian","nuts & seeds,snacks",,portion,30
+herring,"vegan,gluten-free,dairy-free,vegetarian",seafood,,portion,140
+honey,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+instant coffee powder,"vegan,gluten-free,dairy-free,vegetarian",drink,,,
+jam,"vegan,gluten-free,dairy-free,vegetarian",jam,,,
+jelly sweets,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+kiwi fruit,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+lamb,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+lemonade (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,,glass,240
+lemons,"vegan,gluten-free,dairy-free,vegetarian",fruit,,,
+lentils,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,30
+lettuce,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+limes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,,
+lobster,"gluten-free,dairy-free",seafood,,portion,140
+low fat cream cheese,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+low fat crème fraiche,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+low fat yogurt,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,30
+mace,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+mackerel,"gluten-free,dairy-free",seafood,,portion,140
+maize,"vegan,gluten-free,dairy-free,vegetarian",baking,,,
+mandarines,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+mangoes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+margarine,"vegan,gluten-free,dairy-free,vegetarian",spreads,,,
+marmalade,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+marzipan,"vegan,gluten-free,dairy-free,vegetarian",sweets,,,
+maté,"vegan,gluten-free,dairy-free,vegetarian",tea & coffee,,,
+meat substitutes,"vegan,gluten-free,dairy-free,vegetarian",meat & vegan alternatives,,portion,80
+milk chocolate,"gluten-free,vegetarian",sweets,,,
+millet,"vegan,gluten-free,dairy-free,vegetarian",baking,,portion,140
+mozzarella cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+mushrooms,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+mussels,"gluten-free,dairy-free",seafood,,portion,140
+mustard seed,"vegan,gluten-free,dairy-free,vegetarian",nuts & seeds,,,
+navy beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,30
+nectarines,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+nutmeg,"vegan,gluten-free,dairy-free,vegetarian",spice,,,
+oats,"vegan,gluten-free,dairy-free,vegetarian",breakfast bowls,,portion,40
+octopus,"gluten-free,dairy-free",seafood,,portion,140
+olive oil (125ml bottle),"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+olive oil (1l bottle),"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+olive oil (250ml bottle),"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+olive oil (500ml bottle),"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+olive oil (750ml bottle),"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+olives,"vegan,gluten-free,dairy-free,vegetarian",preserved vegetables,,portion,30
+onions,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+orange juice (from concentrate),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+orange juice (not from concentrate),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+oranges,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+papayas,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+parmesan cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+parsnips,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+passata,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+pasta,"vegan,dairy-free,vegetarian",rice & pasta,,portion,75
+pastry,vegetarian,baking,,portion,185
+pea beans,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,30
+peaches,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+peanuts,"vegan,gluten-free,dairy-free,vegetarian",snacks,,portion,30
+pears,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+peas,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+peppers,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+pineapples,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+pinto beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,30
+pistachios,"vegan,gluten-free,dairy-free,vegetarian",snacks,,portion,30
+pita bread,"vegan,dairy-free,vegetarian",bread,,portion,50
+plain flour,"vegan,dairy-free,vegetarian",flour,,,
+plantains,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+plums,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+pollock,"gluten-free,dairy-free",seafood,,portion,80
+pomelo,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+pork,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+potato crisps,"vegan,gluten-free,dairy-free,vegetarian",snack,,,
+potatoes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,185
+prawns,"gluten-free,dairy-free",seafood,,portion,140
+pumpkins,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+quinces,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+quinoa,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,40
+quorn,"vegan,gluten-free,dairy-free,vegetarian",vegan products,,portion,80
+rabbit,"gluten-free,dairy-free",meat & vegan alternatives,,portion,80
+raisins,"vegan,gluten-free,dairy-free,vegetarian",preserved fruit,,portion,30
+raspberries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+red cabbage,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+red wine vinegar,"vegan,gluten-free,dairy-free,vegetarian",vinegar,yes,,
+redcurrants,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+rice,"vegan,gluten-free,dairy-free,vegetarian",rice & pasta,,portion,75
+roquefort cheese,"gluten-free,vegetarian",cheese & vegan cheese,,portion,30
+rum,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+runner beans,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+rutabaga,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+rye,"vegan,dairy-free,vegetarian",baking,,portion,40
+rye bread,"vegan,dairy-free,vegetarian",bread,,portion,50
+saffron,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+salmon,"gluten-free,dairy-free",seafood,,portion,140
+sea bass,"gluten-free,dairy-free",seafood,,portion,140
+semi-skimmed milk,"gluten-free,vegetarian",drink,yes,glass,240
+sesame seeds,"vegan,gluten-free,dairy-free,vegetarian",nuts & seeds,,,
+shallots,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+shrimps,"gluten-free,dairy-free",seafood,,portion,140
+single cream,"gluten-free,vegetarian",dairy & vegan alternatives,yes,,
+skimmed milk,"gluten-free,vegetarian","drink,dairy & vegan alternatives",yes,glass,240
+sloes,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+sole,"vegan,gluten-free,dairy-free,vegetarian",seafood,,portion,140
+sorghum,"vegan,gluten-free,dairy-free,vegetarian",baking,,portion,40
+soy beans,"vegan,gluten-free,dairy-free,vegetarian",beans & pulses,,portion,75
+soy oil,"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+soya milk,"vegan,gluten-free,dairy-free,vegetarian","drink,dairy & vegan alternatives",yes,glass,240
+sparkling water (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+sparkling water (500ml bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+spinach,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+squid,"gluten-free,dairy-free",seafood,,portion,140
+still water (2l bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+still water (500ml bottle),"vegan,gluten-free,dairy-free,vegetarian",drink,yes,glass,240
+stilton cheese,"vegan,gluten-free,dairy-free,vegetarian",cheese & vegan cheese,,portion,30
+strawberries,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+sugar,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+sunflower oil,"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+sunflower seeds,"vegan,gluten-free,dairy-free,vegetarian","nuts & seeds,snacks",,portion,30
+swedes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+sweet potatoes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+sweets,"vegan,gluten-free,dairy-free,vegetarian",sweets & jam,,,
+swordfish,"gluten-free,dairy-free",seafood,,portion,140
+tangerines,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+tap water,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,,
+tea,"vegan,gluten-free,dairy-free,vegetarian",tea & coffee,,,
+tequila,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+tinned tomatoes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+tomatoes,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+tonic water,"vegan,gluten-free,dairy-free,vegetarian",drink,yes,,
+trout,"gluten-free,dairy-free",seafood,,portion,140
+truffles,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+tumeric,"vegan,gluten-free,dairy-free,vegetarian",spices & seasoning,,,
+tuna,"gluten-free,dairy-free",seafood,,portion,80
+turbot,"gluten-free,dairy-free",seafood,,portion,140
+turkey,"gluten-free,dairy-free",meat and vegan alternatives,,portion,80
+vegetable crisps,"vegan,gluten-free,dairy-free,vegetarian",snacks,,,
+vegetable oil,"vegan,gluten-free,dairy-free,vegetarian",oils,,,
+vodka,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+walnuts,"vegan,gluten-free,dairy-free,vegetarian","nuts & seeds,snacks",,portion,30
+watermelons,"vegan,gluten-free,dairy-free,vegetarian",fruit,,portion,80
+whipping cream,"gluten-free,vegetarian",dairy & vegan alternatives,yes,,
+whisky,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,,
+white bread,"vegan,dairy-free,vegetarian",bread,,portion,50
+white cabbage,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+white wine vinegar,"vegan,gluten-free,dairy-free,vegetarian",vinegar,yes,,
+whiting,"gluten-free,dairy-free",seafood,,portion,140
+whole milk,"gluten-free,vegetarian",drink,yes,glass,240
+wholemeal bread,"vegan,dairy-free,vegetarian",bread,,portion,50
+wine,"vegan,gluten-free,dairy-free,vegetarian",alcohol,yes,glass,175
+yams,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80
+yogurt,"gluten-free,vegetarian",dairy & vegan alternatives,,portion,125
+zucchini,"vegan,gluten-free,dairy-free,vegetarian",vegetables,,portion,80

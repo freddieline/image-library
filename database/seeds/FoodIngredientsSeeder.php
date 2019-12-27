@@ -23,10 +23,11 @@ class FoodIngredientsSeeder extends Seeder
                 App\FoodIngredients::updateOrCreate([
                     'name' => $csvLine[0]
                 ], [
-                    'category' => $csvLine[1],
-                    'is_liquid' =>( $csvLine[2] == "yes"),
-                    'portion_type' =>$csvLine[3],
-                    'portion_size' =>(int)$csvLine[4],
+                    'dietary_requirements' => $csvLine[1],
+                    'category' => $csvLine[2],
+                    'is_liquid' =>( $csvLine[3] == "yes"),
+                    'portion_type' =>$csvLine[4],
+                    'portion_size' =>(int)$csvLine[5],
                 ]);
 
         };

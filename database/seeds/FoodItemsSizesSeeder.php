@@ -38,7 +38,8 @@ class FoodItemsSizesSeeder extends Seeder
                     FoodItemsSizes::updateOrCreate([
                         'food_size_id' =>  $foodSize->id,
                         'ingredient_id' => $ingredientId,
-                        'mass_in_grams' => (int)$csvLine[2]
+                        'mass_in_grams' => (int)$csvLine[2],
+                        'purchasable' => $csvLine[3] === 'yes'
                     ]);
                 }
                 else{
@@ -50,7 +51,8 @@ class FoodItemsSizesSeeder extends Seeder
                     FoodItemsSizes::updateOrCreate([
                         'food_size_id' =>  $foodSize->id,
                         'food_product_id' => $foodProductId,
-                        'mass_in_grams' => (int)$csvLine[2]
+                        'mass_in_grams' => (int)$csvLine[2],
+                        'purchasable' => $csvLine[3] === 'yes'
                     ]);
                 }
 	     

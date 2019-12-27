@@ -29,8 +29,10 @@ class MealsSeeder extends Seeder
 
 
                 $meal = App\Meals::updateOrCreate([
-                'name' => $csvLine[0]
-                
+                    'name' => $csvLine[0],
+                ],[
+                    'dietary_requirements' => '',
+                    'tags' => $csvLine[1],
                 ]);
 
                 $ingredient1 = 0;
@@ -39,16 +41,17 @@ class MealsSeeder extends Seeder
                 $ingredient4 = 0;
              
            
-                $ingredient1 = $ingredients->where('name',$csvLine[1])->first();
+                $ingredient1 = $ingredients->where('name',strtolower($csvLine[2]))->first();
 
                 if(empty($ingredient1)){
-                    $foodProduct1 = $foodProducts->where('name',$csvLine[1])->first()->id;
+                    $foodProduct1 = $foodProducts->where('name',strtolower($csvLine[2]))->first()->id;
                     MealComponents::updateOrCreate([
                         'meal_id' => $meal->id,
                         'food_product_id' =>  $foodProduct1
                     ],
                     [ 
-                        'mass_in_grams' => (integer)$csvLine[2]
+                        'mass_in_grams' => (integer)$csvLine[3],
+
                     ]);
                 }
                 else{
@@ -57,24 +60,24 @@ class MealsSeeder extends Seeder
                         'ingredient_id' =>  $ingredient1->id
                     ],
                     [
-                        'mass_in_grams' => (integer)$csvLine[2]
+                        'mass_in_grams' => (integer)$csvLine[3]
                     ]);
          
                 }
        
 
-                if(!empty($csvLine[3])){
-                    $ingredient2 = $ingredients->where('name',$csvLine[3])->first();
+                if(!empty($csvLine[4])){
+                    $ingredient2 = $ingredients->where('name',strtolower($csvLine[4]))->first();
 
                     if(empty($ingredient2)){
-                        dump($csvLine[3]);
-                        $foodProduct2 = $foodProducts->where('name',$csvLine[3])->first()->id;
+                        dump($csvLine[4]);
+                        $foodProduct2 = $foodProducts->where('name',strtolower($csvLine[4]))->first()->id;
                         MealComponents::updateOrCreate([
                             'meal_id' => $meal->id,
                             'food_product_id' =>  $foodProduct2
                         ],
                         [
-                            'mass_in_grams' => (integer)$csvLine[4]
+                            'mass_in_grams' => (integer)$csvLine[5]
                         ]);
                     }
                     else{
@@ -83,27 +86,27 @@ class MealsSeeder extends Seeder
                             'ingredient_id' =>  $ingredient2->id,
                         ],
                         [
-                            'mass_in_grams' => (integer)$csvLine[4]
+                            'mass_in_grams' => (integer)$csvLine[5]
                         ]);
                     }
                 }
                 else{
-                    dump($csvLine[3]);
+                    dump($csvLine[4]);
                 }
 
-                if(!empty($csvLine[5])){
+                if(!empty($csvLine[6])){
 
 
-                    $ingredient3 = $ingredients->where('name',$csvLine[5])->first();
+                    $ingredient3 = $ingredients->where('name',strtolower($csvLine[6]))->first();
                     if(empty($ingredient3)){
-                        dump($csvLine[5]);
-                        $foodProduct = $foodProducts->where('name',$csvLine[5])->first()->id;
+                        dump($csvLine[6]);
+                        $foodProduct = $foodProducts->where('name',strtolower($csvLine[6]))->first()->id;
                          MealComponents::updateOrCreate([
                             'meal_id' => $meal->id,
                             'food_product_id' =>  $foodProduct
                         ],
                         [
-                            'mass_in_grams' => (integer)$csvLine[6]
+                            'mass_in_grams' => (integer)$csvLine[7]
                         ]);
 
                     }
@@ -113,26 +116,26 @@ class MealsSeeder extends Seeder
                             'ingredient_id' => $ingredient3->id
                         ],
                         [
-                            'mass_in_grams' => (integer)$csvLine[6]
+                            'mass_in_grams' => (integer)$csvLine[7]
                         ]);
                     }
                     
                 }
                 else{
-                    dump($csvLine[5]);
+                    dump($csvLine[6]);
                 }
                 
                  // insert ingredient 4
-                if(!empty($csvLine[7])){
-                    $ingredient4 = $ingredients->where('name',$csvLine[7])->first();
+                if(!empty($csvLine[8])){
+                    $ingredient4 = $ingredients->where('name',strtolower($csvLine[8]))->first();
                     if(empty($ingredient4)){
-                        dump($csvLine[7]);
-                        $foodProduct = $foodProducts->where('name',$csvLine[7])->first()->id;
+                        dump($csvLine[8]);
+                        $foodProduct = $foodProducts->where('name',strtolower($csvLine[8]))->first()->id;
                          MealComponents::updateOrCreate([
                             'meal_id' => $meal->id,
                             'food_product_id' =>  $foodProduct
                         ],[
-                            'mass_in_grams' => (integer)$csvLine[8]
+                            'mass_in_grams' => (integer)$csvLine[9]
                         ]);
 
                     }
@@ -141,27 +144,27 @@ class MealsSeeder extends Seeder
                             'meal_id' => $meal->id,
                             'ingredient_id' =>  $ingredient4->id
                         ],[
-                            'mass_in_grams' => (integer)$csvLine[8]
+                            'mass_in_grams' => (integer)$csvLine[9]
                         ]);
                     }
                 }
                 else{
-                    dump($csvLine[7]);
+                    dump($csvLine[8]);
                 }
 
                 // insert ingredient 5
-                if(!empty($csvLine[9])){
+                if(!empty($csvLine[10])){
 
-                    $ingredient5 = $ingredients->where('name',$csvLine[9])->first();
+                    $ingredient5 = $ingredients->where('name',strtolower($csvLine[10]))->first();
 
                     if(empty($ingredient5)){
 
-                        $foodProduct = $foodProducts->where('name',$csvLine[9])->first()->id;
+                        $foodProduct = $foodProducts->where('name',strtolower($csvLine[10]))->first()->id;
                          MealComponents::updateOrCreate([
                             'meal_id' => $meal->id,
                             'food_product_id' =>  $foodProduct
                         ],[
-                            'mass_in_grams' => (integer)$csvLine[10]
+                            'mass_in_grams' => (integer)$csvLine[11]
                         ]);
 
                     }
@@ -170,7 +173,7 @@ class MealsSeeder extends Seeder
                             'meal_id' => $meal->id,
                             'ingredient_id' =>  $ingredient5->id
                         ],[
-                            'mass_in_grams' => (integer)$csvLine[10]
+                            'mass_in_grams' => (integer)$csvLine[11]
                         ]);
                     }
                 }

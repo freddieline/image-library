@@ -28,7 +28,8 @@ class FoodProductsSeeder extends Seeder
                 $foodProduct = App\FoodProducts::updateOrCreate([
                 	'name' => $csvLine[0]
                 ],[
-                    'category' => $csvLine[1],
+                    'dietary_requirements' => $csvLine[1],
+                    'category' => $csvLine[2],
                 ]);
 
                 $ingredient1 = 0;
@@ -38,59 +39,59 @@ class FoodProductsSeeder extends Seeder
                	$ingredient5 = 0;
              
                 // insert ingredient 1
-                $ingredient1 = $ingredients->where('name',$csvLine[2])->first()->id;
+                $ingredient1 = $ingredients->where('name',$csvLine[3])->first()->id;
  
             	FoodProductsIngredients::updateOrCreate([
                     'food_product_id' => $foodProduct->id,
                     'ingredient_id' =>  $ingredient1,
-                    'ratio' => (integer)$csvLine[3]
+                    'ratio' => (integer)$csvLine[4]
                 ]);
 
                 // insert ingredient 2
-                if(!empty($csvLine[4])){
-                         dump($csvLine[4]);
-                    $ingredient2 = $ingredients->where('name',$csvLine[4])->first()->id;
+                if(!empty($csvLine[5])){
+                    dump($csvLine[5]);
+                    $ingredient2 = $ingredients->where('name',$csvLine[5])->first()->id;
                       dump($ingredient2);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient2,
-                        'ratio' => (integer)$csvLine[5]
+                        'ratio' => (integer)$csvLine[6]
                     ]);
                 }
 
                 // insert ingredient 3
-                if(!empty($csvLine[6])){
-                                dump($csvLine[6]);
-                    $ingredient3 = $ingredients->where('name',$csvLine[6])->first()->id;
+                if(!empty($csvLine[7])){
+                    dump($csvLine[7]);
+                    $ingredient3 = $ingredients->where('name',$csvLine[7])->first()->id;
           
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient3,
-                        'ratio' => (integer)$csvLine[7]
+                        'ratio' => (integer)$csvLine[8]
                     ]);
                 }
                 
                  // insert ingredient 4
-                if(!empty($csvLine[8])){
-                                dump($csvLine[8]);
-                    $ingredient4 = $ingredients->where('name',$csvLine[8])->first()->id;
+                if(!empty($csvLine[9])){
+                    dump($csvLine[9]);
+                    $ingredient4 = $ingredients->where('name',$csvLine[9])->first()->id;
           
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
-                        'ingredient_id' =>  $ingredient4,
-                        'ratio' => (integer)$csvLine[9]
+                        'ingredient_id' => $ingredient4,
+                        'ratio' => (integer)$csvLine[10]
                     ]);
                 }
 
                                  // insert ingredient 4
-                if(!empty($csvLine[10])){
-                     dump($csvLine[10]);
-                    $ingredient5 = $ingredients->where('name',$csvLine[10])->first()->id;
+                if(!empty($csvLine[11])){
+                     dump($csvLine[11]);
+                    $ingredient5 = $ingredients->where('name',$csvLine[11])->first()->id;
                   	dump($ingredient5);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
                         'ingredient_id' =>  $ingredient4,
-                        'ratio' => (integer)$csvLine[11]
+                        'ratio' => (integer)$csvLine[12]
                     ]);
                 }
 

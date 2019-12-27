@@ -71,7 +71,7 @@ class ExportTableValues extends Command
 
         $meals = json_encode($meals);
 
-        file_put_contents(storage_path('meals.json'), $meals);
+        file_put_contents(storage_path('meals.json'), stripslashes($meals));
 
     }
 
@@ -94,7 +94,7 @@ class ExportTableValues extends Command
 
         $ingredients = json_encode($ingredients);
 
-        file_put_contents(storage_path('ingredients.json'), $ingredients);
+        file_put_contents(storage_path('ingredients.json'), stripslashes($ingredients));
 
     }
 
@@ -115,11 +115,11 @@ class ExportTableValues extends Command
 
         $foodSizes = json_encode($foodSizes);
 
-        file_put_contents(storage_path("food_sizes.json"), $foodSizes);
+        file_put_contents(storage_path("food_sizes.json"), stripslashes($foodSizes));
 
     }
 
-        /**
+    /**
      * Export food products
      *
      */
@@ -136,7 +136,7 @@ class ExportTableValues extends Command
 
         $foodProducts = json_encode($foodProducts);
 
-        file_put_contents(storage_path("food_products.json"), $foodProducts);
+        file_put_contents(storage_path("food_products.json"), stripslashes($foodProducts));
 
     }
 }

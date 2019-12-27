@@ -1,176 +1,182 @@
-1 pint,Skimmed milk,568
-1 pint,Whole milk,568
-1 pint,Semi-skimmed milk,568
-1.35L,Fruit juice,1350
-1.5L,Vodka,1500
-1.5L,Whisky,1500
-100g,Vegetable crisps,100
-125g,Low fat yogurt,125
-125g,Vegetable crisps,125
-125g,Yogurt,125
-150ml,Single cream,150
-150ml,Double cream,150
-150ml,Whipping cream,150
-1kg,Margarine,1000
-1kg,Barley,1000
-1kg,Sugar,1000
-2 pint,Skimmed milk,1137
-2 pint,Whole milk,1137
-2 pint,Semi-skimmed milk,1137
-250g,Margarine,250
-bottle,Olive oil (1l bottle),1000
-bottle,Olive oil (750ml bottle),750
-bottle,Olive oil (500ml bottle),500
-bottle,Olive oil (250ml bottle),250
-bottle,Olive oil (125ml bottle),125
-250ml,Crème fraiche,250
-250ml,Low fat crème fraiche,250
-2L,Sunflower oil,2000
-2L,Vegetable oil,2000
-300ml,Buttermilk,300
-300ml,Whipping cream,300
-300ml,Double cream,300
-300ml,Single cream,300
-300ml,Crème fraiche,300
-300ml,Low fat crème fraiche,300
-35cl,Vodka,350
-35cl,Whisky,350
-375ml,Tequila,375
-3L,Sunflower oil,3000
-4 pint,Skimmed milk,2273
-4 pint,Whole milk,2273
-4 pint,Semi-skimmed milk,2273
-400ml,Coconut milk,400
-500g,Low fat yogurt,500
-500g,Margarine,500
-500g,Yogurt,500
-500g,Sugar,500
-500ml,Sunflower oil,500
-500ml,Vegetable oil,500
-500ml,Cider,354
-6 pint,Skimmed milk,3410
-6 pint,Whole milk,3410
-6 pint,Semi-skimmed milk,3410
-600ml,Double cream,600
-600ml,Single cream,600
-600ml,Whipping cream,600
-600ml,Crème fraiche,600
-600ml,Low fat crème fraiche,600
-1L bottle,Rum,1000
-1L bottle,Vodka,1000
-1L bottle,Whisky,1000
-1L bottle,Tequila,1000
-70cl,Rum,750
-70cl,Vodka,70
-70cl,Whisky,750
-750ml,Tequila,750
-750ml,Ginger beer,750
-2L bottle,Orange juice (not from concentrate),2000
-1.75L bottle,Orange juice (not from concentrate),1750
-1L bottle,Orange juice (not from concentrate),1000
-2L bottle,Orange juice (from concentrate),2000
-1.5L bottle,Orange juice (from concentrate),1500
-1L bottle,Orange juice (from concentrate),1000
-1L bottle,Fruit juice,900
-baking,Potatoes,185
-bottle,Wine,750
-half loaf,White bread,400
-half loaf,Wholemeal bread,400
-half loaf,Rye bread,400
-head,Broccoli,255
-head,Garlic,85
-jar,Honey,340
-jar,Jam,340
-jar,Marmalade,340
-large,Pumpkins,8000
-large,Onions,340
-large,Eggs,68
-large,Guavas,300
-large,Pears,240
-large bag,Potato crisps,150
-large packet,Biscuits,400
-large packet,Breakfast cereals,1000
-medium,Lettuce,539
-medium,Zucchini,200
-medium,Aubergines,350
-medium,Eggplants,350
-medium,Pumpkins,5000
-medium,Cantaloupes,1360
-medium,Watermelons,10000
-medium,Mangoes,200
-medium,Fennel,234
-medium,Pineapples,907
-medium,Cauliflower,840
-medium,Papayas,455
-medium,Oranges,131
-medium,Bananas,120
-medium,Apples,85
-medium,Plantains,276
-medium,Onions,200
-medium,Tangerines,100
-medium,Apricots,52
-medium,Quinces,113
-medium,Rutabaga,386
-medium,Beetroot,113
-medium,Avocados,215
-medium,Butternut squash,1134
-medium,Parsnips,113
-medium,Sweet potatoes,113
-medium,Cantaloupes,1360
-medium,Cucumbers,400
-medium,Eggs,58
-medium,Grapefruit,247
-medium,Guavas,200
-medium,Kiwi fruit,76
-medium,Lemons,100
-medium,Mandarines,120
-medium,Nectarines,150
-medium,Peaches,150
-medium,Pears,190
-medium,Peppers,170
-medium,Plums,90
-medium,Pomelo,247
-medium,Swedes,580
-medium packet,Biscuits,300
-medium packet,Breakfast cereals,750
-new,Potatoes,60
-packet,Cottage cheese,225
-packet,Brie cheese,250
-packet,Camembert cheese,250
-packet,Butter,250
-packet,Feta cheese,200
-packet,Cream cheese,250
-packet,Low fat cream cheese,250
-small,Lettuce,324
-small,Butternut squash,650
-small,Pumpkins,3000
-small,Onions,113
-small,Guavas,100
-small,Pears,150
-small bag,Potato crisps,25
-small packet,Biscuits,200
-small packet,Breakfast cereals,360
-white,Potatoes,150
-whole,Lobster,650
-whole,Capsicums,125
-whole,Tomatoes,125
-whole loaf,White bread,800
-whole loaf,Wholemeal bread,800
-whole loaf,Rye bread,800
-medium,Limes,44
-200g tub,Humous,200
-bottle,Cola drink (2l bottle),2000
-bottle,Cola drink (500ml bottle),500
-can,Cola drink (330ml can),330
-bottle,Diet cola drink (2l bottle),2000
-bottle,Diet cola drink (500ml bottle),500
-can,Diet cola drink (330ml can),330
-bottle,Lemonade (2l bottle),2000
-bottle,Diet lemonade (2l bottle),2000
-bottle,Still water (500ml bottle),500
-bottle,Still water (2l bottle),2000
-bottle,Still water (2l bottle),2000
-bottle,Sparkling water (500ml bottle),500
-bottle,Sparkling water (2l bottle),2000
-bottle,Beer (250ml bottle),250
-can,Beer (440ml can),440
+1 pint,skimmed milk,568,yes
+1 pint,whole milk,568,yes
+1 pint,semi-skimmed milk,568,yes
+1.35L,fruit juice,1350,yes
+1.5L,vodka,1500,yes
+1.5L,whisky,1500,yes
+100g,vegetable crisps,100,yes
+125g,low fat yogurt,125,yes
+125g,vegetable crisps,125,yes
+125g,yogurt,125,yes
+150ml,single cream,150,yes
+150ml,double cream,150,yes
+150ml,whipping cream,150,yes
+1kg,margarine,1000,yes
+1kg,barley,1000,yes
+1kg,sugar,1000,yes
+2 pint,skimmed milk,1137,yes
+2 pint,whole milk,1137,yes
+2 pint,semi-skimmed milk,1137,yes
+250g,margarine,250,yes
+bottle,olive oil (1l bottle),1000,yes
+bottle,olive oil (750ml bottle),750,yes
+bottle,olive oil (500ml bottle),500,yes
+bottle,olive oil (250ml bottle),250,yes
+bottle,olive oil (125ml bottle),125,yes
+250ml,crème fraiche,250,yes
+250ml,low fat crème fraiche,250,yes
+2L,sunflower oil,2000,yes
+2L,vegetable oil,2000,yes
+300ml,buttermilk,300,yes
+300ml,whipping cream,300,yes
+300ml,double cream,300,yes
+300ml,single cream,300,yes
+300ml,crème fraiche,300,yes
+300ml,low fat crème fraiche,300,yes
+35cl,vodka,350,yes
+35cl,whisky,350,yes
+375ml,tequila,375,yes
+3L,sunflower oil,3000,yes
+4 pint,skimmed milk,2273,yes
+4 pint,whole milk,2273,yes
+4 pint,semi-skimmed milk,2273,yes
+400ml,coconut milk,400,yes
+500g,low fat yogurt,500,yes
+500g,margarine,500,yes
+500g,yogurt,500,yes
+500g,sugar,500,yes
+500ml,sunflower oil,500,yes
+500ml,vegetable oil,500,yes
+500ml,cider,354,yes
+6 pint,skimmed milk,3410,yes
+6 pint,whole milk,3410,yes
+6 pint,semi-skimmed milk,3410,yes
+600ml,double cream,600,yes
+600ml,single cream,600,yes
+600ml,whipping cream,600,yes
+600ml,crème fraiche,600,yes
+600ml,low fat crème fraiche,600,yes
+1L bottle,rum,1000,yes
+1L bottle,vodka,1000,yes
+1L bottle,whisky,1000,yes
+1L bottle,tequila,1000,yes
+70cl,rum,750,yes
+70cl,vodka,70,yes
+70cl,whisky,750,yes
+750ml,tequila,750,yes
+750ml,ginger beer,750,yes
+2L bottle,orange juice (not from concentrate),2000,yes
+1.75L bottle,orange juice (not from concentrate),1750,yes
+1L bottle,orange juice (not from concentrate),1000,yes
+2L bottle,orange juice (from concentrate),2000,yes
+1.5L bottle,orange juice (from concentrate),1500,yes
+1L bottle,orange juice (from concentrate),1000,yes
+1L bottle,fruit juice,900,yes
+baking,potatoes,185,yes
+bottle,wine,750,yes
+half loaf,white bread,400,yes
+half loaf,wholemeal bread,400,yes
+half loaf,rye bread,400,yes
+head,broccoli,255,yes
+head,garlic,85,yes
+jar,honey,340,yes
+jar,jam,340,yes
+jar,marmalade,340,yes
+large,pumpkins,8000,yes
+large,onions,340,yes
+large,eggs,68,yes
+large,guavas,300,yes
+large,pears,240,yes
+large bag,potato crisps,150,yes
+large packet,biscuits,400,yes
+large packet,breakfast cereals,1000,yes
+medium,lettuce,539,yes
+medium,zucchini,200,yes
+medium,aubergines,350,yes
+medium,eggplants,350,yes
+medium,pumpkins,5000,yes
+medium,cantaloupes,1360,yes
+medium,watermelons,10000,yes
+medium,mangoes,200,yes
+medium,fennel,234,yes
+medium,pineapples,907,yes
+medium,cauliflower,840,yes
+medium,papayas,455,yes
+medium,oranges,131,yes
+medium,bananas,120,yes
+medium,apples,85,yes
+medium,plantains,276,yes
+medium,onions,200,yes
+medium,tangerines,100,yes
+medium,apricots,52,yes
+medium,quinces,113,yes
+medium,rutabaga,386,yes
+medium,beetroot,113,yes
+medium,avocados,215,yes
+medium,butternut squash,1134,yes
+medium,parsnips,113,yes
+medium,sweet potatoes,113,yes
+medium,cantaloupes,1360,yes
+medium,cucumbers,400,yes
+medium,eggs,58,yes
+medium,grapefruit,247,yes
+medium,guavas,200,yes
+medium,kiwi fruit,76,yes
+medium,lemons,100,yes
+medium,mandarines,120,yes
+medium,nectarines,150,yes
+medium,peaches,150,yes
+medium,pears,190,yes
+medium,peppers,170,yes
+medium,plums,90,yes
+medium,pomelo,247,yes
+medium,swedes,580,yes
+medium packet,biscuits,300,yes
+medium packet,breakfast cereals,750,yes
+new,potatoes,60,yes
+packet,cottage cheese,225,yes
+packet,brie cheese,250,yes
+packet,camembert cheese,250,yes
+packet,butter,250,yes
+packet,feta cheese,200,yes
+packet,cream cheese,250,yes
+packet,low fat cream cheese,250,yes
+small,lettuce,324,yes
+small,butternut squash,650,yes
+small,pumpkins,3000,yes
+small,onions,113,yes
+small,guavas,100,yes
+small,pears,150,yes
+small bag,potato crisps,25,yes
+small packet,biscuits,200,yes
+small packet,breakfast cereals,360,yes
+white,potatoes,150,yes
+whole,lobster,650,yes
+whole,capsicums,125,yes
+whole,tomatoes,125,yes
+whole loaf,white bread,800,yes
+whole loaf,wholemeal bread,800,yes
+whole loaf,rye bread,800,yes
+medium,limes,44,yes
+200g tub,humous,200,yes
+bottle,cola drink (2l bottle),2000,yes
+bottle,cola drink (500ml bottle),500,yes
+can,cola drink (330ml can),330,yes
+bottle,diet cola drink (2l bottle),2000,yes
+bottle,diet cola drink (500ml bottle),500,yes
+can,diet cola drink (330ml can),330,yes
+bottle,lemonade (2l bottle),2000,yes
+bottle,diet lemonade (2l bottle),2000,yes
+bottle,still water (500ml bottle),500,yes
+bottle,still water (2l bottle),2000,yes
+bottle,still water (2l bottle),2000,yes
+bottle,sparkling water (500ml bottle),500,yes
+bottle,sparkling water (2l bottle),2000,yes
+bottle,beer (250ml bottle),250,yes
+can,beer (440ml can),440,yes
+thigh,chicken,100,yes
+drumstick,chicken,115,yes
+breast,chicken,200,yes
+stalk,celery,54,no
+clove,garlic,5,no
+bunch,celery,454,yes
