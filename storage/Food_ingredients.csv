@@ -57,9 +57,9 @@ cocoa powder,vegan:gluten-free:dairy-free:vegetarian,baking,,,
 coconut milk,vegan:gluten-free:dairy-free:vegetarian,drink,,,
 coconuts,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit",,portion,30
 cod,gluten-free:dairy-free,seafood,,portion,140
-cola drink (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,glass,240
-cola drink (330ml can),vegan:gluten-free:dairy-free:vegetarian,drink,,,
-cola drink (500ml bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,,
+cola drink (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
+cola drink (330ml can),vegan:gluten-free:dairy-free:vegetarian,drink,yes,,
+cola drink (500ml bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,,
 common ling,gluten-free:dairy-free,seafood,,portion,140
 cottage cheese,gluten-free:vegetarian,dairy & vegan substitutes,,portion,30
 couscous,vegan:gluten-free:dairy-free:vegetarian,beans & pulses,,portion,40
@@ -72,24 +72,24 @@ crisp bread,vegan:dairy-free:vegetarian,"bread, rice & pasta",,,
 cucumbers,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 dark chocolate,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
 dates,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit",,portion,30
-diet cola drink (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,glass,240
-diet cola drink (330ml can),vegan:gluten-free:dairy-free:vegetarian,drink,,,
-diet cola drink (500ml bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,,
-diet lemonade (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,glass,240
+diet cola drink (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
+diet cola drink (330ml can),vegan:gluten-free:dairy-free:vegetarian,drink,yes,,
+diet cola drink (500ml bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,,
+diet lemonade (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
 double cream,gluten-free:vegetarian,dairy & vegan substitutes,yes,,
 dried fruit,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit",,portion,30
 dry chillies,vegan:gluten-free:dairy-free:vegetarian,spices & seasoning,,,
 dry peas,vegan:gluten-free:dairy-free:vegetarian,beans & pulses,,portion,30
 duck,gluten-free:dairy-free,meat & vegan substitutes,,portion,80
 eggplants,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
-eggs,vegetarian:gluten-free,dairy & vegan substitutes,,,
+eggs,vegetarian:gluten-free,dairy & vegan substitutes:baking,,,
 fennel,vegan:gluten-free:dairy-free:vegetarian,herb,,,
 feta cheese,vegetarian:gluten-free,cheese & vegan cheese,,portion,30
 figs,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit",,portion,30
 foam sweets,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
 french beans,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 fresh chillies,vegan:gluten-free:dairy-free:vegetarian,spices & seasoning,,,
-fresh coffee,vegan:gluten-free:dairy-free:vegetarian,drink,,,
+fresh coffee,vegan:gluten-free:dairy-free:vegetarian,tea & coffee,,,
 frites,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,185
 fruit juice,vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
 fruit squash,vegan:gluten-free:dairy-free:vegetarian,drink,yes,,
@@ -116,14 +116,14 @@ ham,gluten-free:dairy-free,meat & vegan substitutes,,portion,80
 hazelnuts,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit:snacks",,portion,30
 herring,vegan:gluten-free:dairy-free:vegetarian,fish & seafood,,portion,140
 honey,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
-instant coffee powder,vegan:gluten-free:dairy-free:vegetarian,drink,,,
+instant coffee powder,vegan:gluten-free:dairy-free:vegetarian,tea & coffee,,,
 jam,vegan:gluten-free:dairy-free:vegetarian,jam,,,
 jelly sweets,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
 kiwi fruit,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
 lamb,gluten-free:dairy-free,meat & vegan substitutes,,portion,80
-lemonade (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,,glass,240
+lemonade (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
 lemons,vegan:gluten-free:dairy-free:vegetarian,fruit,,,
-lentils,vegan:gluten-free:dairy-free:vegetarian,fish & seafood,,portion,30
+lentils,vegan:gluten-free:dairy-free:vegetarian,beans & pulses,,portion,30
 lettuce,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 limes,vegan:gluten-free:dairy-free:vegetarian,fruit,,,
 lobster,gluten-free:dairy-free,fish & seafood,,portion,140
@@ -177,7 +177,7 @@ pineapples,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
 pinto beans,vegan:gluten-free:dairy-free:vegetarian,beans & pulses,,portion,30
 pistachios,vegan:gluten-free:dairy-free:vegetarian,snacks,,portion,30
 pita bread,vegan:dairy-free:vegetarian,"bread, rice & pasta",,portion,50
-plain flour,vegan:dairy-free:vegetarian,flour,,,
+plain flour,vegan:dairy-free:vegetarian,baking,,,
 plantains,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
 plums,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
 pollock,gluten-free:dairy-free,fish & seafood,,portion,80
@@ -226,9 +226,9 @@ still water (2l bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,
 still water (500ml bottle),vegan:gluten-free:dairy-free:vegetarian,drink,yes,glass,240
 stilton cheese,vegan:gluten-free:dairy-free:vegetarian,cheese & vegan cheese,,portion,30
 strawberries,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
-sugar,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
+sugar,vegan:gluten-free:dairy-free:vegetarian,baking,,,
 sunflower oil,vegan:gluten-free:dairy-free:vegetarian,oils & spreads,,,
-sunflower seeds,vegan:gluten-free:dairy-free:vegetarian,nuts- seeds & dried fruit:snacks,,portion,30
+sunflower seeds,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit:snacks",,portion,30
 swedes,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 sweet potatoes,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 sweets,vegan:gluten-free:dairy-free:vegetarian,sweets & jam,,,
@@ -249,11 +249,11 @@ turkey,gluten-free:dairy-free,meat and vegan substitutes,,portion,80
 vegetable crisps,vegan:gluten-free:dairy-free:vegetarian,snacks,,,
 vegetable oil,vegan:gluten-free:dairy-free:vegetarian,oils & spreads,,,
 vodka,vegan:gluten-free:dairy-free:vegetarian,alcohol,yes,,
-walnuts,vegan:gluten-free:dairy-free:vegetarian,nuts- seeds & dried fruit:snacks,,portion,30
+walnuts,vegan:gluten-free:dairy-free:vegetarian,"nuts, seeds & dried fruit:snacks",,portion,30
 watermelons,vegan:gluten-free:dairy-free:vegetarian,fruit,,portion,80
 whipping cream,gluten-free:vegetarian,dairy & vegan substitutes,yes,,
 whisky,vegan:gluten-free:dairy-free:vegetarian,alcohol,yes,,
-white bread,vegan:dairy-free:vegetarian,bread- rice & pasta,,portion,50
+white bread,vegan:dairy-free:vegetarian,"bread, rice & pasta",,portion,50
 white cabbage,vegan:gluten-free:dairy-free:vegetarian,vegetables,,portion,80
 white wine vinegar,vegan:gluten-free:dairy-free:vegetarian,vinegar,yes,,
 whiting,gluten-free:dairy-free,seafood,,portion,140

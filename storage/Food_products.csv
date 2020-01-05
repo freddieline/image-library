@@ -1,18 +1,18 @@
-tomato sauce,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,tomatoes,800,onions,300,garlic,25,,,,
-short crust pastry,vegetarian,baking,plain flour,225,butter,100,,,,,,
-caesar dressing,vegetarian:gluten-free,sauces & condiments,white wine vinegar,134,vegetable oil,300,eggs,40,,,,
-pizza dough,vegetarian:vegan:dairy-free,baking,plain flour,500,tap water,400,,,,,,
-crutons,vegan:dairy-free:vegetarian,sauces & condiments,white bread,15,,,,,,,,
-fish fingers,dairy-free,fish & seafood,cod,60,plain flour,10,tap water,10,potatoes,10,vegetable oil,10
-chips,vegan:dairy-free:vegetarian,vegetables,potatoes,95,vegetable oil,5,plain flour,5,,,,
-mayonaise,vegetarian:gluten-free,sauces & condiments,white wine vinegar,54,vegetable oil,300,eggs,40,,,,
-tomato ketchup,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,tomatoes,236,sugar,12,white wine vinegar,12,,,,
-battered fish,dairy-free,fish & seafood,cod,80,plain flour,10,vegetable oil,10,,,,
-humous,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,chickpeas,400,olive oil (1l bottle),30,garlic,15,sesame seeds,30,lemons,40
-naan bread,gluten-free:vegetarian,"bread, rice & pasta",plain flour,300,butter,25,yogurt,150,,,,
-naan bread (VE),vegan:dairy-free:vegetarian,"bread, rice & pasta",plain flour,300,butter,25,soya milk,150,,,,
-vegan yogurt,vegan:gluten-free:dairy-free:vegetarian,dairy & vegan substitutes,soya milk,15,,,,,,,,
-noodles (egg-free),vegan:dairy-free:vegetarian,"bread, rice & pasta",pasta,15,,,,,,,,
-falafels,vegan:dairy-free:vegetarian,meat & vegan substitutes,chickpeas,400,garlic,18,onions,200,vegetable oil,20,plain flour,36
-vegan cheese,vegan:gluten-free:dairy-free:vegetarian,cheese & vegan cheese,cashew nuts,80,garlic,5,lemons,23,tap water,236,,
-granola (almonds & raisins),vegan:dairy-free:vegetarian,breakfast bowls,vegtable oil,118,sugar,118,oats,354,almonds,118,raisins,118
+tomato sauce,yes,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,tomatoes,800,onions,300,garlic,25,,,,
+short crust pastry,no,vegetarian,baking,plain flour,225,butter,100,,,,,,
+caesar dressing,yes,vegetarian:gluten-free,sauces & condiments,white wine vinegar,134,vegetable oil,300,eggs,40,,,,
+pizza dough,no,vegetarian:vegan:dairy-free,baking,plain flour,500,tap water,400,,,,,,
+crutons,no,vegan:dairy-free:vegetarian,sauces & condiments,white bread,15,,,,,,,,
+fish fingers,no,dairy-free,fish & seafood,cod,60,plain flour,10,tap water,10,potatoes,10,vegetable oil,10
+chips,no,vegan:dairy-free:vegetarian,vegetables,potatoes,95,vegetable oil,5,plain flour,5,,,,
+mayonaise,yes,vegetarian:gluten-free,sauces & condiments,white wine vinegar,54,vegetable oil,300,eggs,40,,,,
+tomato ketchup,yes,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,tomatoes,236,sugar,12,white wine vinegar,12,,,,
+battered fish,no,dairy-free,fish & seafood,cod,80,plain flour,10,vegetable oil,10,,,,
+humous,no,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,chickpeas,400,olive oil (1l bottle),30,garlic,15,sesame seeds,30,lemons,40
+naan bread,no,vegetarian,"bread, rice & pasta",plain flour,300,butter,25,yogurt,150,,,,
+naan bread (VE),no,vegan:dairy-free:vegetarian,"bread, rice & pasta",plain flour,300,butter,25,soya milk,150,,,,
+vegan yogurt,no,vegan:gluten-free:dairy-free:vegetarian,dairy & vegan substitutes,soya milk,15,,,,,,,,
+noodles (egg-free),no,vegan:dairy-free:vegetarian,"bread, rice & pasta",pasta,15,,,,,,,,
+falafels,no,vegan:dairy-free:vegetarian,meat & vegan substitutes,chickpeas,400,garlic,18,onions,200,vegetable oil,20,plain flour,36
+vegan cheese,no,vegan:gluten-free:dairy-free:vegetarian,cheese & vegan cheese,cashew nuts,80,garlic,5,lemons,23,tap water,236,,
+granola (almonds & raisins),no,vegan:dairy-free:vegetarian,breakfast bowls,vegetable oil,118,sugar,118,oats,354,almonds,118,raisins,118
