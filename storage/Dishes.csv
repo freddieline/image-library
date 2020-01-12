@@ -1,7 +1,22 @@
-Beef burger and chips,"burgers,beef",Beef,125,White bread,60,Potatoes,300,,,,
-Veggie burger and chips,"burgers,vegan",Lentils,125,White bread,60,Cheddar cheese,20,Potatoes,300,,
-Spaghetti carbonara,"pasta,pork",Pasta,80,Ham,20,Cheddar cheese,40,Eggs,40,,
-Fish and chips,"fish & seafood",Cod,170,Potatoes,250,Sunflower oil,60,Plain flour,25,Eggs,35
-Steak and chips,"beef",Beef,200,Potatoes,250,Sunflower oil,30,,,,
-Pepperoni pizza,"pizzas,pork",Pizza dough,125,Tomato sauce,40,Pork,25,Mozzarella cheese,35,,
-Spagetti bolognaise,"pasta,beef",Beef,85,Tomato sauce,120,Garlic,10,Pasta,100,Parmesan cheese,20
+beef burger and chips,"burgers,beef",Beef,125,White bread,60,Potatoes,285,,,,
+cheese burger and chips,"burgers,beef",Beef,125,White bread,60,Cheddar cheese,20,Potatoes,285,,
+veggie burger and chips,"vegan,burgers",Lentils,125,White bread,60,Cheddar cheese,20,Potatoes,285,,
+spaghetti carbonara,"pasta,pork",Pasta,80,Ham,20,Cheddar cheese,40,Eggs,40,,
+fish and chips,fish & seafood,Cod,170,Potatoes,285,Sunflower oil,60,Plain flour,25,Eggs,35
+steak and chips,beef,Beef,200,Potatoes,285,Sunflower oil,30,,,,
+pepperoni pizza,"pizzas,pork",Pizza dough,125,Tomato sauce,30,Pork,25,Mozzarella cheese,60,,
+spagetti bolognaise,beef,Beef,85,Tomato sauce,120,Parmesan cheese,20,Pasta,100,,
+chicken tikka masala,chicken,chicken,170,rice,200,double cream,25,tinned tomatoes,100,onions,50
+cottage pie,"beef,pies",beef,125,onions,85,carrots,40,potatoes,225,butter,20
+sheppards pie,"lamb,pies",lamb,125,onions,85,carrots,40,potatoes,225,butter,20
+chicken and mushroom pie,"chicken,pies",chicken,150,short crust pastry,125,mushrooms,50,semi-skimmed milk,40,tap water,80
+pizza margherita (plain),vegetarian,Pizza dough,150,Tomato sauce,40,Mozzarella cheese,60,tomatoes,30,,
+ham and pineapple pizza,pork,Pizza dough,125,Tomato sauce,40,Mozzarella cheese,60,Pork,15,Pineapples,20
+greek salad,vegetarian,feta cheese,20,tomatoes,150,cucumbers,100,olives,65,
+vegetable tacos,vegetarian,onions,100,peppers,80,tomatoes,125,tortillas,70,avocados,80
+pork and bean tacos,pork,pork,125,pinto beans,100,passata,75,tortillas,70,avocados,50
+falafel wrap,"vegan,vegetarian",falafels,150,tomatoes,80,lettuce,80,pita bread,70,chilli sauce,10
+falafel and halloumi wrap,vegetarian,falafels,150,tomatoes,80,lettuce,80,pita bread,70,halloumi cheese,30
+lamb doner kebab,lamb,lamb,150,tomatoes,80,lettuce,80,flatbread,70,chilli sauce,10
+chicken doner kebab,chicken,chicken,150,tomatoes,80,lettuce,80,flatbread,70,chilli sauce,10
+pizza margherita (vegan),vegetarian,Pizza dough,150,Tomato sauce,40,vegan cheese,60,tomatoes,30,,

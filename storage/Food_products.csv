@@ -9,10 +9,16 @@ mayonaise,yes,vegetarian:gluten-free,sauces & condiments,white wine vinegar,54,v
 tomato ketchup,yes,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,tomatoes,236,sugar,12,white wine vinegar,12,,,,
 battered fish,no,dairy-free,fish & seafood,cod,80,plain flour,10,vegetable oil,10,,,,
 humous,no,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,chickpeas,400,olive oil (1l bottle),30,garlic,15,sesame seeds,30,lemons,40
-naan bread,no,vegetarian,"bread, rice & pasta",plain flour,300,butter,25,yogurt,150,,,,
-naan bread (VE),no,vegan:dairy-free:vegetarian,"bread, rice & pasta",plain flour,300,butter,25,soya milk,150,,,,
-vegan yogurt,no,vegan:gluten-free:dairy-free:vegetarian,dairy & vegan substitutes,soya milk,15,,,,,,,,
-noodles (egg-free),no,vegan:dairy-free:vegetarian,"bread, rice & pasta",pasta,15,,,,,,,,
-falafels,no,vegan:dairy-free:vegetarian,meat & vegan substitutes,chickpeas,400,garlic,18,onions,200,vegetable oil,20,plain flour,36
+naan bread,no,vegetarian,bread,plain flour,300,butter,25,yogurt,150,,,,
+naan bread (VE),no,vegan:dairy-free:vegetarian,bread,plain flour,300,butter,25,soya milk,150,,,,
+vegan yogurt,no,vegan:gluten-free:dairy-free:vegetarian,dairy & vegan alternatives,soya milk,15,,,,,,,,
+noodles (egg-free),no,vegan:dairy-free:vegetarian,rice & pasta,pasta,15,,,,,,,,
+falafels,no,vegan:dairy-free:vegetarian,meat & protein foods,chickpeas,400,garlic,18,onions,200,vegetable oil,20,plain flour,36
 vegan cheese,no,vegan:gluten-free:dairy-free:vegetarian,cheese & vegan cheese,cashew nuts,80,garlic,5,lemons,23,tap water,236,,
 granola (almonds & raisins),no,vegan:dairy-free:vegetarian,breakfast bowls,vegetable oil,118,sugar,118,oats,354,almonds,118,raisins,118
+flatbread,no,vegan:dairy-free:vegetarian,bread,plain flour,400,tap water,150,olive oil (1l bottle),45,,,,
+tortillas,no,vegan:dairy-free:vegetarian,bread,plain flour,400,tap water,150,olive oil (1l bottle),45,,,,
+pita bread,no,vegan:dairy-free:vegetarian,bread,plain flour,500,tap water,200,,,,,,
+chilli sauce,yes,vegan:gluten-free:dairy-free:vegetarian,sauces & condiments,fresh chillies,400,garlic,50,apple cyder vinegar,70,sugar,60,tap water,200
+garlic sauce,yes,gluten-free:dairy-free:vegetarian,sauces & condiments,white wine vinegar,54,vegetable oil,300,eggs,40,yogurt,400,garlic,67
+tofu,no,vegan:gluten-free:dairy-free:vegetarian,meat & protein foods,soy beans,23,,,,,,,,

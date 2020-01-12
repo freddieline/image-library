@@ -84,7 +84,7 @@ class FoodProductsSeeder extends Seeder
                     ]);
                 }
 
-                                 // insert ingredient 4
+                 // insert ingredient 5
                 if(!empty($csvLine[12])){
                      dump($csvLine[12]);
                     $ingredient5 = $ingredients->where('name',$csvLine[12])->first()->id;
