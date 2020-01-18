@@ -40,7 +40,7 @@ class FoodProductsSeeder extends Seeder
                	$ingredient5 = 0;
              
                 // insert ingredient 1
-                $ingredient1 = $ingredients->where('name',$csvLine[4])->first()->id;
+                $ingredient1 = $ingredients->where('name',$csvLine[4])->where('standard_deviation',"!=", null)->first()->id;
  
             	FoodProductsIngredients::updateOrCreate([
                     'food_product_id' => $foodProduct->id,
@@ -51,7 +51,7 @@ class FoodProductsSeeder extends Seeder
                 // insert ingredient 2
                 if(!empty($csvLine[6])){
                     dump($csvLine[6]);
-                    $ingredient2 = $ingredients->where('name',$csvLine[6])->first()->id;
+                    $ingredient2 = $ingredients->where('name',$csvLine[6])->where('standard_deviation',"!=", null)->first()->id;
                       dump($ingredient2);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
@@ -63,7 +63,7 @@ class FoodProductsSeeder extends Seeder
                 // insert ingredient 3
                 if(!empty($csvLine[8])){
                     dump($csvLine[8]);
-                    $ingredient3 = $ingredients->where('name',$csvLine[8])->first()->id;
+                    $ingredient3 = $ingredients->where('name',$csvLine[8])->where('standard_deviation',"!=", null)->first()->id;
           
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
@@ -75,7 +75,7 @@ class FoodProductsSeeder extends Seeder
                  // insert ingredient 4
                 if(!empty($csvLine[10])){
                     dump($csvLine[10]);
-                    $ingredient4 = $ingredients->where('name',$csvLine[10])->first()->id;
+                    $ingredient4 = $ingredients->where('name',$csvLine[10])->where('standard_deviation',"!=", null)->first()->id;
           
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,
@@ -87,7 +87,7 @@ class FoodProductsSeeder extends Seeder
                  // insert ingredient 5
                 if(!empty($csvLine[12])){
                      dump($csvLine[12]);
-                    $ingredient5 = $ingredients->where('name',$csvLine[12])->first()->id;
+                    $ingredient5 = $ingredients->where('name',$csvLine[12])->where('standard_deviation',"!=", null)->first()->id;
                   	dump($ingredient5);
                     FoodProductsIngredients::updateOrCreate([
                         'food_product_id' => $foodProduct->id,

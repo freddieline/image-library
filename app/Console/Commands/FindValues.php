@@ -131,7 +131,8 @@ class FindValues extends Command
             $ingredient->standard_deviation = null;
         }
        else{
-           $ingredient->standard_deviation = $standardDeviation;
+           $ingredient->standard_deviation = $standardDeviation * 100 / $ingredient->average_kgCO2e_per_kg_food;
+           $ingredient->margin_of_error = $standardDeviation * 100 / (pow($ingredient->foodSources()->count(), 0.5) * $ingredient->average_kgCO2e_per_kg_food);
        }
 
        $ingredient->save();
@@ -156,7 +157,7 @@ class FindValues extends Command
                 $foodProductIngredient->ratio;
                 $this->cumulativeTotalMass += $foodProductIngredient->ratio;
             });
-dump($foodProduct->name);
+            dump($foodProduct->name);
             $foodProduct->average_kgCO2e_per_kg_food = $this->cumulativeTotalCarbon / $this->cumulativeTotalMass;
             $foodProduct->save();
         });

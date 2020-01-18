@@ -41,7 +41,7 @@ class MealsSeeder extends Seeder
                 $ingredient4 = 0;
              
            
-                $ingredient1 = $ingredients->where('name',strtolower($csvLine[2]))->first();
+                $ingredient1 = $ingredients->where('name',strtolower($csvLine[2]))->where('standard_deviation',"!=", null)->first();
 
                 if(empty($ingredient1)){
                     $foodProduct1 = $foodProducts->where('name',strtolower($csvLine[2]))->first()->id;
@@ -67,7 +67,7 @@ class MealsSeeder extends Seeder
        
 
                 if(!empty($csvLine[4])){
-                    $ingredient2 = $ingredients->where('name',strtolower($csvLine[4]))->first();
+                    $ingredient2 = $ingredients->where('name',strtolower($csvLine[4]))->where('standard_deviation',"!=", null)->first();
 
                     if(empty($ingredient2)){
                         dump($csvLine[4]);
@@ -97,7 +97,7 @@ class MealsSeeder extends Seeder
                 if(!empty($csvLine[6])){
 
 
-                    $ingredient3 = $ingredients->where('name',strtolower($csvLine[6]))->first();
+                    $ingredient3 = $ingredients->where('name',strtolower($csvLine[6]))->where('standard_deviation',"!=", null)->first();
                     if(empty($ingredient3)){
                         dump($csvLine[6]);
                         $foodProduct = $foodProducts->where('name',strtolower($csvLine[6]))->first()->id;
@@ -128,7 +128,7 @@ class MealsSeeder extends Seeder
                  // insert ingredient 4
                 if(!empty($csvLine[8])){
                           dump($csvLine[8]);
-                    $ingredient4 = $ingredients->where('name',strtolower($csvLine[8]))->first();
+                    $ingredient4 = $ingredients->where('name',strtolower($csvLine[8]))->where('standard_deviation',"!=", null)->first();
                     if(empty($ingredient4)){
                         dump($csvLine[8]);
                         $foodProduct = $foodProducts->where('name',strtolower($csvLine[8]))->first()->id;
@@ -156,7 +156,7 @@ class MealsSeeder extends Seeder
                 // insert ingredient 5
                 if(!empty($csvLine[10])){
                dump($csvLine[10]);
-                    $ingredient5 = $ingredients->where('name',strtolower($csvLine[10]))->first();
+                    $ingredient5 = $ingredients->where('name',strtolower($csvLine[10]))->where('standard_deviation',"!=", null)->first();
 
                     if(empty($ingredient5)){
 
